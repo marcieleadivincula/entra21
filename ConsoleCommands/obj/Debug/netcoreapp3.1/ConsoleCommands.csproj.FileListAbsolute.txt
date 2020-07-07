@@ -1,0 +1,11 @@
+C:\Users\Entra21\source\repos\exercicios\ConsoleCommands\bin\Debug\netcoreapp3.1\ConsoleCommands.exe
+C:\Users\Entra21\source\repos\exercicios\ConsoleCommands\bin\Debug\netcoreapp3.1\ConsoleCommands.deps.json
+C:\Users\Entra21\source\repos\exercicios\ConsoleCommands\bin\Debug\netcoreapp3.1\ConsoleCommands.runtimeconfig.json
+C:\Users\Entra21\source\repos\exercicios\ConsoleCommands\bin\Debug\netcoreapp3.1\ConsoleCommands.runtimeconfig.dev.json
+C:\Users\Entra21\source\repos\exercicios\ConsoleCommands\bin\Debug\netcoreapp3.1\ConsoleCommands.dll
+C:\Users\Entra21\source\repos\exercicios\ConsoleCommands\bin\Debug\netcoreapp3.1\ConsoleCommands.pdb
+C:\Users\Entra21\source\repos\exercicios\ConsoleCommands\obj\Debug\netcoreapp3.1\ConsoleCommands.csprojAssemblyReference.cache
+C:\Users\Entra21\source\repos\exercicios\ConsoleCommands\obj\Debug\netcoreapp3.1\ConsoleCommands.AssemblyInfoInputs.cache
+C:\Users\Entra21\source\repos\exercicios\ConsoleCommands\obj\Debug\netcoreapp3.1\ConsoleCommands.AssemblyInfo.cs
+C:\Users\Entra21\source\repos\exercicios\ConsoleCommands\obj\Debug\netcoreapp3.1\ConsoleCommands.dll
+C:\Users\Entra21\source\repos\exercicios\ConsoleCommands\obj\Debug\netcoreapp3.1\ConsoleCommands.pdb
