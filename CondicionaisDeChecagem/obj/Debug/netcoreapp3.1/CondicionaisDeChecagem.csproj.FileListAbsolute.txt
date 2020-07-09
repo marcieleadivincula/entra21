@@ -1,0 +1,11 @@
+C:\Users\Entra21\source\repos\exercicios\CondicionaisDeChecagem\bin\Debug\netcoreapp3.1\CondicionaisDeChecagem.exe
+C:\Users\Entra21\source\repos\exercicios\CondicionaisDeChecagem\bin\Debug\netcoreapp3.1\CondicionaisDeChecagem.deps.json
+C:\Users\Entra21\source\repos\exercicios\CondicionaisDeChecagem\bin\Debug\netcoreapp3.1\CondicionaisDeChecagem.runtimeconfig.json
+C:\Users\Entra21\source\repos\exercicios\CondicionaisDeChecagem\bin\Debug\netcoreapp3.1\CondicionaisDeChecagem.runtimeconfig.dev.json
+C:\Users\Entra21\source\repos\exercicios\CondicionaisDeChecagem\bin\Debug\netcoreapp3.1\CondicionaisDeChecagem.dll
+C:\Users\Entra21\source\repos\exercicios\CondicionaisDeChecagem\bin\Debug\netcoreapp3.1\CondicionaisDeChecagem.pdb
+C:\Users\Entra21\source\repos\exercicios\CondicionaisDeChecagem\obj\Debug\netcoreapp3.1\CondicionaisDeChecagem.csprojAssemblyReference.cache
+C:\Users\Entra21\source\repos\exercicios\CondicionaisDeChecagem\obj\Debug\netcoreapp3.1\CondicionaisDeChecagem.AssemblyInfoInputs.cache
+C:\Users\Entra21\source\repos\exercicios\CondicionaisDeChecagem\obj\Debug\netcoreapp3.1\CondicionaisDeChecagem.AssemblyInfo.cs
+C:\Users\Entra21\source\repos\exercicios\CondicionaisDeChecagem\obj\Debug\netcoreapp3.1\CondicionaisDeChecagem.dll
+C:\Users\Entra21\source\repos\exercicios\CondicionaisDeChecagem\obj\Debug\netcoreapp3.1\CondicionaisDeChecagem.pdb
