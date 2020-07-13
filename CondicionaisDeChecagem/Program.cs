@@ -161,159 +161,121 @@ namespace CondicionaisDeChecagem
             //Ordem: valor, cartaoFidelidade e quintaCompra
             //cartaoFidelidade = 15% de desconto
             //quintaCompra = 10% de desconto
-            //Console.WriteLine("Digite o valor da compra: ");
-            //double valorCompra = Convert.ToDouble(Console.In.ReadLine());
-            //Console.WriteLine("Tem cartão fidelidade, digite sim ou não: ");
-            //string cartaoFidelidade = Console.In.ReadLine().ToLower();
-            //Console.WriteLine("É a primeira compra, digite sim ou não: ");
-            //string quintaCompra = Console.In.ReadLine().ToLower();
-            //double desconto, cartao, fidelidade;
+            Console.WriteLine("Digite o valor da compra: ");
+            double valorCompra = Convert.ToDouble(Console.In.ReadLine());
+            Console.WriteLine("Tem cartão fidelidade, digite [s] para sim ou [n] para não: ");
+            char cartaoFidelidade = Convert.ToChar(Console.In.ReadLine().ToLower());
+            Console.WriteLine("É a primeira compra, digite [s] para sim ou [n] para não: ");
+            char quintaCompra = Convert.ToChar(Console.In.ReadLine().ToLower());
+            double desconto, cartao, fidelidade;
 
-            //if (valorCompra >= 0.01 && valorCompra <= 200.0)
-            //{
-            //    desconto = valorCompra;
-            //    Console.WriteLine("Valor original: " + valorCompra);
-            //    Console.WriteLine("Valor da compra com desconto: " + desconto);
-            //    if (cartaoFidelidade == "sim")
-            //    {
-            //        fidelidade = valorCompra * 0.15;
-            //        valorCompra -= fidelidade;
-            //        Console.WriteLine("Cartão fidelidade: " + valorCompra);
-            //        if (quintaCompra == "sim")
-            //        {
-            //            cartao = valorCompra * 0.10;
-            //            valorCompra -= cartao;
-            //            Console.WriteLine("Quinta compra: " + valorCompra);
-            //        }
-            //        else
-            //        {
-            //            Console.WriteLine("Não é a quinta compra!");
-            //            Console.WriteLine(valorCompra);
-            //        }
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine("Não tem cartão fidelidade!");
-            //        Console.WriteLine(valorCompra);
-            //    }
-            //}
-            //else if (valorCompra >= 200.01 && valorCompra <= 400.0)
-            //{
-            //    desconto = valorCompra * 0.10;
-            //    valorCompra -= desconto;
-            //    Console.WriteLine("Valor da compra com desconto: " + valorCompra);
-            //    if (cartaoFidelidade == "sim")
-            //    {
-            //        fidelidade = valorCompra * 0.15;
-            //        valorCompra -= fidelidade;
-            //        Console.WriteLine("Cartão fidelidade: " + valorCompra);
-            //        if (quintaCompra == "sim")
-            //        {
-            //            cartao = valorCompra * 0.10;
-            //            valorCompra -= cartao;
-            //            Console.WriteLine("Quinta compra: " + valorCompra);
-            //        }
-            //        else
-            //        {
-            //            Console.WriteLine("Não é a quinta compra!");
-            //            Console.WriteLine(valorCompra);
-            //        }
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine("Não tem cartão fidelidade!");
-            //        Console.WriteLine(valorCompra);
-            //    }
-            //}
-            //else if (valorCompra >= 400.01)
-            //{
-            //    desconto = valorCompra * 0.20;
-            //    valorCompra -= desconto;
-            //    Console.WriteLine("Valor da compra com desconto: " + valorCompra);
-            //    if (cartaoFidelidade == "sim")
-            //    {
-            //        fidelidade = valorCompra * 0.15;
-            //        valorCompra -= fidelidade;
-            //        Console.WriteLine("Cartão fidelidade: " + valorCompra);
-            //        if (quintaCompra == "sim")
-            //        {
-            //            cartao = valorCompra * 0.10;
-            //            valorCompra -= cartao;
-            //            Console.WriteLine("Quinta compra: " + valorCompra);
-            //        }
-            //        else
-            //        {
-            //            Console.WriteLine("Não é a quinta compra!");
-            //            Console.WriteLine(valorCompra);
-            //        }
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine("Não tem cartão fidelidade!");
-            //        Console.WriteLine(valorCompra);
-            //    }
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Valor inválido!");
-            //}
+            //Valor da compra
+            if (valorCompra <= 200.0)
+            {
+                desconto = valorCompra;
+                Console.WriteLine("Valor original: " + valorCompra);
+                Console.WriteLine("Valor da compra com desconto: " + desconto);
+            }
+            else if (valorCompra <= 400.0)
+            {
+                desconto = valorCompra * 0.10;
+                valorCompra -= desconto;
+                Console.WriteLine("Valor da compra com desconto: " + valorCompra);
+            }
+            else if (valorCompra >= 400.01)
+            {
+                desconto = valorCompra * 0.20;
+                valorCompra -= desconto;
+                Console.WriteLine("Valor da compra com desconto: " + valorCompra);
+                
+            }
+            else
+            {
+                Console.WriteLine("Valor inválido!");
+            }
 
+            //Cartão Fidelidade
+            if (cartaoFidelidade == 's')
+            {
+                fidelidade = valorCompra * 0.15;
+                valorCompra -= fidelidade;
+                Console.WriteLine("Cartão fidelidade: " + valorCompra);
+                    
+            }
+            else
+            {
+                Console.WriteLine("Não tem cartão fidelidade!");
+                Console.WriteLine(valorCompra);
+            }
+
+            //Quinta Compra
+            if (quintaCompra == 's')
+            {
+                cartao = valorCompra * 0.10;
+                valorCompra -= cartao;
+                Console.WriteLine("Quinta compra: " + valorCompra);
+            }
+            else
+            {
+                Console.WriteLine("Não é a quinta compra!");
+                Console.WriteLine(valorCompra);
+            }
 
             //Exercício avançado
             //double a = Math.Pow(primeiroValor, segundoValor);
-            Console.Write("Digite o primeiro valor: ");
-            double primeiroValor = Convert.ToDouble(Console.In.ReadLine());
-            Console.Write("Digite o tipo de operação: ");
-            string operacao = Console.In.ReadLine();
-            Console.Write("Digite o segundo valor: ");
-            double segundoValor = Convert.ToDouble(Console.In.ReadLine());
-            double conta;
-
-            while (operacao != "0")
-            {
-                if (operacao == "/")
-                {
-                    if (primeiroValor > segundoValor)
-                    {
-                        conta = primeiroValor / segundoValor;
-                        Console.WriteLine("Resultado => " + conta);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Não é possível divisão por um número menor!");
-                    }
-                }
-                else if (operacao == "*")
-                {
-                    conta = primeiroValor * segundoValor;
-                    Console.WriteLine("Resultado => " + conta);
-                }
-                else if (operacao == "+")
-                {
-                    conta = primeiroValor + segundoValor;
-                    Console.WriteLine("Resultado => " + conta);
-                }
-                else if (operacao == "-")
-                {
-                    if (primeiroValor > segundoValor)
-                    {
-                        conta = primeiroValor - segundoValor;
-                        Console.WriteLine("Resultado => " + conta);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Não é possível subtração por um número menor!");
-                    }
-                }
-                else if (operacao == "**")
-                {
-                    Console.WriteLine($"{primeiroValor}^{segundoValor} = {(long)Math.Pow(primeiroValor, segundoValor):N0} ");
-                }
-                else
-                {
-                    Console.WriteLine("Valor inválido, tente novamente");
-                }
-            }
+            //Console.Write("Digite o primeiro valor: ");
+            //double primeiroValor = Convert.ToDouble(Console.In.ReadLine());
+            //Console.Write("Digite o tipo de operação: ");
+            //string operacao = Console.In.ReadLine();
+            //Console.Write("Digite o segundo valor: ");
+            //double segundoValor = Convert.ToDouble(Console.In.ReadLine());
+            //double conta;
+            //
+            //while (operacao != "0")
+            //{
+            //    if (operacao == "/")
+            //    {
+            //        if (primeiroValor > segundoValor)
+            //        {
+            //            conta = primeiroValor / segundoValor;
+            //            Console.WriteLine("Resultado => " + conta);
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("Não é possível divisão por um número menor!");
+            //        }
+            //    }
+            //    else if (operacao == "*")
+            //    {
+            //        conta = primeiroValor * segundoValor;
+            //        Console.WriteLine("Resultado => " + conta);
+            //    }
+            //    else if (operacao == "+")
+            //    {
+            //        conta = primeiroValor + segundoValor;
+            //        Console.WriteLine("Resultado => " + conta);
+            //    }
+            //    else if (operacao == "-")
+            //    {
+            //        if (primeiroValor > segundoValor)
+            //        {
+            //            conta = primeiroValor - segundoValor;
+            //            Console.WriteLine("Resultado => " + conta);
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("Não é possível subtração por um número menor!");
+            //        }
+            //    }
+            //    else if (operacao == "**")
+            //    {
+            //        Console.WriteLine($"{primeiroValor}^{segundoValor} = {(long)Math.Pow(primeiroValor, segundoValor):N0} ");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Valor inválido, tente novamente");
+            //    }
+            //}
         }
     }
 }

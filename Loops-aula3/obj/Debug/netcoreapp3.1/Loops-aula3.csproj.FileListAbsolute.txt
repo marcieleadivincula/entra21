@@ -1,0 +1,10 @@
+C:\Users\Entra21\source\repos\exercicios\entra21\Loops-aula3\bin\Debug\netcoreapp3.1\Loops-aula3.exe
+C:\Users\Entra21\source\repos\exercicios\entra21\Loops-aula3\bin\Debug\netcoreapp3.1\Loops-aula3.deps.json
+C:\Users\Entra21\source\repos\exercicios\entra21\Loops-aula3\bin\Debug\netcoreapp3.1\Loops-aula3.runtimeconfig.json
+C:\Users\Entra21\source\repos\exercicios\entra21\Loops-aula3\bin\Debug\netcoreapp3.1\Loops-aula3.runtimeconfig.dev.json
+C:\Users\Entra21\source\repos\exercicios\entra21\Loops-aula3\bin\Debug\netcoreapp3.1\Loops-aula3.dll
+C:\Users\Entra21\source\repos\exercicios\entra21\Loops-aula3\bin\Debug\netcoreapp3.1\Loops-aula3.pdb
+C:\Users\Entra21\source\repos\exercicios\entra21\Loops-aula3\obj\Debug\netcoreapp3.1\Loops-aula3.AssemblyInfoInputs.cache
+C:\Users\Entra21\source\repos\exercicios\entra21\Loops-aula3\obj\Debug\netcoreapp3.1\Loops-aula3.AssemblyInfo.cs
+C:\Users\Entra21\source\repos\exercicios\entra21\Loops-aula3\obj\Debug\netcoreapp3.1\Loops-aula3.dll
+C:\Users\Entra21\source\repos\exercicios\entra21\Loops-aula3\obj\Debug\netcoreapp3.1\Loops-aula3.pdb
