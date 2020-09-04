@@ -1,2 +1,2 @@
-# entra21
+# Projeto Entra21
 Exercícios e atividades propostas durante as aulas do Entra21
