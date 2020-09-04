@@ -1,0 +1,13 @@
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Function\ExerciciosFunction01\bin\Debug\netcoreapp3.1\ExerciciosFunction01.exe
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Function\ExerciciosFunction01\bin\Debug\netcoreapp3.1\ExerciciosFunction01.deps.json
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Function\ExerciciosFunction01\bin\Debug\netcoreapp3.1\ExerciciosFunction01.runtimeconfig.json
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Function\ExerciciosFunction01\bin\Debug\netcoreapp3.1\ExerciciosFunction01.runtimeconfig.dev.json
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Function\ExerciciosFunction01\bin\Debug\netcoreapp3.1\ExerciciosFunction01.dll
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Function\ExerciciosFunction01\bin\Debug\netcoreapp3.1\ExerciciosFunction01.pdb
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Function\ExerciciosFunction01\obj\Debug\netcoreapp3.1\ExerciciosFunction01.csprojAssemblyReference.cache
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Function\ExerciciosFunction01\obj\Debug\netcoreapp3.1\ExerciciosFunction01.AssemblyInfoInputs.cache
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Function\ExerciciosFunction01\obj\Debug\netcoreapp3.1\ExerciciosFunction01.AssemblyInfo.cs
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Function\ExerciciosFunction01\obj\Debug\netcoreapp3.1\ExerciciosFunction01.csproj.CoreCompileInputs.cache
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Function\ExerciciosFunction01\obj\Debug\netcoreapp3.1\ExerciciosFunction01.dll
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Function\ExerciciosFunction01\obj\Debug\netcoreapp3.1\ExerciciosFunction01.pdb
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Function\ExerciciosFunction01\obj\Debug\netcoreapp3.1\ExerciciosFunction01.genruntimeconfig.cache

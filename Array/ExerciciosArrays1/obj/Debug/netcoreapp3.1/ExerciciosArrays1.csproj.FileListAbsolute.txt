@@ -1,0 +1,13 @@
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Array\ExerciciosArrays1\bin\Debug\netcoreapp3.1\ExerciciosArrays1.exe
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Array\ExerciciosArrays1\bin\Debug\netcoreapp3.1\ExerciciosArrays1.deps.json
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Array\ExerciciosArrays1\bin\Debug\netcoreapp3.1\ExerciciosArrays1.runtimeconfig.json
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Array\ExerciciosArrays1\bin\Debug\netcoreapp3.1\ExerciciosArrays1.runtimeconfig.dev.json
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Array\ExerciciosArrays1\bin\Debug\netcoreapp3.1\ExerciciosArrays1.dll
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Array\ExerciciosArrays1\bin\Debug\netcoreapp3.1\ExerciciosArrays1.pdb
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Array\ExerciciosArrays1\obj\Debug\netcoreapp3.1\ExerciciosArrays1.csprojAssemblyReference.cache
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Array\ExerciciosArrays1\obj\Debug\netcoreapp3.1\ExerciciosArrays1.AssemblyInfoInputs.cache
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Array\ExerciciosArrays1\obj\Debug\netcoreapp3.1\ExerciciosArrays1.AssemblyInfo.cs
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Array\ExerciciosArrays1\obj\Debug\netcoreapp3.1\ExerciciosArrays1.csproj.CoreCompileInputs.cache
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Array\ExerciciosArrays1\obj\Debug\netcoreapp3.1\ExerciciosArrays1.dll
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Array\ExerciciosArrays1\obj\Debug\netcoreapp3.1\ExerciciosArrays1.pdb
+C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Array\ExerciciosArrays1\obj\Debug\netcoreapp3.1\ExerciciosArrays1.genruntimeconfig.cache
