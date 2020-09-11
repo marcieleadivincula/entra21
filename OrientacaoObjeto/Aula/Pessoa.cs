@@ -9,6 +9,7 @@ namespace Aula
         public string nome;
         public int idade;
         public double salario;
+        public bool genero;
 
 
         public double Aumento()
