@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosFunction01", "ExerciciosFunction01\ExerciciosFunction01.csproj", "{59345F79-809E-4F1B-97DC-DC5A326D220B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosFunction01", "ExerciciosFunction01\ExerciciosFunction01.csproj", "{59345F79-809E-4F1B-97DC-DC5A326D220B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosFunction02", "ExerciciosFunction02\ExerciciosFunction02.csproj", "{3E15D818-784B-496D-8FA0-73ECAF595295}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosFunction02", "ExerciciosFunction02\ExerciciosFunction02.csproj", "{3E15D818-784B-496D-8FA0-73ECAF595295}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosFunction03", "ExerciciosFunction03\ExerciciosFunction03.csproj", "{2631EC91-48D7-4781-B98A-FA8D67EAD4C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosFunction03", "ExerciciosFunction03\ExerciciosFunction03.csproj", "{2631EC91-48D7-4781-B98A-FA8D67EAD4C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosFunction04", "ExerciciosFunction04\ExerciciosFunction04.csproj", "{0C978101-07E1-4E40-9090-AB3583E0A691}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosFunction04", "ExerciciosFunction04\ExerciciosFunction04.csproj", "{0C978101-07E1-4E40-9090-AB3583E0A691}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosFunction05", "ExerciciosFunction05\ExerciciosFunction05.csproj", "{1B6FC8AA-7C8D-4FF0-AD66-70FBC0DB0386}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosFunction05", "ExerciciosFunction05\ExerciciosFunction05.csproj", "{1B6FC8AA-7C8D-4FF0-AD66-70FBC0DB0386}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "funcoesLocais", "funcoesLocais\funcoesLocais.csproj", "{6E74CD9C-173E-4C53-9FE8-3EF0B739E024}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{1B6FC8AA-7C8D-4FF0-AD66-70FBC0DB0386}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B6FC8AA-7C8D-4FF0-AD66-70FBC0DB0386}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B6FC8AA-7C8D-4FF0-AD66-70FBC0DB0386}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E74CD9C-173E-4C53-9FE8-3EF0B739E024}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E74CD9C-173E-4C53-9FE8-3EF0B739E024}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E74CD9C-173E-4C53-9FE8-3EF0B739E024}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E74CD9C-173E-4C53-9FE8-3EF0B739E024}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

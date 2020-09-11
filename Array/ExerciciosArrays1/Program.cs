@@ -31,7 +31,7 @@ namespace ExerciciosArrays1
             //for (int i = 0; i < notas.Length; i++)
             //{
             //    Console.Write("Digite a " + i + "º nota: ");
-            //    notas[i] = Convert.ToDouble(Console.In.ReadLine());
+            //    notas[i] = Convert.ToDouble(Console.In.ReadLine());   
 
             //    soma += notas[i];
             //}
