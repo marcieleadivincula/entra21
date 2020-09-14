@@ -42,7 +42,7 @@ namespace ExerciciosArrays1
 
             //3) Crie um vetor que armazena 3 valores vindo do usuario, depois, mostre apenas o maior dentre eles , se todos forem iguais, exiba uma mensagem dizendo “sao todos iguais”
             int[] valores = new int[3];
-            int maior = 0, menor = 0;
+            int maior = 0, menor = 0, iguais = 0;
 
             for (int i = 0; i < valores.Length; i++)
             {
@@ -53,14 +53,18 @@ namespace ExerciciosArrays1
                 {
                     maior = valores[i];
                 }
-                
-                if (valores[i] < menor)
+                else if (valores[i] < menor)
                 {
                     menor = valores[i];
                 }
+                else if(iguais == valores[i])
+                {
+                    iguais = valores[i];
+                    Console.WriteLine("São todos iguais!");
+                }
                 else
                 {
-                    Console.WriteLine("São todos iguais!");
+                    Console.WriteLine("Valor inválido!");
                 }
 
                 Console.WriteLine(i + "º = " + valores[i]);
@@ -68,6 +72,7 @@ namespace ExerciciosArrays1
             Console.WriteLine();
             Console.WriteLine("Maior valor: " + maior);
             Console.WriteLine("Menor valor: " + menor);
+            Console.WriteLine("Valores iguais: " + iguais);
 
             //4) Crie um vetor que armazena 3 nomes vindo do usuario, o usuario pode, a qualquer momento, solicitar quais nomes estao armazenados.
             //string[] nomes = new string[3];
