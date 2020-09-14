@@ -6,9 +6,9 @@ namespace ExerciciosOO
 {
     class Pessoa
     {
-        private string nome { get; set; }
-        private int idade { get; set; }
-        private double salario { get; set; }
+        public string nome;
+        public int idade;
+        public double salario;
 
         //private string _firstName;
         //private string _lastName;
@@ -25,7 +25,5 @@ namespace ExerciciosOO
         {
             return salario * 0.10;
         }
-
-
     }
 }
