@@ -9,6 +9,7 @@ namespace ExerciciosOO
         public string nome;
         public int idade;
         public double salario;
+        public Endereco endereco;
 
         //private string _firstName;
         //private string _lastName;
@@ -25,5 +26,6 @@ namespace ExerciciosOO
         {
             return salario * 0.10;
         }
+
     }
 }

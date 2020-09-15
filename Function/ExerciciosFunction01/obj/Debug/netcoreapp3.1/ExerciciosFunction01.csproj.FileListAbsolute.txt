@@ -10,3 +10,13 @@ C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Function\ExerciciosFunction01
 C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Function\ExerciciosFunction01\obj\Debug\netcoreapp3.1\ExerciciosFunction01.dll
 C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Function\ExerciciosFunction01\obj\Debug\netcoreapp3.1\ExerciciosFunction01.pdb
 C:\Users\marci\OneDrive\Documentos\Entra21\Entra21\Function\ExerciciosFunction01\obj\Debug\netcoreapp3.1\ExerciciosFunction01.genruntimeconfig.cache
+C:\Users\entra21\Desktop\entra21\Function\ExerciciosFunction01\bin\Debug\netcoreapp3.1\ExerciciosFunction01.exe
+C:\Users\entra21\Desktop\entra21\Function\ExerciciosFunction01\bin\Debug\netcoreapp3.1\ExerciciosFunction01.deps.json
+C:\Users\entra21\Desktop\entra21\Function\ExerciciosFunction01\bin\Debug\netcoreapp3.1\ExerciciosFunction01.runtimeconfig.json
+C:\Users\entra21\Desktop\entra21\Function\ExerciciosFunction01\bin\Debug\netcoreapp3.1\ExerciciosFunction01.runtimeconfig.dev.json
+C:\Users\entra21\Desktop\entra21\Function\ExerciciosFunction01\bin\Debug\netcoreapp3.1\ExerciciosFunction01.dll
+C:\Users\entra21\Desktop\entra21\Function\ExerciciosFunction01\bin\Debug\netcoreapp3.1\ExerciciosFunction01.pdb
+C:\Users\entra21\Desktop\entra21\Function\ExerciciosFunction01\obj\Debug\netcoreapp3.1\ExerciciosFunction01.AssemblyInfoInputs.cache
+C:\Users\entra21\Desktop\entra21\Function\ExerciciosFunction01\obj\Debug\netcoreapp3.1\ExerciciosFunction01.AssemblyInfo.cs
+C:\Users\entra21\Desktop\entra21\Function\ExerciciosFunction01\obj\Debug\netcoreapp3.1\ExerciciosFunction01.dll
+C:\Users\entra21\Desktop\entra21\Function\ExerciciosFunction01\obj\Debug\netcoreapp3.1\ExerciciosFunction01.pdb

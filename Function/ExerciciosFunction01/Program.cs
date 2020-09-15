@@ -9,30 +9,32 @@ namespace ExerciciosFunction01
             Console.WriteLine("Exercícios da lista 1 - Function");
 
             //1) Escreva uma função que receba dois números inteiros retorne o menor número
-            Program pro = new Program();
-            int x, y;
-            x = Convert.ToInt32(Console.In.ReadLine());
-            y = Convert.ToInt32(Console.In.ReadLine());
+            //Program pro = new Program();
+            //int x, y;
 
-            Console.WriteLine("Este é o menor deles \n" + pro.Compara(x, y));
-            Console.In.ReadLine();
+            //Console.WriteLine("Digite dois números inteiros:");
+            //x = Convert.ToInt32(Console.In.ReadLine());
+            //y = Convert.ToInt32(Console.In.ReadLine());
+
+            //Console.WriteLine("Este é o menor deles \n" + pro.Compara(x, y));
+            //Console.In.ReadLine();
 
             //2) Faça uma função que recebe um valor inteiro e verifica se o valor é par. A função deve retornar 1 se o número for par e 0 se for ímpar
             //Program pro = new Program();
-            Console.Write("Digite um número qualquer: ");
-            int numero = Convert.ToInt32(Console.In.ReadLine());
+            //Console.Write("Digite um número qualquer: ");
+            //int numero = Convert.ToInt32(Console.In.ReadLine());
 
-            Console.WriteLine("RESULTADO: " + pro.EhPar(numero));
+            //Console.WriteLine("RESULTADO: " + pro.EhPar(numero));
 
             //3) Faça uma função que recebe um valor inteiro e verifica se o valor é positivo, negativo ou zero. A função deve retornar 1 para valores positivos, -1 para negativos e 0 para o valor 0.
             //Program pro = new Program();
-            Console.Write("Digite um número qualquer: ");
-            int num = Convert.ToInt32(Console.In.ReadLine());
+            //Console.Write("Digite um número qualquer: ");
+            //int num = Convert.ToInt32(Console.In.ReadLine());
 
-            Console.WriteLine("RESULTADO:: " + pro.VerificaValor(num));
+            //Console.WriteLine("RESULTADO:: " + pro.VerificaValor(num));
 
             //4) Faça uma função que retorne a converção de Celsius para Fahrenheit.
-            //Program pro = new Program();
+            Program pro = new Program();
             Console.Write("Digite um número qualquer: ");
             int num0 = Convert.ToInt32(Console.In.ReadLine());
             Console.WriteLine();
@@ -45,7 +47,7 @@ namespace ExerciciosFunction01
 
             //5) Escreva uma função que receba 3 notas de um aluno e uma letra. Se a letra for A a função retorna a média aritmética das notas do aluno, se for P, a sua média ponderada (pesos: 5, 3 e 2) e se for M, a sua mediana.
             //Program pro = new Program();
-            double[] nota = new double[3];
+            //double[] nota = new double[3];
 
             //Console.Write("Digite a nota " + i + ": ");
             //nota[i] = Convert.ToDouble(Console.In.ReadLine());
@@ -54,51 +56,51 @@ namespace ExerciciosFunction01
             //Console.Write("Digite a nota 3: ");
             //n3 = Convert.ToDouble(Console.In.ReadLine());
 
-            Console.Write("Digite uma letra qualquer: ");
-            string str = Console.In.ReadLine();
-            Console.WriteLine();
+            //Console.Write("Digite uma letra qualquer: ");
+            //string str = Console.In.ReadLine();
+            //Console.WriteLine();
 
             //Console.WriteLine("Média = " + pro.Media(vetNotas[nota], str));
 
             //6) Escreva uma função que recebe 5 valores e retorne o resultado da seguinte fórmula
             //Program pro = new Program();
-            double num1, num2, num3, num4, num5;
+            //double num1, num2, num3, num4, num5;
 
-            Console.Write("Digite o valor 1: ");
-            num1 = Convert.ToDouble(Console.In.ReadLine());
-            Console.Write("Digite o valor 2: ");
-            num2 = Convert.ToDouble(Console.In.ReadLine());
-            Console.Write("Digite o valor 3: ");
-            num3 = Convert.ToDouble(Console.In.ReadLine());
-            Console.Write("Digite o valor 4: ");
-            num4 = Convert.ToDouble(Console.In.ReadLine());
-            Console.Write("Digite o valor 5: ");
-            num5 = Convert.ToDouble(Console.In.ReadLine());
+            //Console.Write("Digite o valor 1: ");
+            //num1 = Convert.ToDouble(Console.In.ReadLine());
+            //Console.Write("Digite o valor 2: ");
+            //num2 = Convert.ToDouble(Console.In.ReadLine());
+            //Console.Write("Digite o valor 3: ");
+            //num3 = Convert.ToDouble(Console.In.ReadLine());
+            //Console.Write("Digite o valor 4: ");
+            //num4 = Convert.ToDouble(Console.In.ReadLine());
+            //Console.Write("Digite o valor 5: ");
+            //num5 = Convert.ToDouble(Console.In.ReadLine());
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            Console.WriteLine("Resultado: " + pro.Formula(num1, num2, num3, num4, num5));
+            //Console.WriteLine("Resultado: " + pro.Formula(num1, num2, num3, num4, num5));
 
             //7) Escreva uma função que retorne a reta da hipotenusa de um triângulo retângulo
             //Program pro = new Program();
-            double valor1, valor2, valor3;
-            Console.Write("Digite a valor 1: ");
-            valor1 = Convert.ToDouble(Console.In.ReadLine());
-            Console.Write("Digite a valor 2: ");
-            valor2 = Convert.ToDouble(Console.In.ReadLine());
-            Console.Write("Digite a valor 3: ");
-            valor3 = Convert.ToDouble(Console.In.ReadLine());
+            //double valor1, valor2, valor3;
+            //Console.Write("Digite a valor 1: ");
+            //valor1 = Convert.ToDouble(Console.In.ReadLine());
+            //Console.Write("Digite a valor 2: ");
+            //valor2 = Convert.ToDouble(Console.In.ReadLine());
+            //Console.Write("Digite a valor 3: ");
+            //valor3 = Convert.ToDouble(Console.In.ReadLine());
 
             //Console.WriteLine("" + pro.Hipotenusa());
 
             //8) Escreva uma função que começa pedindo um número N ao usuário e depois pede N números. Afunção deverá mostrar na tela todos esses números ordenados do menor para o maior. Escreva sua própria função de ordenação.
-            Program ordenacao = new Program();
-            ordenacao.OrdenaNumeros();
+            //Program ordenacao = new Program();
+            //ordenacao.OrdenaNumeros();
 
             //MEU
             //Program pro = new Program();
-            Console.Write("Digite um número: ");
-            double numer = Convert.ToDouble(Console.In.ReadLine());
+            //Console.Write("Digite um número: ");
+            //double numer = Convert.ToDouble(Console.In.ReadLine());
 
             //Console.WriteLine("Resultado: " + pro.GetNumbers(numer));
         }
