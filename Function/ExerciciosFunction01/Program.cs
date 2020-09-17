@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace ExerciciosFunction01
 {
@@ -34,33 +35,35 @@ namespace ExerciciosFunction01
             //Console.WriteLine("RESULTADO:: " + pro.VerificaValor(num));
 
             //4) Faça uma função que retorne a converção de Celsius para Fahrenheit.
-            Program pro = new Program();
-            Console.Write("Digite um número qualquer: ");
-            int num0 = Convert.ToInt32(Console.In.ReadLine());
-            Console.WriteLine();
-            Console.WriteLine(num0 + "C° => F°: " + pro.CelsiusToFahrenheit(num0));
-            Console.WriteLine(num0 + "C° => K°: " + pro.CelsiusToKelvin(num0));
-            Console.WriteLine(num0 + "F° => C°: " + pro.FahrenheitToCelsius(num0));
-            Console.WriteLine(num0 + "F° => K°: " + pro.FahrenheitToKelvin(num0));
-            Console.WriteLine(num0 + "K° => C°: " + pro.KelvinToCelsius(num0));
-            Console.WriteLine(num0 + "K° => F°: " + pro.KelvinToFahrenheit(num0));
+            //Program pro = new Program();
+            //Console.Write("Digite um número qualquer: ");
+            //int num0 = Convert.ToInt32(Console.In.ReadLine());
+            //Console.WriteLine();
+            //Console.WriteLine(num0 + "C° => F°: " + pro.CelsiusToFahrenheit(num0));
+            //Console.WriteLine(num0 + "C° => K°: " + pro.CelsiusToKelvin(num0));
+            //Console.WriteLine(num0 + "F° => C°: " + pro.FahrenheitToCelsius(num0));
+            //Console.WriteLine(num0 + "F° => K°: " + pro.FahrenheitToKelvin(num0));
+            //Console.WriteLine(num0 + "K° => C°: " + pro.KelvinToCelsius(num0));
+            //Console.WriteLine(num0 + "K° => F°: " + pro.KelvinToFahrenheit(num0));
 
             //5) Escreva uma função que receba 3 notas de um aluno e uma letra. Se a letra for A a função retorna a média aritmética das notas do aluno, se for P, a sua média ponderada (pesos: 5, 3 e 2) e se for M, a sua mediana.
-            //Program pro = new Program();
-            //double[] nota = new double[3];
+            Program pro = new Program();
+            double[] notas = new double[3];
+            double nota;
 
-            //Console.Write("Digite a nota " + i + ": ");
-            //nota[i] = Convert.ToDouble(Console.In.ReadLine());
-            //Console.Write("Digite a nota 2: ");
-            //n2 = Convert.ToDouble(Console.In.ReadLine());
-            //Console.Write("Digite a nota 3: ");
-            //n3 = Convert.ToDouble(Console.In.ReadLine());
+            for (int i = 0; i < notas.Length; i++)
+            {
+                Console.Write("Digite a " + i + "° nota: ");
+                nota = Convert.ToDouble(Console.In.ReadLine());
+                notas[i] = nota;
+            }
 
-            //Console.Write("Digite uma letra qualquer: ");
-            //string str = Console.In.ReadLine();
-            //Console.WriteLine();
+            Console.Write("Digite uma letra qualquer: ");
+            string str = Console.In.ReadLine();
 
-            //Console.WriteLine("Média = " + pro.Media(vetNotas[nota], str));
+            Console.WriteLine();
+
+            Console.WriteLine("Média aritmética = " + pro.CalculaNotas(notas[0], notas[1], notas[2], str));
 
             //6) Escreva uma função que recebe 5 valores e retorne o resultado da seguinte fórmula
             //Program pro = new Program();
@@ -132,7 +135,7 @@ namespace ExerciciosFunction01
         }
 
         //3
-         public int VerificaValor(int valor)
+        public int VerificaValor(int valor)
         {
             if (valor > 0)
             {
@@ -150,7 +153,7 @@ namespace ExerciciosFunction01
 
 
         //4 
-         public double CelsiusToFahrenheit(double c)
+        public double CelsiusToFahrenheit(double c)
         {
             double fahrenheit = (1.8 * c) + 32;
             return fahrenheit;
@@ -188,38 +191,57 @@ namespace ExerciciosFunction01
         }
 
         //5
-        // public double Media(double[] vetNotas, string letra)
-        //{
-        //    double mediana = 0, mediaAritmetica = 0, soma = 0, mediaPonderada = 0;
+        public double CalculaNotas(double nota1, double nota2, double nota3, string letra)
+        {
 
-        //    for (int i = 0; i < vetNotas.Length; i++)
-        //    {
-        //        soma += vetNotas[i];
-        //        mediaPonderada = (nota1 + nota2 + nota3) / (nota1 + nota2 + nota3);
-        //        mediana = notas[i];
-        //    }
-        //    mediaAritmetica = soma / 3;
+            //Calcula média aritmética
+            double soma = (nota1 + nota2 + nota3);
+            double mediaAritmetica = soma / 3;
 
-        //    if (letra == "A")
-        //    {
-        //        return mediaAritmetica;
-        //    }
-        //    else if (letra == "P")
-        //    {
-        //        return mediaPonderada;
-        //    }
-        //    else if (letra == "M")
-        //    {
-        //        return mediana;
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("Valor inválido, tente novamente!");
-        //    }
-        //  }
+            //Calcula média ponderada
+            double mediaPonderada = ((1 * nota1 + 1 * nota2 + 1 * nota3) / soma);
+
+            //Calcula mediana
+            double mediana = 0;
+            //1° Coloque a sequência numérica em ordem crescente/descrescente
+            if (nota1 > nota2)
+            {
+
+            }
+
+            //2° verifica se a sequência numérica em qtd ímpar ou par: o valor que ocupa a posição central, se a quantidade desses valores for ímpar; a média dos dois valores centrais, se a qtd desses valores for par media ponderada
+            if (mediana % 2 == 0)
+            {
+                mediana = ((nota1 / 2) + (nota2 / 2) + (nota3 / 2) + 1) / 2;
+                mediana = ((nota1) + ((nota1 / 2) + 1)) / 2;
+            }
+
+            //3° Para a sequência numérica que tenha quantidade de números pares(8,3,1,6,8,3) : separa-se em quantidades iguais tanto para esquerda quanto para a direita 
+
+            //4° Soma-se os números que sobraram no meio e divide por dois: 1 + 6 = 7; 7/2 = 3,5
+
+            if (letra == "A")
+            {
+                return mediaAritmetica;
+            }
+            else if (letra == "P")
+            {
+                return mediaPonderada;
+            }
+            else if (letra == "M")
+            {
+                return mediana;
+            }
+            else
+            {
+                Console.WriteLine("Valor inválido, tente novamente!");
+            }
+
+            return mediaAritmetica;
+        }
 
         //6
-         public double Formula(double a, double b, double c, double d, double e)
+        public double Formula(double a, double b, double c, double d, double e)
         {
             double resultado = (a + b + c) / (d * e);
             return resultado;
