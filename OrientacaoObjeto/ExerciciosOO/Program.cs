@@ -20,6 +20,9 @@ namespace ExerciciosOO
             //2
             Dog[] dog = new Dog[3];
 
+            string result = GetDogDetails("Lulu", "Maria", 5);
+            Console.WriteLine(result);
+
             for (int i = 0; i < dog.Length; i++)
             {
                 Console.WriteLine("Insira o {0}° cão", (i+1));
@@ -45,6 +48,12 @@ namespace ExerciciosOO
                     break;
                 }
             }
+        }
+
+        public static string GetDogDetails(string nome, string nomeDono, int idade)
+        {
+            string info = string.Format("Nome do dog: {0}, Nome do dono: {1}, Idade: {2}", nome, nomeDono, idade);
+            return info;
         }
     }
 }
