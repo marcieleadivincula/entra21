@@ -10,6 +10,13 @@ namespace ExerciciosOO
         private int _idade;
         private char _genero;
 
+        public Person(string nome, int idade, char genero)
+        {
+            this._nome = nome;
+            this._idade = idade;
+            this._genero = genero;
+        }
+
         public void SetNome(string nome)
         {
             this._nome = nome;
