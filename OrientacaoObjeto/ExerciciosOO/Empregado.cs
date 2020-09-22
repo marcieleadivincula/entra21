@@ -51,7 +51,18 @@ namespace ExerciciosOO
 
         public double Aumento()
         {
-            return getSalario() * 1.20;
+            double result;
+
+            if (getSalario() > 1500)
+            {
+                result = getSalario() * 1.20;
+                return result;
+            }
+            else
+            {
+                result = getSalario();
+                return result;
+            }
         }
     }
 }
