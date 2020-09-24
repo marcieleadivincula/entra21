@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marci\\OneDrive\\Documentos\\Entra21\\Entra21\\Array\\ExerciciosArrays1\\ExerciciosArrays1.csproj": {}
+    "C:\\Users\\entra21\\Desktop\\MARCIELE\\entra21\\Array\\ExerciciosArrays1\\ExerciciosArrays1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marci\\OneDrive\\Documentos\\Entra21\\Entra21\\Array\\ExerciciosArrays1\\ExerciciosArrays1.csproj": {
+    "C:\\Users\\entra21\\Desktop\\MARCIELE\\entra21\\Array\\ExerciciosArrays1\\ExerciciosArrays1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marci\\OneDrive\\Documentos\\Entra21\\Entra21\\Array\\ExerciciosArrays1\\ExerciciosArrays1.csproj",
+        "projectUniqueName": "C:\\Users\\entra21\\Desktop\\MARCIELE\\entra21\\Array\\ExerciciosArrays1\\ExerciciosArrays1.csproj",
         "projectName": "ExerciciosArrays1",
-        "projectPath": "C:\\Users\\marci\\OneDrive\\Documentos\\Entra21\\Entra21\\Array\\ExerciciosArrays1\\ExerciciosArrays1.csproj",
-        "packagesPath": "C:\\Users\\marci\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marci\\OneDrive\\Documentos\\Entra21\\Entra21\\Array\\ExerciciosArrays1\\obj\\",
+        "projectPath": "C:\\Users\\entra21\\Desktop\\MARCIELE\\entra21\\Array\\ExerciciosArrays1\\ExerciciosArrays1.csproj",
+        "packagesPath": "C:\\Users\\entra21\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\entra21\\Desktop\\MARCIELE\\entra21\\Array\\ExerciciosArrays1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\marci\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\entra21\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

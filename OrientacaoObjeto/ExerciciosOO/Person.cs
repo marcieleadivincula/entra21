@@ -6,13 +6,50 @@ namespace ExerciciosOO
 {
     class Person
     {
-        public string nome;
-        public int idade;
-        public char genero;
+        private string _nome;
+        private int _idade;
+        private char _genero;
+
+        public Person(string nome, int idade, char genero)
+        {
+            this._nome = nome;
+            this._idade = idade;
+            this._genero = genero;
+        }
+
+        public void SetNome(string nome)
+        {
+            this._nome = nome;
+        }
+
+        public string GetNome()
+        {
+            return this._nome;
+        }
+
+        public void SetIdade(int idade)
+        {
+            this._idade = idade;
+        }
+
+        public int GetIdade()
+        {
+            return this._idade;
+        }
+
+        public void SetGenero(char genero)
+        {
+            this._genero = genero;
+        }
+
+        public char GetGenero()
+        {
+            return this._genero;
+        }
 
         public bool SeuGenero()
         {
-            if (this.genero == 'f')
+            if (this.GetGenero() == 'f')
             {
                 return true;
             }
