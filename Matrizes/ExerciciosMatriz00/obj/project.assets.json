@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\entra21\\Desktop\\entra21\\Matrizes\\ExerciciosMatriz00\\ExerciciosMatriz00.csproj",
+      "projectUniqueName": "C:\\Users\\entra21\\Desktop\\MARCIELE\\entra21\\Matrizes\\ExerciciosMatriz00\\ExerciciosMatriz00.csproj",
       "projectName": "ExerciciosMatriz00",
-      "projectPath": "C:\\Users\\entra21\\Desktop\\entra21\\Matrizes\\ExerciciosMatriz00\\ExerciciosMatriz00.csproj",
+      "projectPath": "C:\\Users\\entra21\\Desktop\\MARCIELE\\entra21\\Matrizes\\ExerciciosMatriz00\\ExerciciosMatriz00.csproj",
       "packagesPath": "C:\\Users\\entra21\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\entra21\\Desktop\\entra21\\Matrizes\\ExerciciosMatriz00\\obj\\",
+      "outputPath": "C:\\Users\\entra21\\Desktop\\MARCIELE\\entra21\\Matrizes\\ExerciciosMatriz00\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\entra21\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
