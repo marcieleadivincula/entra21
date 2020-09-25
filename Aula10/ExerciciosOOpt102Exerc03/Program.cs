@@ -26,6 +26,7 @@ namespace ExerciciosOOpt102Exerc03
                 hotel[i] = new Hotel(nome, qtdSolteiro, qtdCasal);
             }
 
+            Console.WriteLine();
             for (int i = 0; i < hotel.Length; i++)
             {
                 for (int j = i; j > 0; j--)
@@ -33,7 +34,7 @@ namespace ExerciciosOOpt102Exerc03
                     if ((hotel[j - 1].MultiplicaQtdCasal()) + (hotel[j - 1].GetQtdSolteiro()) < (hotel[j].MultiplicaQtdCasal()) + (hotel[j].GetQtdSolteiro()))
                     {
                         Hotel ht = hotel[j];
-                        hotel[j - 1] = hotel[j - 1];
+                        hotel[j] = hotel[j - 1];
                         hotel[j - 1] = ht;
                     }
                 }

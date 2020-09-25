@@ -21,9 +21,9 @@ namespace ExerciciosOOpt101Exerc03
                 char genero = Convert.ToChar(Console.In.ReadLine());
 
                 pessoa[i] = new Person(nome, idade, genero);
-                Console.WriteLine();
             }
 
+            Console.WriteLine();
             for (int i = 0; i < pessoa.Length; i++)
             {
                 if (pessoa[i].GetIdade() > homemVelho && pessoa[i].SeuGenero() == false)
@@ -40,7 +40,7 @@ namespace ExerciciosOOpt101Exerc03
             for (int i = 0; i < pessoa.Length; i++)
             {
                 Console.WriteLine("Homem mais velho: ");
-                if (homemVelho > pessoa[i].GetIdade())
+                if (homemVelho > 0)
                 {
                     Console.WriteLine("Nome: {0}, Idade: {1}, Gênero: {2}", pessoa[i].GetNome(), pessoa[i].GetIdade(), pessoa[i].GetGenero());
                 }
@@ -50,7 +50,7 @@ namespace ExerciciosOOpt101Exerc03
                 }
 
                 Console.WriteLine("Mulher mais velha: ");
-                if (mulherVelha > pessoa[i].GetIdade())
+                if (mulherVelha > 0)
                 {
                     Console.WriteLine("Nome: {0}, Idade: {1}, Gênero: {2}", pessoa[i].GetNome(), pessoa[i].GetIdade(), pessoa[i].GetGenero());
                 }
@@ -62,15 +62,8 @@ namespace ExerciciosOOpt101Exerc03
 
 
             //if (indiceMulher != -1)
-            //{
-            //    Console.WriteLine("Nome: {0}, Idade: {1}, Gênero: {2}", pessoa[i].GetNome(), pessoa[i].GetIdade(), pessoa[i].GetGenero());
-            //}
 
             //if (indiceHomem != -1)
-            //{
-            //    Console.WriteLine("Nome: {0}, Idade: {1}, Gênero: {2}", pessoa[i].GetNome(), pessoa[i].GetIdade(), pessoa[i].GetGenero());
-            //}
-
         }
     }
 }
