@@ -6,7 +6,9 @@ namespace ExerciciosDeMatrz02Exerc01
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // 1) Crie uma matriz 3x3 de inteiros e coloque o valor 4 em todos os espaços da matriz
+
+
         }
     }
 }

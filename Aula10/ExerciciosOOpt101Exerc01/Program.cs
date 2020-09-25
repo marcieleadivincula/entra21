@@ -6,6 +6,7 @@ namespace ExerciciosOOpt101Exerc01
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Exercícios de Orientação à Objeto - 1");
             //1) Crie uma pessoa que possui nome,idade,cpf e endereço. Peça apara o usuario preencher os dados e após, mostrar na tela
             Console.WriteLine("Insira os dados da pessoa");
             Console.Write("Insira o nome: ");
@@ -40,6 +41,8 @@ namespace ExerciciosOOpt101Exerc01
 
             Console.WriteLine();
             Console.WriteLine("Nome: {0} Idade: {1} CPF: {2} Endereço: {3}", pessoa.GetNome(), pessoa.GetIdade(), pessoa.GetCpf(), pessoa.GetEndereco().GetLogradouro());
+
+            //Console.WriteLine("Nome: " + pessoa.GetNome() + "\nIdade: " + pessoa.GetIdade() + "\nSalário: " + pessoa.GetSalario() + "\nEndereço: " + pessoa.GetEndereco());
         }
     }
 }
