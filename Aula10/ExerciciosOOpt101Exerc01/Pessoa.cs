@@ -19,6 +19,16 @@ namespace ExerciciosOOpt101Exerc01
             this._endereco = endereco;
         }
 
+        //public string Name => $"{_firstName} {_lastName}";
+
+        //public string Nome
+        //{
+        //    //get => _nome;
+        //    get { return this._nome; }
+        //    //set => _nome = value;
+        //    set { this._nome = value; }
+        //}
+
         public void SetNome(string nome)
         {
             this._nome = nome;
