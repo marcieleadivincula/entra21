@@ -1,6 +1,6 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/csharp
-# Edit at https://www.toptal.com/developers/gitignore?templates=csharp
+# Created by https://www.toptal.com/developers/gitignore/api/csharp,dotenv,dotnetcore
+# Edit at https://www.toptal.com/developers/gitignore?templates=csharp,dotenv,dotnetcore
 
 ### Csharp ###
 ## Ignore Visual Studio temporary files, build results, and
@@ -357,4 +357,16 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
-# End of https://www.toptal.com/developers/gitignore/api/csharp
+### dotenv ###
+.env
+
+### DotnetCore ###
+# .NET Core build folders
+bin/
+obj/
+
+# Common node modules locations
+/node_modules
+/wwwroot/node_modules
+
+# End of https://www.toptal.com/developers/gitignore/api/csharp,dotenv,dotnetcore
