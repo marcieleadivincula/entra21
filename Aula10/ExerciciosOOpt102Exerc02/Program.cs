@@ -21,17 +21,18 @@ namespace ExerciciosOOpt102Exerc02
                 string placaCarro = Console.In.ReadLine();
 
                 estacionamento[i] = new Estacionamento(nomeDono, placaCarro);
+                Console.WriteLine();
             }
 
             for (int i = 0; i < estacionamento.Length; i++)
             {
                 if (estacionamento[i].GetNomeDono() != "")
                 {
-                    Console.WriteLine("{0} {1}", estacionamento[i].GetNomeDono(), estacionamento[i].GetPlacaCarro());
+                    Console.WriteLine("{0}° {1} {2}", i, estacionamento[i].GetNomeDono(), estacionamento[i].GetPlacaCarro());
                 }
                 else
                 {
-                    Console.WriteLine("{0} {1}", estacionamento[i].GetNomeDono(), estacionamento[i].GetPlacaCarro());
+                    Console.WriteLine("{0}° {1} {2}", i, estacionamento[i].GetNomeDono(), estacionamento[i].GetPlacaCarro());
                 }
             }
 

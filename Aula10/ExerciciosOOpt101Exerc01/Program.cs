@@ -40,7 +40,7 @@ namespace ExerciciosOOpt101Exerc01
             Pessoa pessoa = new Pessoa(nome, cpf, idade, end);
 
             Console.WriteLine();
-            Console.WriteLine("Nome: {0} Idade: {1} CPF: {2} Endereço: {3}", pessoa.GetNome(), pessoa.GetIdade(), pessoa.GetCpf(), pessoa.GetEndereco().GetLogradouro());
+            Console.WriteLine("Nome: {0} Idade: {1} CPF: {2} Endereço: {3} {4}", pessoa.GetNome(), pessoa.GetIdade(), pessoa.GetCpf(), pessoa.GetEndereco().GetLogradouro(), pessoa.GetEndereco().GetNumero());
 
             //Console.WriteLine("Nome: " + pessoa.GetNome() + "\nIdade: " + pessoa.GetIdade() + "\nSalário: " + pessoa.GetSalario() + "\nEndereço: " + pessoa.GetEndereco());
         }
