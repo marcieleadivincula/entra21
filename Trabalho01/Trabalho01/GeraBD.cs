@@ -10,8 +10,7 @@ namespace Trabalho01
 
         public int[][] GeraMatriz()
         {
-            // Esse código NAO deve ser alterado, mas pode
-            // ver se desejar
+            // Esse código NAO deve ser alterado, mas pode ver se desejar
             bd = new int[40][];
             for (int i = 0; i < bd.Length; i++)
             {
