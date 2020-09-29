@@ -1,68 +1,67 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Trabalho01
 {
     class Produto
     {
-        private int[] _categoria = { 0, 1, 2, 3, 4 };
-        private string[] _nomeProduto = { "", "alimento", "higiene pessoal", "limpeza", "utensílios" };
+        private int _categoria;
 
-        public void SetCategoria(int[] categoria)
+        public void SetCategoria(int categoria)
         {
             this._categoria = categoria;
         }
 
-        public int[] GetCategoria()
+        public int GetCategoria()
         {
             return this._categoria;
         }
 
-        public void SetNomeCategoria(string[] nomeProduto)
-        {
-            this._nomeProduto = nomeProduto;
-        }
-
-        public string[] GetNomeProduto()
-        {
-            return this._nomeProduto;
-        }
-
-        public void AddProduct(int categoria, string nomeProduto)
+        public void AddProduct(int categoria)
         {
             int produto;
-            if (categoria == 1 && nomeProduto == "alimento")
+            if (categoria == 1)
             {
                 produto = categoria;
             }
-            else if (categoria == 2 && nomeProduto == "higiene pessoal")
+            else if (categoria == 2)
             {
                 produto = categoria;
             }
-            else if (categoria == 3 && nomeProduto == "limpeza")
+            else if (categoria == 3)
             {
                 produto = categoria;
             }
-            else if (categoria == 4 && nomeProduto == "utensílios")
+            else if (categoria == 4)
             {
                 produto = categoria;
             }
             else
             {
                 categoria = 0;
-                nomeProduto = "";
             }
         }
 
-        //public RemoveProduct()
-        //{
+        public bool RemoveProduct(int categoria)
+        {
+            if (categoria == this._categoria)
+            {
+                return false;
+            }
+            else
+            {
+                Console.WriteLine("Categoria inválida! Tente novamente!");
+                return true;
+            }
+        }
 
-        //}
-        //public GetProduct()
-        //{
+        public int[][] GetProducts(int[][] produtos)
+        {
+            return produtos;
+        }
 
-        //}
         //public ToClose()
         //{
 
