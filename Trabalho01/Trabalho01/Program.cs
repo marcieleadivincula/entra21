@@ -18,68 +18,114 @@ namespace Trabalho01
             {
                 estoque[i] = new int[40];
 
+                Console.Write("Insira a categoria: ");
+                categoria = Convert.ToInt32(Console.In.ReadLine());
+
                 for (int j = 0; j < estoque[i].Length; j++)
                 {
-                    Console.Write("Insira a categoria: ");
-                    categoria = Convert.ToInt32(Console.In.ReadLine());
-
-                    if (contador == 39)
+                    if (categoria == 1)
                     {
-                        contador = 0;
-                        Console.WriteLine();
+                        estoque[i][j] = 1;
+                        Console.Write(estoque[i][j]);
                     }
-                    contador++;
-
-                    Console.Write(estoque[i][j] + "|");
+                    else if (categoria == 2)
+                    {
+                        estoque[i][j] = 2;
+                        Console.Write(estoque[i][j]);
+                    }
+                    else if (categoria == 3)
+                    {
+                        estoque[i][j] = 3;
+                        Console.Write(estoque[i][j]);
+                    }
+                    else if (categoria == 4)
+                    {
+                        estoque[i][j] = 4;
+                        Console.Write(estoque[i][j]);
+                    }
+                    else
+                    {
+                        estoque[i][j] = 0;
+                        Console.Write(estoque[i][j]);
+                    }
+                    Console.WriteLine();
                 }
-                Console.WriteLine();
             }
-
-            //Console.BackgroundColor = ConsoleColor.DarkMagenta;// Muda a cor da tela.
-            //Console.ForegroundColor = ConsoleColor.White;// Muda a cor da letra.
-            //Console.Clear();
-            //Console.ReadLine();
-
-            //Produto[] prod = new Produto[4];
-            //int categoria;
-
-            //for (int i = 0; i < estoque.Length; i++)
-            //{
-            //    estoque[i] = new int[40];
-
-            //    Console.Write("Insira a categoria: ");
-            //    categoria = Convert.ToInt32(Console.In.ReadLine());
-
-            //    for (int j = 0; j < estoque[i].Length; j++)
-            //    {
-            //        if (categoria == 1)
-            //        {
-            //            estoque[i][j] = 1;
-            //            Console.Write(estoque[i][j]);
-            //        }
-            //        else if (categoria == 2)
-            //        {
-            //            estoque[i][j] = 2;
-            //            Console.Write(estoque[i][j]);
-            //        }
-            //        else if (categoria == 3)
-            //        {
-            //            estoque[i][j] = 3;
-            //            Console.Write(estoque[i][j]);
-            //        }
-            //        else if (categoria == 4)
-            //        {
-            //            estoque[i][j] = 4;
-            //            Console.Write(estoque[i][j]);
-            //        }
-            //        else
-            //        {
-            //            estoque[i][j] = 0;
-            //            Console.Write(estoque[i][j]);
-            //        }
-            //        Console.WriteLine();
-            //    }
-            //}
+            Console.WriteLine();
         }
+
+        //for (int i = 0; i < estoque.Length; i++)
+        //{
+        //    estoque[i] = new int[40];
+
+        //    for (int j = 0; j < estoque[i].Length; j++)
+        //    {
+        //        Console.Write("Insira a categoria: ");
+        //        categoria = Convert.ToInt32(Console.In.ReadLine());
+
+        //        if (contador == 10)
+        //        {
+        //            categoria = Convert.ToInt32(Console.In.ReadLine());
+        //            contador = 0;
+
+        //            Console.WriteLine();
+
+        //            Console.ForegroundColor = ConsoleColor.White;
+        //            Console.Clear();
+        //            Console.ReadLine();
+        //        }
+        //        contador++;
+
+        //        Console.Write(estoque[i][j] + "|");
+        //    }
+        //    Console.WriteLine();
+        //}
+
+        //Console.BackgroundColor = ConsoleColor.DarkMagenta;// Muda a cor da tela.
+        //Console.ForegroundColor = ConsoleColor.White;// Muda a cor da letra.
+        //Console.Clear();
+        //Console.ReadLine();
+
+        //Produto[] prod = new Produto[4];
+        //int categoria;
+
+        //for (int i = 0; i < estoque.Length; i++)
+        //{
+        //    estoque[i] = new int[40];
+
+        //    Console.Write("Insira a categoria: ");
+        //    categoria = Convert.ToInt32(Console.In.ReadLine());
+
+        //    for (int j = 0; j < estoque[i].Length; j++)
+        //    {
+        //        if (categoria == 1)
+        //        {
+        //            estoque[i][j] = 1;
+        //            Console.Write(estoque[i][j]);
+        //        }
+        //        else if (categoria == 2)
+        //        {
+        //            estoque[i][j] = 2;
+        //            Console.Write(estoque[i][j]);
+        //        }
+        //        else if (categoria == 3)
+        //        {
+        //            estoque[i][j] = 3;
+        //            Console.Write(estoque[i][j]);
+        //        }
+        //        else if (categoria == 4)
+        //        {
+        //            estoque[i][j] = 4;
+        //            Console.Write(estoque[i][j]);
+        //        }
+        //        else
+        //        {
+        //            estoque[i][j] = 0;
+        //            Console.Write(estoque[i][j]);
+        //        }
+        //        Console.WriteLine();
+        //    }
+        //}
     }
 }
+
