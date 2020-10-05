@@ -15,8 +15,95 @@ namespace ExerciciosOOpt401Exerc07
             //2: Pergunte qual cachorro irá dormir e quanto.
             //3: Encerre o programa.
 
+            Cachorro[] dog = new Cachorro[4];
+            //string opcao = Console.In.ReadLine();
+            int menu = 0, quanto = 0, cachorro;
+
+            for (int i = 0; i < dog.Length; i++)
+            {
+                dog[i] = new Cachorro();
+                Console.WriteLine("Insira os dados do cachorro: ");
+                Console.Write("Nome: ");
+                dog[i].Nome = Console.In.ReadLine();
+                Console.Write("Dopamina: ");
+                dog[i].Dopamina = int.Parse(Console.In.ReadLine());
+                Console.Write("Conforto: ");
+                dog[i].Conforto = int.Parse(Console.In.ReadLine());
+                Console.WriteLine();
+            }
+
+            for (int i = 0; i < dog.Length; i++)
+            {
+                Console.WriteLine("Qual cachorro irá comer?");
+                cachorro = Convert.ToInt32(Console.In.ReadLine());
+
+                if (cachorro == i)
+                {
+                    Console.WriteLine("Escolha uma opção:");
+                    Console.WriteLine("\t1 - Comer");
+                    Console.WriteLine("\t2 - Descansar");
+                    Console.WriteLine("\t3 - Sair");
+
+                    menu = int.Parse(Console.In.ReadLine());
+                }
+
+                if (menu == 1)
+                {
+                    Console.Write("Quanto o cachorro vai comer? ");
+                    quanto = int.Parse(Console.In.ReadLine());
+                }
+                else if (menu == 2)
+                {
+                    Console.Write("Quanto o cachorro irá dormir? ");
+                    quanto = int.Parse(Console.In.ReadLine());
+                }
+                else
+                {
+                    Console.WriteLine("Opção inválida!");
+                }
+                Console.WriteLine();
+            }
+
+            for (int i = 0; i < dog.Length; i++)
+            {
+                Console.WriteLine("{0} {1} {2}", dog[i].Nome, dog[i].Dopamina, dog[i].Conforto);
+                Console.WriteLine("Comer: {0} \nDescansar: {1} ", dog[i].Comer(quanto), dog[i].Descansar(quanto));
+                Console.WriteLine();
+            }
 
 
+            //switch (opcao)
+            //{
+            //    case "comer":
+            //        Console.WriteLine("Comer");
+            //        Console.WriteLine(dog[i].Comer(quanto));
+            //        break;
+            //    case "descansar":
+            //        Console.WriteLine("Descansar");
+            //        Console.WriteLine(dog[i].Descansar(quanto));
+            //        break;
+            //    case "sair":
+            //        Console.WriteLine("SAINDO...");
+            //        break;
+            //    default:
+            //        Console.WriteLine("Opção inválida");
+            //        break;
+            //}
+
+            //if (opcao == "comer")
+            //{
+            //    Console.Write("Quanto? ");
+            //    quanto = int.Parse(Console.In.ReadLine());
+            //}
+            //else if (opcao == "dormir")
+            //{
+            //    Console.Write("Quanto? ");
+            //    quanto = int.Parse(Console.In.ReadLine());
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Opção inválida!");
+            //}
         }
     }
 }
