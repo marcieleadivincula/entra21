@@ -28,30 +28,38 @@ namespace ExerciciosOOpt401Exerc06
             Console.Write("Quanto: ");
             double quanto = int.Parse(Console.ReadLine());
 
+            //Funcoes: Comer(double quantidade de kilos), Descansar(int horas) e Trabalhar(int horas)
+            //Comer: para cada kilo de alimento, ganha 250 de dopamina
+            //Descansar: para cada hora de descanso, ganha 100 de conforto
+            //Trabalhar: para cada hora de trabalho, ganha R$ 24,52 de dinheiro no bolso
+
             if (opcao.ToLower() == "comer")
             {
                 //dop/kl
                 result = pes.Comer(quanto);
-                Console.WriteLine(result);
+                Console.WriteLine();
+                Console.WriteLine(quanto + " kilo(s) de alimento = {0} ", result + " de dopamina");
             }
             else if(opcao.ToLower() == "descansar")
             {
                 //dinh/hora
-                result = pes.Trabalhar((int)quanto);
-                Console.WriteLine(result);
+                result = pes.Descansar((int)quanto);
+                Console.WriteLine();
+                Console.WriteLine(quanto + " hora(s) de descanso = {0} ", result + " de conforto");
             }
             else if (opcao.ToLower() == "trabalhar")
             {
                 //dinh/hora
                 result = pes.Trabalhar((int)quanto);
-                Console.WriteLine(result);
+                Console.WriteLine();
+                Console.WriteLine(quanto + " hora(s) de trabalho = R$ {0} ", result + " em dinheiro");
             }
             else
             {
                 Console.WriteLine("Opção inválida!");
             }
 
-            Console.WriteLine("Nome: {0} Idade: {1} Dopamina: {2} R$ {3} {4}", pes.Nome, pes.Idade, pes.Dopamina, pes.Dinheiro, pes.Trabalhar(), pes.Comer());
+            Console.WriteLine("Nome: {0} \nIdade: {1} \nDopamina: {2} \nR$ {3}", pes.Nome, pes.Idade, pes.Dopamina, pes.Dinheiro);
         }
     }
 }
