@@ -6,6 +6,9 @@ namespace Aula01
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Exercícios de Fixação – Introdução à Programação");
+            //Desenvolva os algoritmos, fluxogramas e codificação em C# dos seguintes programas:
+
             //int inteiro = 10;
             //double pontoFlutuante = 4;
             //string palavra = "5";
@@ -24,70 +27,6 @@ namespace Aula01
 
             //Console.WriteLine(a);
             //Console.WriteLine(palavras);
-
-            //Exercício A
-            //int a = Convert.ToInt32(Console.In.ReadLine());
-            //Console.WriteLine("========================================================================================");
-            //Console.WriteLine("Valor digitado = " + a);
-
-            //Exercício B
-            //int x = Convert.ToInt32(Console.In.ReadLine());
-            //int y = Convert.ToInt32(Console.In.ReadLine());
-            //int z = Convert.ToInt32(Console.In.ReadLine());
-            //Console.WriteLine("================================================================================================");
-            //Console.WriteLine("Valor de X = " + x);
-            //Console.WriteLine("Valor de Y = " + y);
-            //Console.WriteLine("Valor de Z = " + z);
-
-            //Exercício C
-            //int a = Convert.ToInt32(Console.In.ReadLine());
-            //a = a * a;
-            //Console.WriteLine("Valor ao quadrado = " + a );
-
-            //Exercício D
-            //int a = Convert.ToInt32(Console.In.ReadLine());
-            //int b = Convert.ToInt32(Console.In.ReadLine());
-            //a = a * a;
-            //b = b * b;
-            //Console.WriteLine("================================================================================================");
-            //Console.WriteLine("Resultado ao quadrado " + (a + b));
-
-            //Exercício E
-            //Console.WriteLine("Digite o valor para conversão: ");
-            //int totalDolar = Convert.ToInt32(Console.In.ReadLine());
-            //Console.WriteLine("Digite o valor da cotação: ");
-            //int cotacaoDolar = Convert.ToInt32(Console.In.ReadLine());
-            //Console.WriteLine();
-            //Console.WriteLine("Resultado = " + (totalDolar * cotacaoDolar) + " reais");
-            //Console.WriteLine("Quantidade de dólares = " + totalDolar);
-
-            //Exercício F
-            //Console.WriteLine("Digite o valor para conversão: ");
-            //double totalReal = Convert.ToDouble(Console.In.ReadLine());
-            //Console.WriteLine("Digite o valor da cotação: ");
-            //double cotacaoReal = Convert.ToDouble(Console.In.ReadLine());
-            //Console.WriteLine("================================================================================================");
-            //Console.WriteLine("Resultado = " + (totalReal / cotacaoReal) + " dólares");
-            //Console.WriteLine("Quantidade de reais = " + totalReal);
-
-            //Exercício G
-            //double valorArtigo = Convert.ToDouble(Console.In.ReadLine());
-            //double avista = valorArtigo * 0.08, tresVezes = valorArtigo * 0.15;
-            //Console.WriteLine("================================================================================================");
-            //Console.WriteLine("Valor à vista = " + (valorArtigo - avista));
-            //Console.WriteLine("Valor parcelado em 3x = " + (valorArtigo + tresVezes));
-            //0.92 ou .92
-            //int produto = Convert.ToInt32(Console.In.ReadLine());
-            //Console.WriteLine("Valor à vista -> " + (produto * 0.92) + " reais" + " valor parcelado em 3x -> " + (produto * 1.15) + " reais");
-
-            //Exercício H
-            //int a = Convert.ToInt32(Console.In.ReadLine());
-            //int b = Convert.ToInt32(Console.In.ReadLine());
-            //int c = a;
-            //a = b;
-            //b = c;
-            //Console.WriteLine("Valor de A = " + a);
-            //Console.WriteLine("Valor de B = " + b);
 
             //Exercício avançado
             //Joeslei = 20 pontos de vida, ataque entre 3 a 10;
