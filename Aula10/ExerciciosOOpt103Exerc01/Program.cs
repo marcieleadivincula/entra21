@@ -26,7 +26,20 @@ namespace ExerciciosOOpt103Exerc01
 
             for (int i = 0; i < vagaEmpregos.Length; i++)
             {
+                for (int j = i; j > 0; j--)
+                {
+                    if (vagaEmpregos[j - 1].GetSalario() > vagaEmpregos[j].GetSalario())
+                    {
+                        VagaEmprego temp = vagaEmpregos[j];
+                        vagaEmpregos[j] = vagaEmpregos[j - 1];
+                        vagaEmpregos[j - 1] = temp;
+                    }
+                }
+            }
 
+            for (int i = 0; i < vagaEmpregos.Length; i++)
+            {
+                Console.WriteLine("Nome da vaga: {0} Função: {1} Salário: {2:c}", vagaEmpregos[i].GetNomeVaga(), vagaEmpregos[i].GetFuncao(), vagaEmpregos[i].GetSalario());
             }
         }
     }
