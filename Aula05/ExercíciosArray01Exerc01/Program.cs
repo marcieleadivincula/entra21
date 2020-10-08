@@ -20,9 +20,9 @@ namespace ExercíciosArray01Exerc01
                 if (maiorNumero[i] > maior)
                 {
                     maior = maiorNumero[i];
-                    Console.WriteLine("Maior número = " + maior);
                 }
             }
+            Console.WriteLine("Maior número = " + maior);
         }
     }
 }
