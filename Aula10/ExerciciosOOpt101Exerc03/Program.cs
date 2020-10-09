@@ -39,18 +39,8 @@ namespace ExerciciosOOpt101Exerc03
 
             for (int i = 0; i < pessoa.Length; i++)
             {
-                Console.WriteLine("Homem mais velho: ");
-                if (homemVelho > 0)
-                {
-                    Console.WriteLine("Nome: {0}, Idade: {1}, Gênero: {2}", pessoa[i].GetNome(), pessoa[i].GetIdade(), pessoa[i].GetGenero());
-                }
-                else
-                {
-                    break;
-                }
-
-                Console.WriteLine("Mulher mais velha: ");
-                if (mulherVelha > 0)
+                Console.WriteLine("Pessoas mais velhas: ");
+                if (homemVelho > 0 && mulherVelha > 0)
                 {
                     Console.WriteLine("Nome: {0}, Idade: {1}, Gênero: {2}", pessoa[i].GetNome(), pessoa[i].GetIdade(), pessoa[i].GetGenero());
                 }
