@@ -22,10 +22,22 @@ namespace ExerciciosOOpt103Exerc03
             }
             Console.WriteLine("=====================================================");
 
+           
+
             for (int i = 0; i < fab.Length; i++)
             {
-                Console.WriteLine("Taxa de produção: {0} \nNúmero de funcionários: {1} \nGanho: {2} \nCusto mensal: {3} \nMaior lucro: {4}", fab[i].GetTaxaProducao(), fab[i].GetQtdFuncionarios(), fab[i].GetGanhoEmpresa(), fab[i].CustoFuncionariosMensal(), fab[i].EmpresaMaiorLucro());
-                Console.WriteLine();
+                double maior = 0;
+                if (fab[i].LucroEmpresa() > maior)
+                {
+                    maior = fab[i].LucroEmpresa();
+
+                    Console.WriteLine("Taxa de produção: {0} \nNúmero de funcionários: {1} \nGanho: {2} \nCusto mensal: {3} \nMaior lucro: {4}", fab[i].GetTaxaProducao(), fab[i].GetQtdFuncionarios(), fab[i].GetGanhoEmpresa(), fab[i].CustoFuncionariosMensal(), maior);
+                    Console.WriteLine();
+                }
+                else
+                {
+                    break;
+                }
             }
         }
     }
