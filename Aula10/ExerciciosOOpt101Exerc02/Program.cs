@@ -28,13 +28,9 @@ namespace ExerciciosOOpt101Exerc02
 
             for (int i = 0; i < dogs.Length; i++)
             {
-                if (dogs[i].EhSeis() == true)
+                if (dogs[i].EhSeis())
                 {
-                    Console.WriteLine("Nome do cão: {0}, Nome do dono: {1}, Idade do cão: {2}", dogs[i].GetNome(), dogs[i].GetNomeDono(), dogs[i].GetIdade());
-                }
-                else
-                {
-                    break;
+                    Console.WriteLine("Nome do cão: {0} Nome do dono: {1} Idade do cão: {2}", dogs[i].GetNome(), dogs[i].GetNomeDono(), dogs[i].GetIdade());
                 }
             }
         }

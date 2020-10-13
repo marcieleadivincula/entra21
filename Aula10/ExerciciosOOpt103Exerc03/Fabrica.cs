@@ -6,15 +6,18 @@ namespace ExerciciosOOpt103Exerc03
 {
     class Fabrica
     {
+        //Atributos
         private double _taxaProducao;
         private int _qtdFuncionarios;
 
+        //Construtor
         public Fabrica(double taxaProducao, int qtdFuncionarios)
         {
             this._taxaProducao = taxaProducao;
             this._qtdFuncionarios = qtdFuncionarios;
         }
 
+        //Getters and Setters
         public void SetTaxaProducao(double taxaProducao)
         {
             this._taxaProducao = taxaProducao;
@@ -35,6 +38,7 @@ namespace ExerciciosOOpt103Exerc03
             return this._qtdFuncionarios;
         }
 
+        //
         public double GetGanhoEmpresa()
         {
             double ganho = GetTaxaProducao() * 121.3;
