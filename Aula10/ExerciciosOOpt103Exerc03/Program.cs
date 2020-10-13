@@ -22,8 +22,6 @@ namespace ExerciciosOOpt103Exerc03
             }
             Console.WriteLine("=====================================================");
 
-           
-
             for (int i = 0; i < fab.Length; i++)
             {
                 double maior = 0;
