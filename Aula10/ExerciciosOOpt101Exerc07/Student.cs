@@ -65,7 +65,7 @@ namespace ExerciciosOOpt101Exerc07
 
         public string ValidaMedia()
         {
-            if (MediaNotas() >= 7)
+            if (MediaNotas() > 7)
             {
                 return "Aprovado!";
             }

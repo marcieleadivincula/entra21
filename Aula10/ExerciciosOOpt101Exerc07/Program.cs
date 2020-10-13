@@ -25,24 +25,13 @@ namespace ExerciciosOOpt101Exerc07
                 Console.WriteLine();
             }
 
+            Console.WriteLine("Lista dos alunos e sua sistuação: ");
             for (int i = 0; i < students.Length; i++)
             {
-                if (students[i].MediaNotas() >= 7)
-                {
-                    Console.WriteLine("Nome: {0}, Média: {1}, {2}", students[i].GetNome(), students[i].MediaNotas(), students[i].ValidaMedia());
-                }
-                else
-                {
-                    Console.WriteLine("Nome: {0}, Média: {1}, {2}", students[i].GetNome(), students[i].MediaNotas(), students[i].ValidaMedia());
-                }
-            }
+                string info = string.Format("Nome: {0}, Média: {1:0.##} Situação: {2}", students[i].GetNome(), students[i].MediaNotas(), students[i].ValidaMedia());
 
-            //Exemplo:
-            //public static string GetDogDetails(string nome, string nomeDono, int idade)
-            //{
-            //    string info = string.Format("Nome do dog: {0}, Nome do dono: {1}, Idade: {2}", nome, nomeDono, idade);
-            //    return info;
-            //}
+                Console.WriteLine(info);
+            }
         }
     }
 }
