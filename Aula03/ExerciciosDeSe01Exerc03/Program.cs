@@ -8,6 +8,21 @@ namespace ExerciciosDeSe01Exerc03
         {
             Console.WriteLine("ExerciciosDeSe01Exerc03");
             //3) Receba dois valores, apresente na tela apenas o maior deles
+            int a = Convert.ToInt32(Console.In.ReadLine());
+            int b = Convert.ToInt32(Console.In.ReadLine());
+
+            if (a > b)
+            {
+                Console.WriteLine(a);
+            }
+            else if (b > a)
+            {
+                Console.WriteLine(b);
+            }
+            else
+            {
+                Console.WriteLine("São iguais!");
+            }
         }
     }
 }
