@@ -8,6 +8,17 @@ namespace ExerciciosDeSe01Exerc02
         {
             Console.WriteLine("ExerciciosDeSe01Exerc02");
             //2) Recebe dois números, apresente na tela “são iguais” caso sejam iguais, caso contrário apresente qualquer outra mensagem
+            int valor1 = Convert.ToInt32(Console.In.ReadLine());
+            int valor2 = Convert.ToInt32(Console.In.ReadLine());
+
+            if (valor1 == valor2)
+            {
+                Console.WriteLine("São iguais!");
+            }
+            else
+            {
+                Console.WriteLine("Não são iguais!");
+            }
         }
     }
 }
