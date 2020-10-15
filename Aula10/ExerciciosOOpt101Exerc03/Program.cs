@@ -8,9 +8,12 @@ namespace ExerciciosOOpt101Exerc03
         {
             Console.WriteLine("Exercícios de Orientação à Objeto - 1");
             //3) Crie 5 pessoas com nome,idade e genero. Peça para o usuario preencher as pessoas, em seguida, diga qual o homem mais velho e qual a mulher mais velha.
-            Person[] pessoa = new Person[5];
-            int homemVelho = 0, mulherVelha = 0;
 
+            //Instância da classe Pessoa com 5 posições 
+            Person[] pessoa = new Person[5];
+            int homemVelho = -1, mulherVelha = -1;
+
+            //Percorre o vetor pessoa e preenche com os dados digitados pelo usuário
             for (int i = 0; i < pessoa.Length; i++)
             {
                 Console.Write("Insira o nome: ");
@@ -24,36 +27,37 @@ namespace ExerciciosOOpt101Exerc03
             }
 
             Console.WriteLine();
+
+            //Verifica qual pessoa é mais velha de cada gênero
             for (int i = 0; i < pessoa.Length; i++)
             {
-                if (pessoa[i].GetIdade() > homemVelho && pessoa[i].SeuGenero() == false)
+                if (pessoa[i].SeuGenero() == false && pessoa[i].GetGenero() == 'm')
                 {
-                    homemVelho = pessoa[i].GetIdade();
+                    homemVelho++;
                 }
 
-                if (pessoa[i].GetIdade() > mulherVelha && pessoa[i].SeuGenero() == true)
+                if (pessoa[i].SeuGenero() == true && pessoa[i].GetGenero() == 'f')
                 {
-                    mulherVelha = pessoa[i].GetIdade();
+                    mulherVelha++;
                 }
             }
 
+            //Percorre o vetor pessoa já preenchido com os dados digitados pelo usuário e apresenta na tela
+            Console.WriteLine("Pessoas mais velhas: ");
             for (int i = 0; i < pessoa.Length; i++)
             {
-                Console.WriteLine("Pessoas mais velhas: ");
-                if (homemVelho > 0 && mulherVelha > 0)
+                if (homemVelho != -1 && pessoa[i].SeuGenero() == false && pessoa[i].MaisVelho() == true)
                 {
                     Console.WriteLine("Nome: {0}, Idade: {1}, Gênero: {2}", pessoa[i].GetNome(), pessoa[i].GetIdade(), pessoa[i].GetGenero());
                 }
-                else
+
+                if (mulherVelha != -1 && pessoa[i].SeuGenero() == true && pessoa[i].MaisVelho() == true)
                 {
-                    break;
+                    Console.WriteLine("Nome: {0}, Idade: {1}, Gênero: {2}", pessoa[i].GetNome(), pessoa[i].GetIdade(), pessoa[i].GetGenero());
                 }
             }
 
-
-            //if (indiceMulher != -1)
-
-            //if (indiceHomem != -1)
+            //if (homemVelho != -1) e  if (mulherVelha != -1)
         }
     }
 }

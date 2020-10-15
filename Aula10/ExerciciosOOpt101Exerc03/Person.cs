@@ -58,5 +58,19 @@ namespace ExerciciosOOpt101Exerc03
                 return false;
             }
         }
+
+        public bool MaisVelho()
+        {
+            int maisVelho = 0;
+
+            if (this.GetIdade() > maisVelho)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
