@@ -59,17 +59,17 @@ namespace ExerciciosOOpt101Exerc03
             }
         }
 
-        public bool MaisVelho()
+        public void MaiorIdade()
         {
-            int maisVelho = 0;
+            double maiorIdade = 0;
 
-            if (this.GetIdade() > maisVelho)
+            if (this.GetIdade() > maiorIdade)
             {
-                return true;
+                maiorIdade = GetIdade();
             }
             else
             {
-                return false;
+                Console.WriteLine("Erro na comparação das idades!"); ;
             }
         }
     }
