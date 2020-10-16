@@ -58,5 +58,19 @@ namespace ExerciciosOOpt101Exerc03
                 return false;
             }
         }
+
+        public void MaiorIdade()
+        {
+            double maiorIdade = 0;
+
+            if (this.GetIdade() > maiorIdade)
+            {
+                maiorIdade = GetIdade();
+            }
+            else
+            {
+                Console.WriteLine("Erro na comparação das idades!"); ;
+            }
+        }
     }
 }
