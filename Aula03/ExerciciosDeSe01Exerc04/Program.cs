@@ -8,8 +8,11 @@ namespace ExerciciosDeSe01Exerc04
         {
             Console.WriteLine("ExerciciosDeSe01Exerc04");
             //4) Receba três valores, apresente na tela apenas o maior deles
+            Console.Write("Valor de A: ");
             int a = Convert.ToInt32(Console.In.ReadLine());
+            Console.Write("Valor de B: ");
             int b = Convert.ToInt32(Console.In.ReadLine());
+            Console.Write("Valor de C: ");
             int c = Convert.ToInt32(Console.In.ReadLine());
 
             if (a > b && a > c)
