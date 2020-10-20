@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace Aula11
+namespace ExerciciosOOpt201Exerc002
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Lista de Exercícios - OOpt2");
+            Console.WriteLine("Hello World!");
         }
     }
 }
