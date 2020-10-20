@@ -8,6 +8,7 @@ namespace ExerciciosDeSe01Exerc05
         {
             Console.WriteLine("ExerciciosDeSe01Exerc05");
             //5) Receba um número qualquer de entrada, se for 1 apresente na tela “1”, se 2 apresente “2”, se for 3 apresente “3” e se não for nenhuma das anteriores apresente “não computável” (use a função Switch)
+            Console.Write("Digite um número: ");
             int valor = Convert.ToInt32(Console.In.ReadLine());
 
             switch (valor)

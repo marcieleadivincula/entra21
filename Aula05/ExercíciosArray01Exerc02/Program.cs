@@ -11,10 +11,12 @@ namespace ExercíciosArray01Exerc02
             double[] notas = new double[3];
             double media, soma = 0;
 
+            Console.WriteLine("Insira um valor com ponto em vez de vírgula.");
             for (int i = 0; i < notas.Length; i++)
             {
                 Console.Write("Digite a " + i + "º nota: ");
-                notas[i] = Convert.ToDouble(Console.In.ReadLine());
+                //notas[i] = Convert.ToDouble(Console.In.ReadLine());
+                notas[i] = double.Parse(Console.In.ReadLine());
 
                 soma += notas[i];
             }

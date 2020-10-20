@@ -9,6 +9,7 @@ namespace ExerciciosDeSe01Exerc09
             Console.WriteLine("ExerciciosDeSe01Exerc09");
             //9) Receba o salário de um funcionário, baseado no valor que esta na tabela abaixo, então, apresente o salário com aumento. OBS: tem uma imagem - tabela
 
+            Console.Write("Salário: ");
             double salario = Convert.ToDouble(Console.In.ReadLine());
 
             if (salario >= 3550.01)

@@ -6,7 +6,7 @@ namespace Aula11
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Lista de Exercícios - OOpt2");
         }
     }
 }
