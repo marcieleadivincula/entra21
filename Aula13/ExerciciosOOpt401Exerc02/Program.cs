@@ -7,7 +7,7 @@ namespace ExerciciosOOpt401Exerc02
         static void Main(string[] args)
         {
             Console.WriteLine("Lista de exercícios de OOpt - 401");
-            //2) Crie uma subClasse chamado Pessoa com nome, idade, cpf e herda Endereco. Em seguida preecnha essa Pessoa e mostre na tela.
+            //2) Crie uma subClasse chamado Pessoa com nome, idade, cpf e herda Endereco. Em seguida preencha essa Pessoa e mostre na tela.
 
             Pessoa pes = new Pessoa();
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ExercíciosDeOOpt0501Exerc01
 {
@@ -12,6 +13,7 @@ namespace ExercíciosDeOOpt0501Exerc01
             //a) Crie uma subClasse Chamado Empresa com saldo, quantidade de funcionarios, herda Endereco e herda Dados. Crie e preencha uma empresa, mostre na tela se a quantidade de funcionarios for maior que 8, caso nao, mostre “Micro empresa”.
 
             //b) Crie uma subClasse Chamado Carro com modelo, cavalos vapor, herda Endereco e herda Dados. Crie e preencha 3 carros, após isso, mostre na tela em ordem do carro com maior cavalos vapor e maior que 500.
+            List<Empresa> empresas = new List<Empresa>();
 
         }
     }
