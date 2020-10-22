@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ExerciciosDeVAOpt101Exerc04
 {
@@ -13,6 +14,9 @@ namespace ExerciciosDeVAOpt101Exerc04
             //3 - LogOut : volte para o inicio onde pede user e password
 
             //PS:Conta Possui Login e senha.
+            List<Conta> contas = new List<Conta>(5);
+            var login = "Admin";
+            var senha = "@proway";
 
 
         }
