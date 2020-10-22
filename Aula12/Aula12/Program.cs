@@ -6,6 +6,7 @@ namespace Aula12
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Exercícios de Orientação à Objeto - 3");
             // Exercício 04 01 versão 2.0
             Cliente[] clientes = new Cliente[5];
 
