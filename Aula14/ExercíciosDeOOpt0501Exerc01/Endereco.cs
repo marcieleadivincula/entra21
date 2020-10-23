@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ExercíciosDeOOpt0501Exerc01
 {
-    class Endereco : Dados
+    class Endereco 
     {
         public string Rua { get; set; }
         public string Numero { get; set; }
@@ -21,6 +21,11 @@ namespace ExercíciosDeOOpt0501Exerc01
             Bairro = bairro;
             Cidade = cidade;
             Estado = estado;
+        }
+
+        public Endereco()
+        {
+
         }
     }
 }
