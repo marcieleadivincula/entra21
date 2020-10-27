@@ -14,5 +14,10 @@ namespace ExerciciosDeVAOpt101Exerc04
             Login = login;
             Senha = senha;
         }
+
+        public Conta()
+        {
+
+        }
     }
 }
