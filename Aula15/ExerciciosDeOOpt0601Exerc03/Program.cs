@@ -17,6 +17,7 @@ namespace ExerciciosDeOOpt0601Exerc03
 
             //OBS: para parcelar, primeiro incremente o valor do imovel baseado no acréscimo e em seguida, divada em 12 e terás o valor de cada parcela com acréscimo de 16,74 %
 
+
         }
     }
 }
