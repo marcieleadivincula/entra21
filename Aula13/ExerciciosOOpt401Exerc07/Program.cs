@@ -16,7 +16,6 @@ namespace ExerciciosOOpt401Exerc07
             //3: Encerre o programa.
 
             Cachorro[] dog = new Cachorro[2];
-            //string opcao = Console.In.ReadLine();
             int menu, quanto = 0, cachorro;
 
             for (int i = 0; i < dog.Length; i++)
@@ -51,9 +50,11 @@ namespace ExerciciosOOpt401Exerc07
                         Console.Write("Quanto? ");
                         quanto = int.Parse(Console.In.ReadLine());
 
-
+                        Console.WriteLine(cachorro);
+                        Console.WriteLine(quanto);
 
                         //Console.WriteLine(dog[i].Comer(quanto));
+                        Console.Clear();
                         break;
                     case 2:
                         Console.WriteLine("Qual cachorro irá dormir?");
@@ -61,45 +62,29 @@ namespace ExerciciosOOpt401Exerc07
                         Console.Write("Quanto? ");
                         quanto = int.Parse(Console.In.ReadLine());
 
-
+                        Console.WriteLine(cachorro);
+                        Console.WriteLine(quanto);
 
                         //Console.WriteLine(dog[i].Descansar(quanto));
+                        Console.Clear();
                         break;
                     case 3:
                         Console.WriteLine("SAINDO...");
+                        Console.Clear();
                         break;
                     default:
-                        Console.WriteLine("Opção inválida");
+                        Console.WriteLine("Opção inválida! Tente novamente");
+
+                        Console.WriteLine("Escolha uma opção:");
+                        Console.WriteLine("\t1 - Comer");
+                        Console.WriteLine("\t2 - Descansar");
+                        Console.WriteLine("\t3 - Sair");
+
+                        Console.Write("Opção: ");
+                        menu = int.Parse(Console.In.ReadLine());
+                        Console.Clear();
                         break;
                 }
-
-                //if (menu == 1)
-                //{
-                //    Console.Write("Quanto o cachorro vai comer? ");
-                //    quanto = int.Parse(Console.In.ReadLine());
-                //}
-                //else if (menu == 2)
-                //{
-                //    Console.Write("Quanto o cachorro irá dormir? ");
-                //    quanto = int.Parse(Console.In.ReadLine());
-                //}
-                //else if (menu == 3)
-                //{
-                //    break;
-                //}
-                //else
-                //{
-                //    Console.WriteLine("Opção inválida! Tente novamente");
-
-                //    Console.WriteLine("Escolha uma opção:");
-                //    Console.WriteLine("\t1 - Comer");
-                //    Console.WriteLine("\t2 - Descansar");
-                //    Console.WriteLine("\t3 - Sair");
-
-                //    Console.Write("Opção: ");
-                //    menu = int.Parse(Console.In.ReadLine());
-                //}
-                //Console.WriteLine();
 
                 //Console.WriteLine("Qual cachorro irá comer ou descansar?");
                 //Console.Write("Chachorro: ");
@@ -116,7 +101,7 @@ namespace ExerciciosOOpt401Exerc07
 
             for (int i = 0; i < dog.Length; i++)
             {
-                Console.WriteLine("Nome: {0} Dopamina: {1} \nConforto: {2} Comer: {3} Descansar: {4} ", dog[i].Nome, dog[i].Dopamina, dog[i].Conforto, dog[i].Comer(quanto), dog[i].Descansar(quanto));
+                Console.WriteLine("Nome: {0} Dopamina: {1} \nConforto: {2} Comer: {3} Descansar: {4} ", dog[i].Nome, dog[i].Dopamina, dog[i].Conforto);
                 Console.WriteLine();
             }
         }
