@@ -8,5 +8,16 @@ namespace ExerciciosOOpt401Exerc04
     {
         public string TipoHabitacao { get; set; }
         public string NomeDono { get; set; }
+
+        public Habitacao(string tipoHabitacao, string nomeDono)
+        {
+            TipoHabitacao = tipoHabitacao;
+            NomeDono = nomeDono;
+        }
+
+        public Habitacao()
+        {
+
+        }
     }
 }

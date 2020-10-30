@@ -11,5 +11,19 @@ namespace ExerciciosOOpt401Exerc03
         public string Bairro { get; set; }
         public string Cidade { get; set; }
         public string Estado { get; set; }
+
+        public Endereco(string rua, string numero, string bairro, string cidade, string estado)
+        {
+            Rua = rua;
+            Numero = numero;
+            Bairro = bairro;
+            Cidade = cidade;
+            Estado = estado;
+        }
+
+        public Endereco()
+        {
+
+        }
     }
 }

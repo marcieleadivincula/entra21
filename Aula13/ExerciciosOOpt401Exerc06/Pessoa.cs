@@ -10,5 +10,17 @@ namespace ExerciciosOOpt401Exerc06
         public int Idade { get; set; }
         public int Dopamina { get; set; }
         public double Dinheiro { get; set; }
+
+        public Pessoa(string nome, int idade, int dopamina, double dinheiro)
+        {
+            Nome = nome;
+            Idade = idade;
+            Dopamina = dopamina;
+            Dinheiro = dinheiro;
+        }
+        public Pessoa()
+        {
+
+        }
     }
 }
