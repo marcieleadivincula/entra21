@@ -9,5 +9,17 @@ namespace ExerciciosOOpt401Exerc07
         public string Nome { get; set; }
         public int Dopamina { get; set; }
         public int Conforto { get; set; }
+
+        public Cachorro(string nome, int dopamina, int conforto)
+        {
+            Nome = nome;
+            Dopamina = dopamina;
+            Conforto = conforto;
+        }
+
+        public Cachorro()
+        {
+
+        }
     }
 }
