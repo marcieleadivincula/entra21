@@ -7,7 +7,7 @@ namespace ExerciciosOOpt401Exerc06
         static void Main(string[] args)
         {
             Console.WriteLine("Lista de exercícios de OOpt - 401");
-            //6) Crie uma subClasse chamado Pessoa com nome, idade, dopamina, dinheiro no bolso e herda Comportamente.Peça para o usuario preencher a Pessoa, em seguida, pergunte se deseja Comer ou Trabalhar e quanto. Após isso, mostre na tela a Pessoa
+            //6) Crie uma subClasse chamado Pessoa com nome, idade, dopamina, dinheiro no bolso e herda Comportamente.Peça para o usuario preencher a Pessoa, em seguida, pergunte se deseja Comer ou Trabalhar e quanto. Após isso, mostre na tela a Pessoa.
 
             Pessoa pes = new Pessoa();
 
@@ -59,7 +59,7 @@ namespace ExerciciosOOpt401Exerc06
                 Console.WriteLine("Opção inválida!");
             }
 
-            Console.WriteLine("Nome: {0} \nIdade: {1} \nDopamina: {2} \nR$ {3}", pes.Nome, pes.Idade, pes.Dopamina, pes.Dinheiro);
+            Console.WriteLine("Nome: {0} Idade: {1} Dopamina: {2} Dinheiro: R$ {3}", pes.Nome, pes.Idade, pes.Dopamina, pes.Dinheiro);
         }
     }
 }
