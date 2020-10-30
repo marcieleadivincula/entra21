@@ -9,32 +9,38 @@ namespace ExerciciosOOpt401Exerc02
             Console.WriteLine("Lista de exercícios de OOpt - 401");
             //2) Crie uma subClasse chamado Pessoa com nome, idade, cpf e herda Endereco. Em seguida preencha essa Pessoa e mostre na tela.
 
-            Pessoa pes = new Pessoa();
+            Pessoa[] pes = new Pessoa[1];
 
-            Console.WriteLine("Olá cordial nobre cavalheiro, por obséquio insira um indivíduo");
+            for (int i = 0; i < pes.Length; i++)
+            {
+                Console.WriteLine("Insira os dados da pessoa: ");
+                Console.Write("Nome: ");
+                string nome = Console.ReadLine();
+                Console.Write("Idade: ");
+                int idade = int.Parse(Console.In.ReadLine()); //pes.Idade = Convert.ToInt32(Console.In.ReadLine()); 
+                Console.Write("CPF: ");
+                Console.WriteLine("Endereço completo");
+                string cpf = Console.ReadLine();
+                Console.Write("Rua: ");
+                string rua = Console.ReadLine();
+                Console.Write("Número: ");
+                string numero = Console.ReadLine();
+                Console.Write("Bairro: ");
+                string bairro = Console.ReadLine();
+                Console.Write("Cidade: ");
+                string cidade = Console.ReadLine();
+                Console.Write("Estado: ");
+                string estado = Console.ReadLine();
 
-            Console.Write("Nome: ");
-            pes.Nome = Console.ReadLine();
-            Console.Write("Idade: ");
-            pes.Idade = int.Parse(Console.In.ReadLine()); //pes.Idade = Convert.ToInt32(Console.In.ReadLine()); 
+                pes[i] = new Pessoa(nome, idade, cpf, rua, numero, bairro, cidade, estado);
+            }
 
-            Console.Write("CPF: ");
-            string cpf = Console.ReadLine();
-            Console.Write("Rua: ");
-            pes.Rua = Console.ReadLine();
-            Console.Write("Número: ");
-            pes.Numero = Console.ReadLine();
-            Console.Write("Bairro: ");
-            pes.Bairro = Console.ReadLine();
-            Console.Write("Cidade: ");
-            pes.Cidade = Console.ReadLine();
-            Console.Write("Estado: ");
-            pes.Estado = Console.ReadLine();
-
-            pes.SetCpf(cpf);
-
-            Console.WriteLine("Dados pessoais: \nNome: {0} Idade: {1} CPF: {2}", pes.Nome, pes.Idade, pes.GetCpf());
-            Console.WriteLine("Endereço: \nRua: {0} Número: {1} Bairro: {2} Cidade: {3} Estado: {4}", pes.Rua, pes.Numero, pes.Bairro, pes.Cidade, pes.Estado);
+            for (int i = 0; i < pes.Length; i++)
+            {
+                Console.WriteLine("Dados pessoais: \nNome: {0} Idade: {1} CPF: {2}", pes[i].Nome, pes[i].Idade, pes[i].GetCpf());
+                Console.WriteLine("Endereço completo: \nRua: {0} Número: {1} Bairro: {2} Cidade: {3} Estado: {4}", pes[i].Rua, pes[i].Numero, pes[i].Bairro, pes[i].Cidade, pes[i].Estado);
+            }
+            
         }
     }
 }

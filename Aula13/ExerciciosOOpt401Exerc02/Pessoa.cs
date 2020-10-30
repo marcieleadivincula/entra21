@@ -10,13 +10,10 @@ namespace ExerciciosOOpt401Exerc02
         public int Idade { get; set; }
         private string _cpf;
 
-        public Pessoa()
+        public Pessoa(string nome, int idade, string cpf, string rua, string numero, string bairro, string cidade, string estado) : base(rua, numero, bairro, cidade, estado)
         {
-
-        }
-
-        public Pessoa(string cpf)
-        {
+            Nome = nome;
+            Idade = idade;
             this._cpf = cpf;
         }
 
