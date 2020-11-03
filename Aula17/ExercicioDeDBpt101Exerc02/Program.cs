@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
-namespace Aula17
+namespace ExercicioDeDBpt101Exerc02
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //3) Crie um Banco de Dados para armazenar 3 Funcionarios de uma empresa, cada Funcionario possui nome,cargo e Salario(INT).Após Inserir todos os Funcionarios mostre apenas aqueles que possuem Salario > 3000
+            //2) Crie um Banco de Dados para armazenar 3 Cachorros de uma PetShop, cada Cachorro possui nome,nomeDoDono e telefoneDoDono.Após Inserir todos os Cachorros, Mostre esses Cachorros na Tela
             SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Desktop\marciele\entra21\Aula17\Aula17\Database1.mdf;Integrated Security=True");
             SqlCommand cmd;
             SqlDataReader dr;
