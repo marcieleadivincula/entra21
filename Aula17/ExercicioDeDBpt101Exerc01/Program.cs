@@ -12,20 +12,12 @@ namespace ExercicioDeDBpt101Exerc01
         static void Main(string[] args)
         {
             //1) Crie um Banco de Dados para armazenar 4 Clientes de uma loja, cada Cliente possui nome, idade e cpf. Após inserir todos os Clientes, Mostre estes Clientes na tela
-            //Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Desktop\marciele\entra21\Aula17\Aula17\Database1.mdf;Integrated Security=True
             SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Desktop\marciele\entra21\Aula17\Aula17\Database1.mdf;Integrated Security=True");
             SqlCommand cmd;
             SqlDataReader dr;
-
-            //string trunc = "TRUNCATE TABLE Cliente";
-            //cmd = new SqlCommand(trunc, conn);
-            //conn.Open();
-            //cmd.ExecuteNonQuery();
-            //conn.Close();
-
+            
             string nome, cpf, select;
             int idade;
-
 
             for (int i = 0; i < 2; i++)
             {
@@ -44,8 +36,6 @@ namespace ExercicioDeDBpt101Exerc01
                 conn.Close();
             }
 
-            Console.WriteLine();
-
             select = "SELECT * FROM Cliente";
             cmd = new SqlCommand(select, conn);
             conn.Open();
@@ -59,22 +49,9 @@ namespace ExercicioDeDBpt101Exerc01
                 Console.WriteLine("Idade : {0}", dr["Idade"]);
                 Console.WriteLine("-----------------//------------------");
             }
-
             conn.Close();
 
             Console.ReadLine();
-
-            //string update = "UPDATE Cliente SET Nome = 'João', Email = 'joao@gmail.com' WHERE Id = 6";
-
-            //cmd = new SqlCommand(update, conn);
-            //cmd.ExecuteNonQuery();
-
-            //string delete = "DELETE FROM Cliente WHERE Id = 6";
-
-            //cmd = new SqlCommand(delete, conn);
-            //cmd.ExecuteNonQuery();
-
-            //2) Crie um Banco de Dados para armazenar 3 Cachorros de uma PetShop, cada Cachorro possui nome,nomeDoDono e telefoneDoDono.Após Inserir todos os Cachorros, Mostre esses Cachorros na Tela
         }
     }
 }
