@@ -11,49 +11,28 @@ namespace Aula17
     {
         static void Main(string[] args)
         {
-            //3) Crie um Banco de Dados para armazenar 3 Funcionarios de uma empresa, cada Funcionario possui nome,cargo e Salario(INT).Após Inserir todos os Funcionarios mostre apenas aqueles que possuem Salario > 3000
+            //Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Desktop\marciele\entra21\Aula17\Aula17\Database1.mdf;Integrated Security=True
             SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Desktop\marciele\entra21\Aula17\Aula17\Database1.mdf;Integrated Security=True");
-            SqlCommand cmd;
-            SqlDataReader dr;
+            //SqlCommand cmd;
+            //SqlDataReader dr;
 
-            string nome, nomeDoDono, telefone, select;
+            //string trunc = "TRUNCATE TABLE Cliente";
+            //cmd = new SqlCommand(trunc, conn);
+            //conn.Open();
+            //cmd.ExecuteNonQuery();
+            //conn.Close();
 
-            for (int i = 0; i < 4; i++)
-            {
-                Console.WriteLine("Insira o cachorro número: {0}", (i + 1));
-                Console.Write("Nome do cão: ");
-                nome = Console.ReadLine();
-                Console.Write("Nome do dono: ");
-                nomeDoDono = Console.ReadLine();
-                Console.Write("Telefone do dono: ");
-                telefone = Console.ReadLine();
+            //string update = "UPDATE Cliente SET Nome = 'João', Email = 'joao@gmail.com' WHERE Id = 6";
+            //cmd = new SqlCommand(update, conn);
+            //conn.Open();
+            //cmd.ExecuteNonQuery();
+            //conn.Close();
 
-                string insert = $"INSERT INTO Cachorro(Nome, NomeDoDono, TelefoneDoDono) values('{nome}', '{nomeDoDono}', {telefone})";
-                cmd = new SqlCommand(insert, conn);
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                conn.Close();
-            }
-
-            Console.WriteLine();
-
-            select = "SELECT * FROM Cachorro";
-            cmd = new SqlCommand(select, conn);
-            conn.Open();
-            dr = cmd.ExecuteReader();
-
-            while (dr.Read())
-            {
-                Console.WriteLine("Id : {0}", dr["Id"]);
-                Console.WriteLine("Nome do cão : {0}", dr["Nome"]);
-                Console.WriteLine("Nome do dono : {0}", dr["NomeDoDono"]);
-                Console.WriteLine("Telefone do dono : {0}", dr["TelefoneDoDono"]);
-                Console.WriteLine("-----------------//------------------");
-            }
-
-            conn.Close();
-
-            Console.ReadLine();
+            //string delete = "DELETE FROM Cliente WHERE Id = 6";
+            //cmd = new SqlCommand(delete, conn);
+            //conn.Open();
+            //cmd.ExecuteNonQuery();
+            //conn.Close();
         }
     }
 }
