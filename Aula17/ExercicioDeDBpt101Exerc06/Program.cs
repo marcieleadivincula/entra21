@@ -16,11 +16,11 @@ namespace ExercicioDeDBpt101Exerc06
             SqlCommand cmd;
             SqlDataReader dr;
 
-            string delete = "DELETE FROM Contato WHERE Email NOT LIKE '%@outlook.com' OR Email NOT LIKE '%@outlook.com.br'";
-            cmd = new SqlCommand(delete, conn);
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            //string delete = "DELETE FROM Contato WHERE Email NOT LIKE '%@outlook.com' AND Email NOT LIKE '%@outlook.com.br'";
+            //cmd = new SqlCommand(delete, conn);
+            //conn.Open();
+            //cmd.ExecuteNonQuery();
+            //conn.Close();
 
             string select = "SELECT * FROM Contato";
             cmd = new SqlCommand(select, conn);
@@ -35,6 +35,7 @@ namespace ExercicioDeDBpt101Exerc06
             }
             conn.Close();
 
+            Console.WriteLine("Fim do programa...");
             Console.ReadLine();
         }
     }
