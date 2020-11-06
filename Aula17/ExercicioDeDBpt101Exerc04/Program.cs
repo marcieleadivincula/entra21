@@ -41,8 +41,60 @@ namespace ExercicioDeDBpt101Exerc04
                 Console.WriteLine("-----------------//------------------");
             }
             conn.Close();
-
+            Console.WriteLine("Fim do programa...");
             Console.ReadLine();
+
+
+            //OPÇÃO 2 para buscar email com @outlook.com e @outlook.com.br
+            //select = "SELECT * FROM Emails";
+            //cmd = new SqlCommand(select, conn);
+            //conn.Open();
+            //dr = cmd.ExecuteReader();
+
+            //while (dr.Read())
+            //{
+            //    char[] temp = new char[Convert.ToString(dr["Email"]).Length];
+
+            //    for (int i = 0; i < Convert.ToString(dr["Email"]).Length; i++)
+            //    {
+            //        if (Convert.ToString(dr["Email"])[i] == '@')
+            //        {
+            //            string final = "";
+            //            Convert.ToString(dr["Email"]).CopyTo(i, temp, 0, Convert.ToString(dr["Email"]).Length - i);
+
+            //            //string final = Convert.ToString(temp);
+            //            //string final = temp.ToString();
+
+            //            for (int j = 0; j < temp.Length; j++)
+            //            {
+            //                //if (Convert.ToString(temp[j]) != null)
+            //                //{
+            //                //	final += Convert.ToString(temp[j]);
+            //                //}
+            //                //else
+            //                //{
+            //                //	break;
+            //                //}
+            //                final += Convert.ToString(temp[j]);
+            //            }
+
+            //            if (final.CompareTo("@outlook.com")  == 0 || final.CompareTo("@outlook.com.br") == 0)
+            //            {
+            //                Console.WriteLine("Id : {0}", dr["Id"]);
+            //                Console.WriteLine("Email: {0}", dr["Email"]);
+            //                Console.WriteLine("-----------------//------------------");
+
+            //                // OU
+            //                Console.WriteLine(@"email Fofo >\\\< : {0}", dr["Email"]);
+            //            }
+            //            break;
+            //        }
+            //    }
+
+            //}
+            //conn.Close();
+            //Console.WriteLine("Fim do programa...");
+            //Console.ReadLine();
         }
     }
 }
