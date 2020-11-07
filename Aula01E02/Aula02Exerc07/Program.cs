@@ -12,14 +12,14 @@ namespace Aula02Exerc07
             Console.Write("Valor do artigo: ");
             double valorArtigo = Convert.ToDouble(Console.In.ReadLine());
             double avista = valorArtigo * .08, tresVezes = valorArtigo * .15;
-            Console.WriteLine("================================================================================================");
+            Console.WriteLine("============================================================");
             Console.WriteLine("Valor à vista = " + (valorArtigo - avista));
             Console.WriteLine("Valor parcelado em 3x = " + (valorArtigo + tresVezes));
             Console.WriteLine();
             //0.92 ou .92
             Console.Write("Valor do produto: ");
             int produto = Convert.ToInt32(Console.In.ReadLine());
-            Console.WriteLine("Valor à vista -> " + (produto * .92) + " reais" + " valor parcelado em 3x -> " + (produto * 1.15) + " reais");
+            Console.WriteLine("Valor à vista -> " + (produto * .92) + " reais" + "\nValor parcelado em 3x -> " + (produto * 1.15) + " reais");
         }
     }
 }
