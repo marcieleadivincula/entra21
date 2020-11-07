@@ -15,7 +15,7 @@ namespace Aula02Exerc04
             int b = Convert.ToInt32(Console.In.ReadLine());
             a = a * a;
             b = b * b;
-            Console.WriteLine("================================================================================================");
+            Console.WriteLine("================================================================");
             Console.WriteLine("Resultado ao quadrado " + (a + b));
         }
     }

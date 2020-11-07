@@ -15,7 +15,7 @@ namespace Aula02Exerc02
             int y = Convert.ToInt32(Console.In.ReadLine());
             Console.Write("Digite o terceiro número: ");
             int z = Convert.ToInt32(Console.In.ReadLine());
-            Console.WriteLine("================================================================================================");
+            Console.WriteLine("=============================================================");
             Console.WriteLine("Valor de X = " + x);
             Console.WriteLine("Valor de Y = " + y);
             Console.WriteLine("Valor de Z = " + z);
