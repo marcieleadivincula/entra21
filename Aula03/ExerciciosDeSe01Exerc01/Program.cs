@@ -10,7 +10,7 @@ namespace ExerciciosDeSe01Exerc01
             //1) Receba um valor numérico qualquer do usuário, se for maior que 10 apresente este número na tela, caso contrário apresente “Não é maior que 10”
             Console.Write("Insira um número qualquer: ");
             int valor = Convert.ToInt32(Console.In.ReadLine());
-            if (valor >= 10)
+            if (valor > 10)
             {
                 Console.WriteLine(valor);
             }
