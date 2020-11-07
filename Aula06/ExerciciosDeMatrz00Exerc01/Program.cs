@@ -14,6 +14,12 @@ namespace ExerciciosDeMatrz00Exerc01
                 matriz[i] = new int[4];
             }
 
+            for (int i = 0; i < matriz.Length; i++)
+            {
+                matriz[i] = i;
+                Console.WriteLine(matriz[i]);
+            }
+
             //Para percorrer toda a matriz
             for (int i = 0; i < matriz.Length; i++)
             {
