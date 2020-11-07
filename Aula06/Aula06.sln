@@ -17,49 +17,55 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosDeMatrz03Exerc01"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosDeMatrz04Exerc01", "ExerciciosDeMatrz04Exerc01\ExerciciosDeMatrz04Exerc01.csproj", "{774183B2-4DAC-4CD5-B442-3686CB2D677F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosDeMatrz00Exerc03", "ExerciciosDeMatrz00Exerc03\ExerciciosDeMatrz00Exerc03.csproj", "{24C0E2DA-C78F-4353-BF6F-06402C32E4BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosDeMatrz00Exerc03", "ExerciciosDeMatrz00Exerc03\ExerciciosDeMatrz00Exerc03.csproj", "{24C0E2DA-C78F-4353-BF6F-06402C32E4BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosDeMatrz00Exerc04", "ExerciciosDeMatrz00Exerc04\ExerciciosDeMatrz00Exerc04.csproj", "{89AA00CA-8F70-4A95-B691-602CB110FAE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosDeMatrz00Exerc04", "ExerciciosDeMatrz00Exerc04\ExerciciosDeMatrz00Exerc04.csproj", "{89AA00CA-8F70-4A95-B691-602CB110FAE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosDeMatrz00Exerc05", "ExerciciosDeMatrz00Exerc05\ExerciciosDeMatrz00Exerc05.csproj", "{1BD8774A-8F12-4A03-B6B5-27EE131C8869}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosDeMatrz00Exerc05", "ExerciciosDeMatrz00Exerc05\ExerciciosDeMatrz00Exerc05.csproj", "{1BD8774A-8F12-4A03-B6B5-27EE131C8869}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosDeMatrz00Exerc06", "ExerciciosDeMatrz00Exerc06\ExerciciosDeMatrz00Exerc06.csproj", "{91BE2EDF-14F3-493C-B5D6-43B2C525CDAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosDeMatrz00Exerc06", "ExerciciosDeMatrz00Exerc06\ExerciciosDeMatrz00Exerc06.csproj", "{91BE2EDF-14F3-493C-B5D6-43B2C525CDAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosDeMatrz00Exerc07", "ExerciciosDeMatrz00Exerc07\ExerciciosDeMatrz00Exerc07.csproj", "{9013E0ED-3786-420B-A197-BE111E1419A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosDeMatrz00Exerc07", "ExerciciosDeMatrz00Exerc07\ExerciciosDeMatrz00Exerc07.csproj", "{9013E0ED-3786-420B-A197-BE111E1419A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosDeMatrz00Exerc08", "ExerciciosDeMatrz00Exerc08\ExerciciosDeMatrz00Exerc08.csproj", "{B67657E1-1759-4627-AFCA-092FF3595248}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosDeMatrz00Exerc08", "ExerciciosDeMatrz00Exerc08\ExerciciosDeMatrz00Exerc08.csproj", "{B67657E1-1759-4627-AFCA-092FF3595248}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosDeMatrz00Exerc09", "ExerciciosDeMatrz00Exerc09\ExerciciosDeMatrz00Exerc09.csproj", "{7CB3B18A-24EA-4162-A770-427ECEAE253C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosDeMatrz00Exerc09", "ExerciciosDeMatrz00Exerc09\ExerciciosDeMatrz00Exerc09.csproj", "{7CB3B18A-24EA-4162-A770-427ECEAE253C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosDeMatrz00Exerc10", "ExerciciosDeMatrz00Exerc10\ExerciciosDeMatrz00Exerc10.csproj", "{4B55FB95-AEDB-4DC6-887B-69FD382457BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosDeMatrz00Exerc10", "ExerciciosDeMatrz00Exerc10\ExerciciosDeMatrz00Exerc10.csproj", "{4B55FB95-AEDB-4DC6-887B-69FD382457BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosDeMatrz01Exerc02", "ExerciciosDeMatrz01Exerc02\ExerciciosDeMatrz01Exerc02.csproj", "{75576D7A-F4E0-4BCD-B2D0-8D821B0AA0EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosDeMatrz01Exerc02", "ExerciciosDeMatrz01Exerc02\ExerciciosDeMatrz01Exerc02.csproj", "{75576D7A-F4E0-4BCD-B2D0-8D821B0AA0EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosDeMatrz01Exerc03", "ExerciciosDeMatrz01Exerc03\ExerciciosDeMatrz01Exerc03.csproj", "{DDE20681-663F-4580-8EE1-D4465E29374B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosDeMatrz01Exerc03", "ExerciciosDeMatrz01Exerc03\ExerciciosDeMatrz01Exerc03.csproj", "{DDE20681-663F-4580-8EE1-D4465E29374B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosDeMatrz01Exerc04", "ExerciciosDeMatrz01Exerc04\ExerciciosDeMatrz01Exerc04.csproj", "{9CD0A37C-0B48-4C64-A361-CA14EE1DB240}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosDeMatrz01Exerc04", "ExerciciosDeMatrz01Exerc04\ExerciciosDeMatrz01Exerc04.csproj", "{9CD0A37C-0B48-4C64-A361-CA14EE1DB240}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosDeMatrz02Exerc02", "ExerciciosDeMatrz02Exerc02\ExerciciosDeMatrz02Exerc02.csproj", "{E15F8B04-BA5D-4827-AE05-6E762BAE327D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosDeMatrz02Exerc02", "ExerciciosDeMatrz02Exerc02\ExerciciosDeMatrz02Exerc02.csproj", "{E15F8B04-BA5D-4827-AE05-6E762BAE327D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosDeMatrz02Exerc03", "ExerciciosDeMatrz02Exerc03\ExerciciosDeMatrz02Exerc03.csproj", "{D3856738-CD94-4A07-B1A0-725FBF9E4F6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosDeMatrz02Exerc03", "ExerciciosDeMatrz02Exerc03\ExerciciosDeMatrz02Exerc03.csproj", "{D3856738-CD94-4A07-B1A0-725FBF9E4F6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosDeMatrz02Exerc04", "ExerciciosDeMatrz02Exerc04\ExerciciosDeMatrz02Exerc04.csproj", "{36CCD2CA-544A-48FF-AA96-A5510ED54B8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosDeMatrz02Exerc04", "ExerciciosDeMatrz02Exerc04\ExerciciosDeMatrz02Exerc04.csproj", "{36CCD2CA-544A-48FF-AA96-A5510ED54B8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosDeMatrz02Exerc05", "ExerciciosDeMatrz02Exerc05\ExerciciosDeMatrz02Exerc05.csproj", "{F99E951B-9280-4EFE-BDB4-4BCD6C15E927}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosDeMatrz02Exerc05", "ExerciciosDeMatrz02Exerc05\ExerciciosDeMatrz02Exerc05.csproj", "{F99E951B-9280-4EFE-BDB4-4BCD6C15E927}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosDeMatrz02Exerc06", "ExerciciosDeMatrz02Exerc06\ExerciciosDeMatrz02Exerc06.csproj", "{33D0E10D-3DC4-49D2-9FDA-9C05B8011BED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosDeMatrz02Exerc06", "ExerciciosDeMatrz02Exerc06\ExerciciosDeMatrz02Exerc06.csproj", "{33D0E10D-3DC4-49D2-9FDA-9C05B8011BED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosDeMatrz02Exerc07", "ExerciciosDeMatrz02Exerc07\ExerciciosDeMatrz02Exerc07.csproj", "{7D12582D-37BD-484E-8AAA-A0BF966F2B02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosDeMatrz02Exerc07", "ExerciciosDeMatrz02Exerc07\ExerciciosDeMatrz02Exerc07.csproj", "{7D12582D-37BD-484E-8AAA-A0BF966F2B02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosDeMatrz02Exerc08", "ExerciciosDeMatrz02Exerc08\ExerciciosDeMatrz02Exerc08.csproj", "{29B00487-9FFB-4353-ADF3-D85E3B7CAE88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosDeMatrz02Exerc08", "ExerciciosDeMatrz02Exerc08\ExerciciosDeMatrz02Exerc08.csproj", "{29B00487-9FFB-4353-ADF3-D85E3B7CAE88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosDeMatrz03Exerc02", "ExerciciosDeMatrz03Exerc02\ExerciciosDeMatrz03Exerc02.csproj", "{1478E942-C845-4998-875A-847F832A5F30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosDeMatrz03Exerc02", "ExerciciosDeMatrz03Exerc02\ExerciciosDeMatrz03Exerc02.csproj", "{1478E942-C845-4998-875A-847F832A5F30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosDeMatrz03Exerc03", "ExerciciosDeMatrz03Exerc03\ExerciciosDeMatrz03Exerc03.csproj", "{EB2191F6-AABD-47EE-AB47-AD18FD0CD345}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosDeMatrz03Exerc03", "ExerciciosDeMatrz03Exerc03\ExerciciosDeMatrz03Exerc03.csproj", "{EB2191F6-AABD-47EE-AB47-AD18FD0CD345}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosDeMatrz03Exerc05", "ExerciciosDeMatrz03Exerc05\ExerciciosDeMatrz03Exerc05.csproj", "{9D2B5B4C-257B-4EF5-92FB-687E6A412F92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosDeMatrz03Exerc05", "ExerciciosDeMatrz03Exerc05\ExerciciosDeMatrz03Exerc05.csproj", "{9D2B5B4C-257B-4EF5-92FB-687E6A412F92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosDeMatrz03Exerc04", "ExerciciosDeMatrz03Exerc04\ExerciciosDeMatrz03Exerc04.csproj", "{BD434C22-8B41-483F-8EA1-C40877F39D83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciciosDeMatrz03Exerc04", "ExerciciosDeMatrz03Exerc04\ExerciciosDeMatrz03Exerc04.csproj", "{BD434C22-8B41-483F-8EA1-C40877F39D83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosDeMatrz04Exerc02", "ExerciciosDeMatrz04Exerc02\ExerciciosDeMatrz04Exerc02.csproj", "{042FC80B-A676-473B-A5C3-FFBCF51CC9BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosDeMatrz04Exerc03", "ExerciciosDeMatrz04Exerc03\ExerciciosDeMatrz04Exerc03.csproj", "{EC2F45EF-8118-46E9-AAE6-8B9E0C3F4296}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciciosDeMatrz04Exerc04", "ExerciciosDeMatrz04Exerc04\ExerciciosDeMatrz04Exerc04.csproj", "{11136B0C-94D2-4FAD-BD28-D5896D9751C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -183,6 +189,18 @@ Global
 		{BD434C22-8B41-483F-8EA1-C40877F39D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD434C22-8B41-483F-8EA1-C40877F39D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD434C22-8B41-483F-8EA1-C40877F39D83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{042FC80B-A676-473B-A5C3-FFBCF51CC9BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{042FC80B-A676-473B-A5C3-FFBCF51CC9BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{042FC80B-A676-473B-A5C3-FFBCF51CC9BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{042FC80B-A676-473B-A5C3-FFBCF51CC9BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC2F45EF-8118-46E9-AAE6-8B9E0C3F4296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC2F45EF-8118-46E9-AAE6-8B9E0C3F4296}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC2F45EF-8118-46E9-AAE6-8B9E0C3F4296}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC2F45EF-8118-46E9-AAE6-8B9E0C3F4296}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11136B0C-94D2-4FAD-BD28-D5896D9751C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11136B0C-94D2-4FAD-BD28-D5896D9751C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11136B0C-94D2-4FAD-BD28-D5896D9751C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11136B0C-94D2-4FAD-BD28-D5896D9751C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

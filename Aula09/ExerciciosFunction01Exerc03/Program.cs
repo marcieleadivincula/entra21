@@ -13,7 +13,7 @@ namespace ExerciciosFunction01Exerc03
             Console.Write("Digite um número qualquer: ");
             int num = Convert.ToInt32(Console.In.ReadLine());
 
-            Console.WriteLine("RESULTADO:: " + pro.VerificaValor(num));
+            Console.WriteLine("RESULTADO: " + pro.VerificaValor(num));
         }
 
         public int VerificaValor(int valor)

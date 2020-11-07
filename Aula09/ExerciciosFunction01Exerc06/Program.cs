@@ -8,7 +8,7 @@ namespace ExerciciosFunction01Exerc06
         {
             Console.WriteLine("Exercícios da lista 1 - Function");
 
-            //6) Escreva uma função que recebe 5 valores e retorne o resultado da seguinte fórmula
+            //6) Escreva uma função que recebe 5 valores e retorne o resultado da seguinte fórmula (IMAGEM no word).
             Program pro = new Program();
             double num1, num2, num3, num4, num5;
 

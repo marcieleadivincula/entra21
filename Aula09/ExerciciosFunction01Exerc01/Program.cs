@@ -13,7 +13,9 @@ namespace ExerciciosFunction01Exerc01
             int x, y;
 
             Console.WriteLine("Digite dois números inteiros:");
+            Console.Write("Insira o valor de X: ");
             x = Convert.ToInt32(Console.In.ReadLine());
+            Console.Write("Insira o valor de Y: ");
             y = Convert.ToInt32(Console.In.ReadLine());
 
             Console.WriteLine("Este é o menor deles \n" + pro.Compara(x, y));

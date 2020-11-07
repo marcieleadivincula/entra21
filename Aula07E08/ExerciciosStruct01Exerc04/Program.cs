@@ -32,7 +32,6 @@ namespace ExerciciosStruct01Exerc04
             {
                 Console.WriteLine("Não encontramos a pessoa mais velha!");
             }
-
         }
 
         public struct Pessoas

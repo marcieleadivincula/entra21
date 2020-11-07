@@ -17,6 +17,8 @@ namespace ExerciciosFunction03Exerc01
             //IMAGEM
             //Joeslei se enfiou em um grande problema, ele enfrentou com força um goblin, entao outro sem tempo para respirar, um lobo sentiu o cheiro de sangue e veio ao encontro de Joeslei graças as divindades que estão sempre com Joeslei, Joeslei viu suas feridas serem curadas e então matou o lobo sem muito esforço.
             //By : Cleito’n o Bardo
+
+            //OBS: tem uma IMAGEM no word
         }
     }
 }

@@ -66,6 +66,5 @@ namespace ExerciciosStruct01Exerc01
             public string estado;
             public string pais;
         }
-
     }
 }
