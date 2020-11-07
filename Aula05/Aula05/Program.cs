@@ -6,7 +6,14 @@ namespace Aula05
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Teste");
+            Console.WriteLine("Aula de Arrays");
+            // <tipo>[] <nomeDaVariavel> = new <tipo>[<tamanhoDoArray>];
+            //Exemplos
+            int[] arr1 = new int[10];
+            double[] arr2 = new double[5];
+            string[] arr3 = new string[7];
+            char[] arr4 = new char[8];
+            Random[] arr5 = new Random[15];
 
             int[] vetorNumeros = new int[10];
             string[] vetorNomes = new string[10];
