@@ -72,7 +72,9 @@ namespace Aula17
             {
                 case 1:
                     //Mostra: Mostra todos os produtos
-                    Console.WriteLine("Lista de produtos: ");
+                    Console.WriteLine("-----------------//------------------");
+                    Console.WriteLine("LISTA DE PRODUTOS: ");
+                    Console.WriteLine("-----------------//------------------");
                     select = "SELECT * FROM Produto";
                     cmd = new SqlCommand(select, conn);
                     conn.Open();
@@ -105,7 +107,8 @@ namespace Aula17
 
                     //Mostra: Mostra todos os produtos
                     Console.WriteLine("-----------------//------------------");
-                    Console.WriteLine("Lista de produtos atual: ");
+                    Console.WriteLine("LISTA DE PRODUTOS: ");
+                    Console.WriteLine("-----------------//------------------");
                     select = "SELECT * FROM Produto";
                     cmd = new SqlCommand(select, conn);
                     conn.Open();
@@ -125,7 +128,8 @@ namespace Aula17
                 case 2:
                     //Mostra: Mostra todos os produtos
                     Console.WriteLine("-----------------//------------------");
-                    Console.WriteLine("Lista de produtos atual: ");
+                    Console.WriteLine("LISTA DE PRODUTOS: ");
+                    Console.WriteLine("-----------------//------------------");
                     select = "SELECT * FROM Produto";
                     cmd = new SqlCommand(select, conn);
                     conn.Open();
@@ -155,7 +159,8 @@ namespace Aula17
 
                     //Mostra: Mostra todos os produtos
                     Console.WriteLine("-----------------//------------------");
-                    Console.WriteLine("Lista de produtos atual: ");
+                    Console.WriteLine("LISTA DE PRODUTOS: ");
+                    Console.WriteLine("-----------------//------------------");
                     select = "SELECT * FROM Produto";
                     cmd = new SqlCommand(select, conn);
                     conn.Open();
@@ -174,7 +179,8 @@ namespace Aula17
                 case 3:
                     //Mostra: Mostra todos os produtos
                     Console.WriteLine("-----------------//------------------");
-                    Console.WriteLine("Lista de produtos atual: ");
+                    Console.WriteLine("LISTA DE PRODUTOS: ");
+                    Console.WriteLine("-----------------//------------------");
                     select = "SELECT * FROM Produto";
                     cmd = new SqlCommand(select, conn);
                     conn.Open();
@@ -209,7 +215,8 @@ namespace Aula17
 
                     //Mostra: Mostra todos os produtos
                     Console.WriteLine("-----------------//------------------");
-                    Console.WriteLine("Lista de produtos atual: ");
+                    Console.WriteLine("LISTA DE PRODUTOS: ");
+                    Console.WriteLine("-----------------//------------------");
                     select = "SELECT * FROM Produto";
                     cmd = new SqlCommand(select, conn);
                     conn.Open();
@@ -228,7 +235,8 @@ namespace Aula17
                 case 4:
                     //Mostra: Mostra todos os produtos
                     Console.WriteLine("-----------------//------------------");
-                    Console.WriteLine("Lista de produtos atual: ");
+                    Console.WriteLine("LISTA DE PRODUTOS: ");
+                    Console.WriteLine("-----------------//------------------");
                     select = "SELECT * FROM Produto";
                     cmd = new SqlCommand(select, conn);
                     conn.Open();
