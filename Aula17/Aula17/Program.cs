@@ -45,7 +45,7 @@ namespace Aula17
             SqlCommand cmd;
             SqlDataReader dr;
             string insert, select, update, create, delete;
-            int menu = 0;
+            int menu;
 
             //CRIA TABELA PRODUTO
             //create = "CREATE TABLE Produto (" +
@@ -60,34 +60,175 @@ namespace Aula17
             //cmd.ExecuteNonQuery();
             //conn.Close();
 
+            Console.Clear();
+            Console.Write("Menu principal: \n1 - Adicionar produto \n2 - Remover produto \n3 - Atualizar produto \n4 - Mostrar produto \n5 - Sair \n");
+            Console.WriteLine();
+            Console.Write("Escolha uma opção:");
+            menu = int.Parse(Console.ReadLine());
+            string nome;
+            int preco, qtdEstoque, id;
+
             switch (menu)
             {
                 case 1:
+                    //Mostra: Mostra todos os produtos
+                    Console.WriteLine("Lista de produtos: ");
+                    select = "SELECT * FROM Produto";
+                    cmd = new SqlCommand(select, conn);
+                    conn.Open();
+                    dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        Console.WriteLine("Id : {0}", dr["Id"]);
+                        Console.WriteLine("Nome: {0}", dr["Nome"]);
+                        Console.WriteLine("Preço: {0}", dr["Preco"]);
+                        Console.WriteLine("Quantidade estoque: {0}", dr["QtdEstoque"]);
+                        Console.WriteLine("-----------------//------------------");
+                    }
+                    conn.Close();
+
+                    Console.WriteLine("Insira dos dados do produto: ");
+                    Console.Write("Nome: ");
+                    nome = Console.ReadLine();
+                    Console.Write("Preco: ");
+                    preco = int.Parse(Console.ReadLine());
+                    Console.Write("Quantidade no Estoque: ");
+                    qtdEstoque = int.Parse(Console.ReadLine());
+
                     //Adicionar: Adiciona um produto no BD
                     insert = $"INSERT INTO Produto(Nome, Preco, QtdEstoque) VALUES('{nome}', {preco}, {qtdEstoque})";
                     cmd = new SqlCommand(insert, conn);
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     conn.Close();
+
+                    //Mostra: Mostra todos os produtos
+                    Console.WriteLine("-----------------//------------------");
+                    Console.WriteLine("Lista de produtos atual: ");
+                    select = "SELECT * FROM Produto";
+                    cmd = new SqlCommand(select, conn);
+                    conn.Open();
+                    dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        Console.WriteLine("Id : {0}", dr["Id"]);
+                        Console.WriteLine("Nome: {0}", dr["Nome"]);
+                        Console.WriteLine("Preço: {0}", dr["Preco"]);
+                        Console.WriteLine("Quantidade estoque: {0}", dr["QtdEstoque"]);
+                        Console.WriteLine("-----------------//------------------");
+                    }
+                    conn.Close();
+
                     break;
                 case 2:
+                    //Mostra: Mostra todos os produtos
+                    Console.WriteLine("-----------------//------------------");
+                    Console.WriteLine("Lista de produtos atual: ");
+                    select = "SELECT * FROM Produto";
+                    cmd = new SqlCommand(select, conn);
+                    conn.Open();
+                    dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        Console.WriteLine("Id : {0}", dr["Id"]);
+                        Console.WriteLine("Nome: {0}", dr["Nome"]);
+                        Console.WriteLine("Preço: {0}", dr["Preco"]);
+                        Console.WriteLine("Quantidade estoque: {0}", dr["QtdEstoque"]);
+                        Console.WriteLine("-----------------//------------------");
+                    }
+                    conn.Close();
+
+                    Console.WriteLine("Qual produto deseja remover: ");
+                    Console.Write("Id: ");
+                    id = int.Parse(Console.ReadLine());
+                    Console.WriteLine();
+
                     //Remover: Pergunta qual produto deseja remover(pode ser pelo nome)
                     delete = $"DELETE FROM Produto WHERE Id = {id}";
                     cmd = new SqlCommand(delete, conn);
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     conn.Close();
+
+                    //Mostra: Mostra todos os produtos
+                    Console.WriteLine("-----------------//------------------");
+                    Console.WriteLine("Lista de produtos atual: ");
+                    select = "SELECT * FROM Produto";
+                    cmd = new SqlCommand(select, conn);
+                    conn.Open();
+                    dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        Console.WriteLine("Id : {0}", dr["Id"]);
+                        Console.WriteLine("Nome: {0}", dr["Nome"]);
+                        Console.WriteLine("Preço: {0}", dr["Preco"]);
+                        Console.WriteLine("Quantidade estoque: {0}", dr["QtdEstoque"]);
+                        Console.WriteLine("-----------------//------------------");
+                    }
+                    conn.Close();
                     break;
                 case 3:
+                    //Mostra: Mostra todos os produtos
+                    Console.WriteLine("-----------------//------------------");
+                    Console.WriteLine("Lista de produtos atual: ");
+                    select = "SELECT * FROM Produto";
+                    cmd = new SqlCommand(select, conn);
+                    conn.Open();
+                    dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        Console.WriteLine("Id : {0}", dr["Id"]);
+                        Console.WriteLine("Nome: {0}", dr["Nome"]);
+                        Console.WriteLine("Preço: {0}", dr["Preco"]);
+                        Console.WriteLine("Quantidade estoque: {0}", dr["QtdEstoque"]);
+                        Console.WriteLine("-----------------//------------------");
+                    }
+                    conn.Close();
+
+                    Console.WriteLine("Insira dos dados do produto: ");
+                    Console.Write("Id: ");
+                    id = int.Parse(Console.ReadLine());
+                    Console.Write("Nome: ");
+                    nome = Console.ReadLine();
+                    Console.Write("Preco: ");
+                    preco = int.Parse(Console.ReadLine());
+                    Console.Write("Quantidade no Estoque: ");
+                    qtdEstoque = int.Parse(Console.ReadLine());
+
                     //Atualiza: Mostre os produtos, pergunte qual deseja alterar e em seguida, peça as informações novas
                     update = $"UPDATE Produto SET Nome = '{nome}', Preco = {preco}, QtdEstoque =  {qtdEstoque} WHERE Id = {id}";
                     cmd = new SqlCommand(update, conn);
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     conn.Close();
+
+                    //Mostra: Mostra todos os produtos
+                    Console.WriteLine("-----------------//------------------");
+                    Console.WriteLine("Lista de produtos atual: ");
+                    select = "SELECT * FROM Produto";
+                    cmd = new SqlCommand(select, conn);
+                    conn.Open();
+                    dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        Console.WriteLine("Id : {0}", dr["Id"]);
+                        Console.WriteLine("Nome: {0}", dr["Nome"]);
+                        Console.WriteLine("Preço: {0}", dr["Preco"]);
+                        Console.WriteLine("Quantidade estoque: {0}", dr["QtdEstoque"]);
+                        Console.WriteLine("-----------------//------------------");
+                    }
+                    conn.Close();
                     break;
                 case 4:
                     //Mostra: Mostra todos os produtos
+                    Console.WriteLine("-----------------//------------------");
+                    Console.WriteLine("Lista de produtos atual: ");
                     select = "SELECT * FROM Produto";
                     cmd = new SqlCommand(select, conn);
                     conn.Open();
