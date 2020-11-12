@@ -9,6 +9,11 @@
         public string Cargo { get; set; }
         public double Saldo { get; set; }
 
+        public Funcionario()
+        {
+
+        }
+
         public Funcionario(string nome, string cpf, int idade, double salarioPorHora, string cargo, double saldo)
         {
             Nome = nome;
@@ -45,10 +50,10 @@
             SalarioPorHora = salario;
         }
 
-        public BatePonto(string hrEntrada, string hrSaida)
-        {
-            //Calcula o ganho do funcionário naquele dia de trabalho e adiciona no Saldo dele
+        //public BatePonto(string hrEntrada, string hrSaida)
+        //{
+        //    //Calcula o ganho do funcionário naquele dia de trabalho e adiciona no Saldo dele
 
-        }
+        //}
     }
 }

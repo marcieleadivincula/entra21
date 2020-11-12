@@ -7,6 +7,11 @@
         public int TipoDeProduto { get; set; }
         public int QuantidadeFornecidaAoMes { get; set; }
 
+        public Fornecedor()
+        {
+
+        }
+
         public Fornecedor(string nome, string cnpj, int tipoDeProduto, int qtdFornecidaAoMes)
         {
             Nome = nome;
