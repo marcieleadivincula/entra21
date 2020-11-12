@@ -4,6 +4,11 @@
     {
         public double QtdAcoes { get; set; }
 
+        public Socio()
+        {
+
+        }
+
         public Socio(double qtdAcoes, string nome, string cpf, int idade, double saldo) : base(nome, cpf, idade, saldo)
         {
             QtdAcoes = qtdAcoes;
