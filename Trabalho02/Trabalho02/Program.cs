@@ -47,27 +47,76 @@ namespace Trabalho02
             //cmd.ExecuteNonQuery();
             //conn.Close();
 
-            //Cliente[] customer = new Cliente[5];
-            //Cliente[] socio = new Socio[2];
+            ////Inclui dados na tabela
+            //Console.WriteLine("Inserindo dos dados do TipoCliente: ");
+            //insert = $"INSERT INTO TipoCliente(TipoCliente, QuantidadeAcoes) VALUES('Normal', 0)";
+            //cmd = new SqlCommand(insert, conn);
+            //conn.Open();
+            //cmd.ExecuteNonQuery();
+            //conn.Close();
 
+            //insert = $"INSERT INTO TipoCliente(TipoCliente, QuantidadeAcoes) VALUES('Sócio', 0)";
+            //cmd = new SqlCommand(insert, conn);
+            //conn.Open();
+            //cmd.ExecuteNonQuery();
+            //conn.Close();
 
-            //for (int i = 0; i < customer.Length; i++)
-            //{
-            //    customer[i] = new Cliente();
+            string nome = "", cpf = "", empresa = "";
+            int idade = 0;
+            double saldo = 0.0;
 
-            //    customer[i].Nome = Gerador.NomePessoa();
-            //    customer[i].CPF = Gerador.Cpf();
-            //    customer[i].Idade = Gerador.Idade();
-            //    customer[i].Saldo = Gerador.Saldo();
+            //nome = Gerador.NomePessoa();
+            //cpf = Gerador.Cpf();
+            //idade = Gerador.Idade();
+            //saldo = Gerador.Saldo();
+            //empresa = Gerador.NomeEmpresa();
 
-            //    customer[i].CreateCliente();
-            //    customer[i].InsertCliente();
-            //}
+            //na primeira execução DEVE-SE  conter ao menos 5 Cliente Normal, 2 Cliente Socio, 5 Funcionario
+            Cliente[] customer = new Cliente[5];
+            Cliente[] socio = new Socio[2];
+            Funcionario[] func = new Funcionario[5];
+            Fornecedor[] forn = new Fornecedor[2];
 
-            //for (int i = 0; i < customer.Length; i++)
-            //{
-            //    customer[i].SelectCliente();
-            //}
+            //Gerando clientes do tipo NORMAL
+            for (int i = 0; i < customer.Length; i++)
+            {
+                customer[i] = new Cliente();
+
+                nome = Gerador.NomePessoa();
+                cpf = Gerador.Cpf();
+                idade = Gerador.Idade();
+                saldo = Gerador.Saldo();
+            }
+
+            //Gerando clientes do tipo SÓCIO
+            for (int i = 0; i < socio.Length; i++)
+            {
+                socio[i] = new Socio();
+
+                nome = Gerador.NomePessoa();
+                cpf = Gerador.Cpf();
+                idade = Gerador.Idade();
+                saldo = Gerador.Saldo();
+                //double QtdAcoes
+            }
+
+            for (int i = 0; i < customer.Length; i++)
+            {
+                customer[i] = new Cliente();
+
+                customer[i].Nome = nome;
+                customer[i].CPF = cpf;
+                customer[i].Idade = idade;
+                customer[i].Saldo = saldo;
+
+                //customer[i].CreateCliente();
+                customer[i].InsertCliente();
+            }
+
+            for (int i = 0; i < customer.Length; i++)
+            {
+                customer[i].SelectCliente();
+            }
 
             //FUNCIONÁRIO
             //Funcionario[] func = new Funcionario[2];
@@ -103,8 +152,6 @@ namespace Trabalho02
             //}
 
             //FORNECEDOR
-            Fornecedor[] forn = new Fornecedor[2];
-
             //for (int i = 0; i < forn.Length; i++)
             //{
             //    forn[i] = new Fornecedor();

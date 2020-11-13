@@ -9,7 +9,6 @@ namespace Trabalho02
         public string CNPJ { get; set; }
         public int TipoDeProduto { get; set; }
         public int QuantidadeFornecidaAoMes { get; set; }
-
         public Fornecedor()
         {
 

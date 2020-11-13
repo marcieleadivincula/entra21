@@ -89,7 +89,7 @@ namespace Trabalho02
 
             //Inclui dados na tabela
             Console.WriteLine("Inserindo dos dados do cliente: ");
-            string insert = $"INSERT INTO Cliente(Nome, CPF, Idade, Saldo) VALUES('{Nome}', '{CPF}', {Idade}, {Saldo})";
+            string insert = $"INSERT INTO Cliente(Nome, CPF, Idade, Saldo, IdTipoCliente) VALUES('{Nome}', '{CPF}', {Idade}, {Saldo}, 1)";
             cmd = new SqlCommand(insert, conn);
             conn.Open();
             cmd.ExecuteNonQuery();
