@@ -12,24 +12,129 @@ namespace Trabalho02
             SqlDataReader dr;
             string insert, select, update, create, delete;
 
-            Cliente[] customer = new Cliente[7];
+            //TESTE
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    Console.Write("Pessoa: ");
+            //    Console.WriteLine(Gerador.NomePessoa());
+            //    Console.Write("CPF: ");
+            //    Console.WriteLine(Gerador.Cpf());
+            //    Console.Write("Idade: ");
+            //    Console.WriteLine(Gerador.Idade());
+            //    Console.Write("Saldo: ");
+            //    Console.WriteLine(Gerador.Saldo());
+            //    Console.Write("Empresas: ");
+            //    Console.WriteLine(Gerador.NomeEmpresa());
+            //    Console.WriteLine("------------//---------------");
+            //}
 
-            for (int i = 0; i < customer.Length; i++)
-            {
-                customer[i] = new Cliente();
 
-                customer[i].Nome = Gerador.NomePessoa();
-                customer[i].CPF = Gerador.Cpf();
-                customer[i].Idade = Gerador.Idade();
-                customer[i].Saldo = Gerador.Saldo();
+            ////CRIA TABELA TipoCliente
+            //create = "CREATE TABLE TipoCliente (" +
+            //    "[Id] INT IDENTITY(1,1) NOT NULL, " +
+            //    "[TipoCliente] VARCHAR(60), " +
+            //    "[QuantidadeAcoes] FLOAT," +
+            //    "PRIMARY KEY CLUSTERED([Id] ASC))";
 
-                customer[i].InsertCliente();
-            }
+            //cmd = new SqlCommand(create, conn);
+            //conn.Open();
+            //cmd.ExecuteNonQuery();
+            //conn.Close();
 
-            for (int i = 0; i < customer.Length; i++)
-            {
-                customer[i].SelectCliente();
-            }
+            //update = "ALTER TABLE Cliente ADD CONSTRAINT FK_Cliente_TipoCliente FOREIGN KEY(Id) REFERENCES TipoCliente(Id)";
+            //cmd = new SqlCommand(update, conn);
+            //conn.Open();
+            //cmd.ExecuteNonQuery();
+            //conn.Close();
+
+            //Cliente[] customer = new Cliente[5];
+            //Cliente[] socio = new Socio[2];
+
+
+            //for (int i = 0; i < customer.Length; i++)
+            //{
+            //    customer[i] = new Cliente();
+
+            //    customer[i].Nome = Gerador.NomePessoa();
+            //    customer[i].CPF = Gerador.Cpf();
+            //    customer[i].Idade = Gerador.Idade();
+            //    customer[i].Saldo = Gerador.Saldo();
+
+            //    customer[i].CreateCliente();
+            //    customer[i].InsertCliente();
+            //}
+
+            //for (int i = 0; i < customer.Length; i++)
+            //{
+            //    customer[i].SelectCliente();
+            //}
+
+            //FUNCIONÁRIO
+            //Funcionario[] func = new Funcionario[2];
+
+            //for (int i = 0; i < func.Length; i++)
+            //{
+            //    func[i] = new Funcionario();
+            //    Console.WriteLine("Criando funcionário...");
+            //    func[i].CreateFuncionario();
+            //    Console.WriteLine("Funcionário criado com sucesso...");
+            //}
+
+            //for (int i = 0; i < func.Length; i++)
+            //{
+            //    func[i] = new Funcionario();
+
+            //    func[i].Nome = Gerador.NomePessoa();
+            //    func[i].CPF = Gerador.Cpf();
+            //    func[i].Idade = Gerador.Idade();
+            //    func[i].SalarioPorHora = Gerador.Saldo();
+            //    func[i].Cargo = Gerador.NomeEmpresa();
+            //    func[i].Saldo = Gerador.Saldo();
+
+            //    Console.WriteLine("Inserindo funcionário: ");
+            //    func[i].InsertFuncionario();
+            //    Console.WriteLine("Fucionário inserindo com sucesso...");
+            //}
+
+            //for (int i = 0; i < func.Length; i++)
+            //{
+            //    func[i] = new Funcionario();
+            //    func[i].SelectFuncionario();
+            //}
+
+            //FORNECEDOR
+            Fornecedor[] forn = new Fornecedor[2];
+
+            //for (int i = 0; i < forn.Length; i++)
+            //{
+            //    forn[i] = new Fornecedor();
+            //    Console.WriteLine("Criando fornecedor...");
+            //    forn[i].CreateFornecedor();
+            //    Console.WriteLine("Fornecedor criado com sucesso...");
+            //}
+
+            //for (int i = 0; i < forn.Length; i++)
+            //{
+            //    forn[i] = new Fornecedor();
+
+            //    forn[i].Nome = Gerador.NomePessoa();
+            //    forn[i].CNPJ = Gerador.Cpf();
+            //    forn[i].TipoDeProduto = Gerador.Idade();
+            //    forn[i].QuantidadeFornecidaAoMes = Gerador.Saldo();
+
+            //    Console.WriteLine("Inserindo fornecedor: ");
+            //    forn[i].InsertFornecedor();
+            //    Console.WriteLine("Fornecedor inserindo com sucesso...");
+            //}
+
+            //for (int i = 0; i < forn.Length; i++)
+            //{
+            //    forn[i] = new Fornecedor();
+            //    forn[i].SelectFornecedor();
+            //}
+
+            Console.WriteLine("Programa encerrado...");
+            Console.ReadLine();
         }
     }
 }
