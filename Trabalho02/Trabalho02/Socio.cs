@@ -7,6 +7,11 @@ namespace Trabalho02
     {
         public double QtdAcoes { get; set; }
 
+        public void GeraQtdAcoes()
+        {
+
+        }
+
         public Socio()
         {
 
