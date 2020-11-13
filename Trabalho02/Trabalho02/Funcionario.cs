@@ -1,4 +1,7 @@
-﻿namespace Trabalho02
+﻿using System;
+using System.Data.SqlClient;
+
+namespace Trabalho02
 {
     class Funcionario
     {
@@ -54,6 +57,94 @@
         //{
         //    //Calcula o ganho do funcionário naquele dia de trabalho e adiciona no Saldo dele
 
+        //}
+
+        public void CreateFuncionario()
+        {
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Desktop\marciele\entra21\Trabalho02\Trabalho02\trabalho02.mdf;Integrated Security=True");
+            SqlCommand cmd;
+            SqlDataReader dr;
+
+            //CRIA TABELA FUNCIONARIO
+            string create = "CREATE TABLE Funcionario (" +
+                "[Id] INT IDENTITY(1,1) NOT NULL, " +
+                "[Nome] VARCHAR(60), " +
+                "[CPF] VARCHAR(20), " +
+                "[Idade] INT NOT NULL, " +
+                "[SalarioPorHora] FLOAT NOT NULL, " +
+                "[Cargo] VARCHAR(60), " +
+                "[Saldo] FLOAT NOT NULL," +
+                "PRIMARY KEY CLUSTERED([Id] ASC))";
+
+            cmd = new SqlCommand(create, conn);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+        public void SelectFuncionario()
+        {
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Desktop\marciele\entra21\Trabalho02\Trabalho02\trabalho02.mdf;Integrated Security=True");
+            SqlCommand cmd;
+            SqlDataReader dr;
+
+            //Mostra: Mostra todos os funcionário
+            Console.WriteLine("-----------------//------------------");
+            Console.WriteLine("LISTA DE FUNCIONÁRIOS: ");
+            Console.WriteLine("-----------------//------------------");
+            string select = "SELECT * FROM Funcionario";
+            cmd = new SqlCommand(select, conn);
+            conn.Open();
+            dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                Console.WriteLine("Id : {0}", dr["Id"]);
+                Console.WriteLine("Nome: {0}", dr["Nome"]);
+                Console.WriteLine("CPF: {0}", dr["CPF"]);
+                Console.WriteLine("Idade: {0}", dr["Idade"]);
+                Console.WriteLine("Salário por Hora: {0}", dr["SalarioPorHora"]);
+                Console.WriteLine("Cargo: {0}", dr["Cargo"]);
+                Console.WriteLine("Saldo: {0}", dr["Saldo"]);
+                Console.WriteLine("-----------------//------------------");
+            }
+            conn.Close();
+        }
+        public void InsertFuncionario()
+        {
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Desktop\marciele\entra21\Trabalho02\Trabalho02\trabalho02.mdf;Integrated Security=True");
+            SqlCommand cmd;
+
+            //Inclui dados na tabela
+            Console.WriteLine("Inserindo dos dados do funcionário: ");
+            string insert = $"INSERT INTO Cliente(Nome, CPF, Idade, SalarioPorHora, Cargo, Saldo) VALUES('{Nome}', '{CPF}', {Idade}, {SalarioPorHora}, '{Cargo}', {Saldo})";
+            cmd = new SqlCommand(insert, conn);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+        //public void UpdateFuncionario()
+        //{
+        //    SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Desktop\marciele\entra21\Trabalho02\Trabalho02\trabalho02.mdf;Integrated Security=True");
+        //    SqlCommand cmd;
+
+        //    Console.WriteLine("Atualizando dos dados do funcionário: ");
+        //    string update = $"UPDATE Funcionario SET Nome = '{Nome}', CPF = '{CPF}', Idade = {Idade}, SalarioPorHora = {SalarioPorHora}, Cargo = '{Cargo}', Saldo = {Saldo} WHERE id = {Id}";
+        //    cmd = new SqlCommand(update, conn);
+        //    conn.Open();
+        //    cmd.ExecuteNonQuery();
+        //    conn.Close();
+        //}
+        //public void DeleteFuncionario()
+        //{
+        //    SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Desktop\marciele\entra21\Trabalho02\Trabalho02\trabalho02.mdf;Integrated Security=True");
+        //    SqlCommand cmd;
+
+        //    Console.WriteLine("Deletando dos dados do funcionário: ");
+        //    string delete = $"DELETE FROM Funcionario WHERE Id = {Id}";
+        //    cmd = new SqlCommand(delete, conn);
+        //    conn.Open();
+        //    cmd.ExecuteNonQuery();
+        //    conn.Close();
         //}
     }
 }
