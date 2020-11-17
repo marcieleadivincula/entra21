@@ -77,46 +77,56 @@ namespace Trabalho02
             Funcionario[] func = new Funcionario[5];
             Fornecedor[] forn = new Fornecedor[2];
 
-            //Gerando clientes do tipo NORMAL
-            for (int i = 0; i < customer.Length; i++)
-            {
-                customer[i] = new Cliente();
+            //Console.WriteLine(GeraOutrosDados.Cnpj());
+            //Console.WriteLine(GeraOutrosDados.QtdAcoes());
+            //Console.WriteLine(GeraOutrosDados.QuantidadeFornecidaAoMes());
 
-                nome = Gerador.NomePessoa();
-                cpf = Gerador.Cpf();
-                idade = Gerador.Idade();
-                saldo = Gerador.Saldo();
-            }
+            ////Gerando clientes do tipo NORMAL
+            //for (int i = 0; i < customer.Length; i++)
+            //{
+            //    customer[i] = new Cliente();
 
-            //Gerando clientes do tipo SÓCIO
-            for (int i = 0; i < socio.Length; i++)
-            {
-                socio[i] = new Socio();
+            //    nome = Gerador.NomePessoa();
+            //    cpf = Gerador.Cpf();
+            //    idade = Gerador.Idade();
+            //    saldo = Gerador.Saldo();
+            //}
 
-                nome = Gerador.NomePessoa();
-                cpf = Gerador.Cpf();
-                idade = Gerador.Idade();
-                saldo = Gerador.Saldo();
-                //double QtdAcoes
-            }
+            ////Gerando clientes do tipo SÓCIO
+            //for (int i = 0; i < socio.Length; i++)
+            //{
+            //    socio[i] = new Socio();
 
-            for (int i = 0; i < customer.Length; i++)
-            {
-                customer[i] = new Cliente();
+            //    nome = Gerador.NomePessoa();
+            //    cpf = Gerador.Cpf();
+            //    idade = Gerador.Idade();
+            //    saldo = Gerador.Saldo();
+            //    //double QtdAcoes
+            //}
 
-                customer[i].Nome = nome;
-                customer[i].CPF = cpf;
-                customer[i].Idade = idade;
-                customer[i].Saldo = saldo;
+            //for (int i = 0; i < socio.Length; i++)
+            //{
+            //    socio[i].SelectCliente();
+            //}
 
-                //customer[i].CreateCliente();
-                customer[i].InsertCliente();
-            }
+            //for (int i = 0; i < customer.Length; i++)
+            //{
+            //    customer[i] = new Cliente();
 
-            for (int i = 0; i < customer.Length; i++)
-            {
-                customer[i].SelectCliente();
-            }
+            //    customer[i].Nome = nome;
+            //    customer[i].CPF = cpf;
+            //    customer[i].Idade = idade;
+            //    customer[i].Saldo = saldo;
+
+            //    customer[i].CreateCliente();
+            //    customer[i].InsertCliente();
+            //}
+
+            //for (int i = 0; i < customer.Length; i++)
+            //{
+            //    customer[i].SelectCliente();
+            //}
+
 
             //FUNCIONÁRIO
             //Funcionario[] func = new Funcionario[2];
@@ -179,6 +189,36 @@ namespace Trabalho02
             //    forn[i] = new Fornecedor();
             //    forn[i].SelectFornecedor();
             //}
+
+            Console.Write("Escolha uma opção: \t1- Adicionar \t2- Remover \t3- Comprar \t4- Bater Cartão \t5- Alterar \t6- Calcular \t7- Sair");
+            int menu = int.Parse(Console.ReadLine());
+
+            switch (menu)
+            {
+                case 1:
+                    //Adicionar : primeiro, pede-se o que será adicionado (Cliente Normal, Cliente Socio, etc…) e depois peça as devidas informações.
+                    break;
+                case 2:
+                    //Remover : primeiro, pede-se o que será removido (Cliente Normal, Cliente Socio, etc…) e depois peça qual elemento será removido (deve ser feito por cpf ou cnpj)
+                    break;
+                case 3:
+                    //Comprar: primeiro, pede-se qual Cliente esta comprando (Cliente Normal, Cliente Socio) após isso, mostre todos daquele elemento e peça qual esta comprando(deve ser feito por cpf ou cnpj) , após isso, peça quanto esta comprando caso seja um Cliente Socio aplica-se 20% de desconto na compra.
+                    break;
+                case 4:
+                    //BaterCartao: Mostre todos os Funcionarios, em seguida peça qual esta batendo cartao(deve ser feito por cpf) , em seguida , peça se esta batendo o cartao do dia ou de 30 dias, caso for do dia, *peça qual a hora de entrada e qual a hora de saida* 
+                    break;
+                case 5:
+                    //Alterar: primeiro, pede-se o que será alterado (Cliente Normal, Cliente Socio, etc…) e depois mostre todos os elementos daquele conjunto, e então, peça qual será alterado (deve ser feito por cpf ou cnpj) e então, as devidas informações novas  
+                    break;
+                case 6:
+                    //Calcular Lucro: Primeiro Passo, Devemos calcular o ganho, que é dado pela soma do Saldo de TODOS os Clientes, Agora vamos calcular o prejuízo que é dado por (Soma do Saldo de TODOS os Funcionarios + *os Fornecedores*) - *os Cliente Socio*, após isso, subtraia um pelo outro, caso der valor positivo, deve-se tirar a porção dos |dos Cliente Socio| , após o lucro ser calculado, armazene em uma variável chamado CAIXA e então Zere o Saldo de todos(Cliente e Funcioario) e Metade dos produtos de cada fornecedor(arredondado para cima)
+                    break;
+                case 7:
+                    //Sair: Agradeça e encerre o programa 
+                    break;
+                default:
+                    break;
+            }
 
             Console.WriteLine("Programa encerrado...");
             Console.ReadLine();
