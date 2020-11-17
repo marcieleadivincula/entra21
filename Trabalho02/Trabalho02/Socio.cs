@@ -90,6 +90,7 @@ namespace Trabalho02
             cmd.ExecuteNonQuery();
             conn.Close();
         }
+
         //public void UpdateCliente()
         //{
         //    SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Desktop\marciele\entra21\Trabalho02\Trabalho02\trabalho02.mdf;Integrated Security=True");

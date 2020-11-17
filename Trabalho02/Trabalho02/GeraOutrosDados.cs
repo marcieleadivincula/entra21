@@ -123,13 +123,66 @@ namespace Trabalho02
         // Gera um quantidade fornecida ao mês de 1 a 6
         public static int QuantidadeFornecidaAoMes()
         {
-            return ran.Next(1, 6);
+            int escolha = ran.Next(1, 6);
+            double qtdFornecidaAoMes;
+
+            switch (escolha)
+            {
+                case 1:
+                    qtdFornecidaAoMes = 5.45;
+                    break;
+                case 2:
+                    qtdFornecidaAoMes = 6.78;
+                    break;
+                case 3:
+                    qtdFornecidaAoMes = 1.43;
+                    break;
+                case 4:
+                    qtdFornecidaAoMes = 2.68;
+                    break;
+                case 5:
+                    qtdFornecidaAoMes = 3.78;
+                    break;
+                case 6:
+                    qtdFornecidaAoMes = 2.96;
+                    break;
+                default:
+                    qtdFornecidaAoMes = 0.0;
+                    break;
+            }
+
+            return (int)qtdFornecidaAoMes;
         }
 
-        // Gera um QtdAcoes de 1 a 10
+        // Gera um QtdAcoes de 1 a 10 (clientes) de até no máximo de 4.95% das ações
         public static double QtdAcoes()
         {
-            return ran.Next(1, 10);
+            int escolha = ran.Next(1, 10);
+            int acoes = ran.Next(1, 4);
+            double qtdAcoes;
+
+            switch (escolha)
+            {
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                    qtdAcoes = acoes;
+                    break;
+                case 10:
+                    qtdAcoes = 5.45;
+                    break;
+                default:
+                    qtdAcoes = 0.0;
+                    break;
+            }
+
+            return (int)qtdAcoes;
         }
 
         // Gera um cnpj no padrao 00.000.000/0000-00
@@ -137,26 +190,30 @@ namespace Trabalho02
         public static string Cnpj()
         {
             string cnpj = "";
-            for (int i = 1; i < 18; i++)
+            for (int i = 0; i < 18; i++)
             {
-                if (i % 4 == 0)
+                if (i % 3 == 0)
                 {
-                    if (i == 9)
+                    if (i >= 2 && i <= 6)
+                    {
+                        cnpj += ".";
+                    }
+                    else if (i == 10)
                     {
                         cnpj += "/";
                     }
-                    else if (i == 14)
+                    else if (i == 15)
                     {
                         cnpj += "-";
                     }
                     else
                     {
-                        cnpj += ".";
+                        Console.WriteLine("Erro...");
                     }
                 }
                 else
                 {
-                    cnpj += ran.Next(0, 10);
+                    cnpj += ran.Next(0, 9);
                 }
             }
             return cnpj;
