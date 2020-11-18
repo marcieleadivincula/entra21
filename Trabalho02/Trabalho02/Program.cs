@@ -11,6 +11,10 @@ namespace Trabalho02
             SqlCommand cmd;
             SqlDataReader dr;
             string insert, select, update, create, delete;
+            int menu, id, idTipoCliente, idade;
+            string nome, cpf;
+            float saldo;
+
 
             //TESTE
             //for (int i = 0; i < 10; i++)
@@ -61,9 +65,9 @@ namespace Trabalho02
             //cmd.ExecuteNonQuery();
             //conn.Close();
 
-            string nome = "", cpf = "", empresa = "";
-            int idade = 0;
-            double saldo = 0.0;
+           // string nome = "", cpf = "", empresa = "";
+            //int idade = 0;
+            //double saldo = 0.0;
 
             //nome = Gerador.NomePessoa();
             //cpf = Gerador.Cpf();
@@ -190,16 +194,158 @@ namespace Trabalho02
             //    forn[i].SelectFornecedor();
             //}
 
-            Console.Write("Escolha uma opção: \t1- Adicionar \t2- Remover \t3- Comprar \t4- Bater Cartão \t5- Alterar \t6- Calcular \t7- Sair");
-            int menu = int.Parse(Console.ReadLine());
+            //TRUNCATE
+            //string truncate = "TRUNCATE TABLE Cliente";
+            //cmd = new SqlCommand(truncate, conn);
+            //conn.Open();
+            //cmd.ExecuteNonQuery();
+            //conn.Close();
+
+
+            Console.Clear();
+            Console.Write("Menu principal: \n1 - Adicionar \n2 - Remover \n3 - Comprar  \n4 - Bater Cartão \n5 - Alterar \n6 - Calcular \n7 - Sair \n");
+            Console.WriteLine();
+            Console.Write("Escolha uma opção:");
+            menu = int.Parse(Console.ReadLine());
 
             switch (menu)
             {
                 case 1:
                     //Adicionar : primeiro, pede-se o que será adicionado (Cliente Normal, Cliente Socio, etc…) e depois peça as devidas informações.
+                    //Mostra: Mostra todos os clientes
+                    Console.WriteLine("-----------------//------------------");
+                    Console.WriteLine("LISTA DE CLIENTES: ");
+                    Console.WriteLine("-----------------//------------------");
+                    select = "SELECT * FROM Cliente";
+                    cmd = new SqlCommand(select, conn);
+                    conn.Open();
+                    dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        Console.WriteLine("Id : {0}", dr["Id"]);
+                        Console.WriteLine("Nome: {0}", dr["Nome"]);
+                        Console.WriteLine("CPF: {0}", dr["CPF"]);
+                        Console.WriteLine("Idade: {0}", dr["Idade"]);
+                        Console.WriteLine("Saldo: {0}", dr["Saldo"]);
+                        Console.WriteLine("IdTipoCliente: {0}", dr["IdTipoCliente"]);
+                        Console.WriteLine("-----------------//------------------");
+                    }
+                    conn.Close();
+
+                    Console.WriteLine("Insira os dados do cliente: ");
+                    Console.Write("Nome: ");
+                    nome = Console.ReadLine();
+                    Console.Write("CPF: ");
+                    cpf = Console.ReadLine();
+                    Console.Write("Idade: ");
+                    idade = int.Parse(Console.ReadLine());
+                    Console.Write("Saldo: ");
+                    saldo = float.Parse(Console.ReadLine());
+                    Console.Write("IdTipoCliente: ");
+                    idTipoCliente = int.Parse(Console.ReadLine());
+
+                    //Mostra: Mostra todos os tipos de clientes
+                    //Console.WriteLine("-----------------//------------------");
+                    //Console.WriteLine("LISTA DE TIPO DE CLIENTES: ");
+                    //Console.WriteLine("-----------------//------------------");
+                    //select = "SELECT * FROM TipoCliente";
+                    //cmd = new SqlCommand(select, conn);
+                    //conn.Open();
+                    //dr = cmd.ExecuteReader();
+
+                    //while (dr.Read())
+                    //{
+                    //    Console.WriteLine("Id : {0}", dr["Id"]);
+                    //    Console.WriteLine("TipoCliente: {0}", dr["TipoCliente"]);
+                    //    Console.WriteLine("QuantidadeAcoes: {0}", dr["QuantidadeAcoes"]);
+                    //    Console.WriteLine("-----------------//------------------");
+                    //}
+                    //conn.Close();
+
+                    //Adicionar: Adiciona um cliente no BD
+                    insert = $"INSERT INTO Cliente(Nome, CPF, Idade, Saldo, IdTipoCliente) VALUES('{nome}', '{cpf}', {idade}, {saldo}, {idTipoCliente})";
+                    cmd = new SqlCommand(insert, conn);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    //Mostra: Mostra todos os clientes
+                    Console.WriteLine("-----------------//------------------");
+                    Console.WriteLine("LISTA DE CLIENTES: ");
+                    Console.WriteLine("-----------------//------------------");
+                    select = "SELECT * FROM Cliente";
+                    cmd = new SqlCommand(select, conn);
+                    conn.Open();
+                    dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        Console.WriteLine("Id : {0}", dr["Id"]);
+                        Console.WriteLine("Nome: {0}", dr["Nome"]);
+                        Console.WriteLine("CPF: {0}", dr["CPF"]);
+                        Console.WriteLine("Idade: {0}", dr["Idade"]);
+                        Console.WriteLine("Saldo: {0}", dr["Saldo"]);
+                        Console.WriteLine("IdTipoCliente: {0}", dr["IdTipoCliente"]);
+                        Console.WriteLine("-----------------//------------------");
+                    }
+                    conn.Close();
                     break;
                 case 2:
                     //Remover : primeiro, pede-se o que será removido (Cliente Normal, Cliente Socio, etc…) e depois peça qual elemento será removido (deve ser feito por cpf ou cnpj)
+                    //Mostra: Mostra todos os produtos
+                    Console.WriteLine("-----------------//------------------");
+                    Console.WriteLine("LISTA DE CLIENTES: ");
+                    Console.WriteLine("-----------------//------------------");
+                    select = "SELECT * FROM Cliente";
+                    cmd = new SqlCommand(select, conn);
+                    conn.Open();
+                    dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        Console.WriteLine("Id : {0}", dr["Id"]);
+                        Console.WriteLine("Nome: {0}", dr["Nome"]);
+                        Console.WriteLine("CPF: {0}", dr["CPF"]);
+                        Console.WriteLine("Idade: {0}", dr["Idade"]);
+                        Console.WriteLine("Saldo: {0}", dr["Saldo"]);
+                        Console.WriteLine("IdTipoCliente: {0}", dr["IdTipoCliente"]);
+                        Console.WriteLine("-----------------//------------------");
+                    }
+                    conn.Close();
+
+                    Console.WriteLine("Qual cliente deseja remover: ");
+                    Console.Write("Id: ");
+                    id = int.Parse(Console.ReadLine());
+                    Console.WriteLine();
+
+                    //Remover: Pergunta qual produto deseja remover(pode ser pelo nome)
+                    delete = $"DELETE FROM Cliente WHERE Id = {id}";
+                    cmd = new SqlCommand(delete, conn);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    //Mostra: Mostra todos os produtos
+                    Console.WriteLine("-----------------//------------------");
+                    Console.WriteLine("LISTA DE CLIENTES: ");
+                    Console.WriteLine("-----------------//------------------");
+                    select = "SELECT * FROM Cliente";
+                    cmd = new SqlCommand(select, conn);
+                    conn.Open();
+                    dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        Console.WriteLine("Id : {0}", dr["Id"]);
+                        Console.WriteLine("Nome: {0}", dr["Nome"]);
+                        Console.WriteLine("CPF: {0}", dr["CPF"]);
+                        Console.WriteLine("Idade: {0}", dr["Idade"]);
+                        Console.WriteLine("Saldo: {0}", dr["Saldo"]);
+                        Console.WriteLine("IdTipoCliente: {0}", dr["IdTipoCliente"]);
+                        Console.WriteLine("-----------------//------------------");
+                    }
+                    conn.Close();
                     break;
                 case 3:
                     //Comprar: primeiro, pede-se qual Cliente esta comprando (Cliente Normal, Cliente Socio) após isso, mostre todos daquele elemento e peça qual esta comprando(deve ser feito por cpf ou cnpj) , após isso, peça quanto esta comprando caso seja um Cliente Socio aplica-se 20% de desconto na compra.
@@ -208,7 +354,65 @@ namespace Trabalho02
                     //BaterCartao: Mostre todos os Funcionarios, em seguida peça qual esta batendo cartao(deve ser feito por cpf) , em seguida , peça se esta batendo o cartao do dia ou de 30 dias, caso for do dia, *peça qual a hora de entrada e qual a hora de saida* 
                     break;
                 case 5:
-                    //Alterar: primeiro, pede-se o que será alterado (Cliente Normal, Cliente Socio, etc…) e depois mostre todos os elementos daquele conjunto, e então, peça qual será alterado (deve ser feito por cpf ou cnpj) e então, as devidas informações novas  
+                    //Alterar: primeiro, pede-se o que será alterado (Cliente Normal, Cliente Socio, etc…) e depois mostre todos os elementos daquele conjunto, e então, peça qual será alterado (deve ser feito por cpf ou cnpj) e então, as devidas informações novas
+                    //Mostra: Mostra todos os produtos
+                    Console.WriteLine("-----------------//------------------");
+                    Console.WriteLine("LISTA DE CLIENTES: ");
+                    Console.WriteLine("-----------------//------------------");
+                    select = "SELECT * FROM Cliente";
+                    cmd = new SqlCommand(select, conn);
+                    conn.Open();
+                    dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        Console.WriteLine("Id : {0}", dr["Id"]);
+                        Console.WriteLine("Nome: {0}", dr["Nome"]);
+                        Console.WriteLine("CPF: {0}", dr["CPF"]);
+                        Console.WriteLine("Idade: {0}", dr["Idade"]);
+                        Console.WriteLine("Saldo: {0}", dr["Saldo"]);
+                        Console.WriteLine("IdTipoCliente: {0}", dr["IdTipoCliente"]);
+                        Console.WriteLine("-----------------//------------------");
+                    }
+                    conn.Close();
+
+                    Console.WriteLine("Insira os dados do cliente: ");
+                    Console.Write("Id: ");
+                    id = int.Parse(Console.ReadLine());
+                    Console.Write("Nome: ");
+                    nome = Console.ReadLine();
+                    Console.Write("CPF: ");
+                    cpf = Console.ReadLine();
+                    Console.Write("Saldo: ");
+                    saldo = float.Parse(Console.ReadLine());
+
+                    //Atualiza: Mostre os produtos, pergunte qual deseja alterar e em seguida, peça as informações novas
+                    update = $"UPDATE Produto SET Nome = '{nome}', CPF = '{cpf}', Saldo =  {saldo} WHERE Id = {id}";
+                    cmd = new SqlCommand(update, conn);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    //Mostra: Mostra todos os produtos
+                    Console.WriteLine("-----------------//------------------");
+                    Console.WriteLine("LISTA DE CLIENTES: ");
+                    Console.WriteLine("-----------------//------------------");
+                    select = "SELECT * FROM Cliente";
+                    cmd = new SqlCommand(select, conn);
+                    conn.Open();
+                    dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        Console.WriteLine("Id : {0}", dr["Id"]);
+                        Console.WriteLine("Nome: {0}", dr["Nome"]);
+                        Console.WriteLine("CPF: {0}", dr["CPF"]);
+                        Console.WriteLine("Idade: {0}", dr["Idade"]);
+                        Console.WriteLine("Saldo: {0}", dr["Saldo"]);
+                        Console.WriteLine("IdTipoCliente: {0}", dr["IdTipoCliente"]);
+                        Console.WriteLine("-----------------//------------------");
+                    }
+                    conn.Close();
                     break;
                 case 6:
                     //Calcular Lucro: Primeiro Passo, Devemos calcular o ganho, que é dado pela soma do Saldo de TODOS os Clientes, Agora vamos calcular o prejuízo que é dado por (Soma do Saldo de TODOS os Funcionarios + *os Fornecedores*) - *os Cliente Socio*, após isso, subtraia um pelo outro, caso der valor positivo, deve-se tirar a porção dos |dos Cliente Socio| , após o lucro ser calculado, armazene em uma variável chamado CAIXA e então Zere o Saldo de todos(Cliente e Funcioario) e Metade dos produtos de cada fornecedor(arredondado para cima)
@@ -217,6 +421,7 @@ namespace Trabalho02
                     //Sair: Agradeça e encerre o programa 
                     break;
                 default:
+                    Console.WriteLine("Opção inválida!");
                     break;
             }
 
