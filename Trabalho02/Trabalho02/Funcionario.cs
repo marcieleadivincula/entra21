@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 
 namespace Trabalho02
@@ -50,7 +52,7 @@ namespace Trabalho02
         public void SetCargoSalario(string cargo, double salario)
         {
             Cargo = cargo;
-            SalarioPorHora = salario;
+            SalarioPorHora = salario / 8.0;
         }
 
         //public BatePonto(string hrEntrada, string hrSaida)
@@ -116,7 +118,7 @@ namespace Trabalho02
 
             //Inclui dados na tabela
             Console.WriteLine("Inserindo dos dados do funcionário: ");
-            string insert = $"INSERT INTO Cliente(Nome, CPF, Idade, SalarioPorHora, Cargo, Saldo) VALUES('{Nome}', '{CPF}', {Idade}, {SalarioPorHora}, '{Cargo}', {Saldo})";
+            string insert = $"INSERT INTO Funcionario(Nome, CPF, Idade, SalarioPorHora, Cargo, Saldo) VALUES('{Nome}', '{CPF}', {Idade}, {SalarioPorHora}, '{Cargo}', {Saldo})";
             cmd = new SqlCommand(insert, conn);
             conn.Open();
             cmd.ExecuteNonQuery();
@@ -146,5 +148,43 @@ namespace Trabalho02
         //    cmd.ExecuteNonQuery();
         //    conn.Close();
         //}
+
+        //SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Desktop\marciele\entra21\Trabalho02\Trabalho02\trabalho02.mdf;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexao"].ConnectionString);
+        public List<Funcionario> Listar()
+        {
+            List<Funcionario> listaFuncionario = new List<Funcionario>();
+
+            try
+            {
+
+                SqlCommand sqlSelect = new SqlCommand("SELECT Id, Nome, CPF, Idade, SalarioPorHora, Cargo, Saldo FROM Funcionario ORDER BY Id", conn);
+                conn.Open();
+
+                SqlDataReader dr = sqlSelect.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    Funcionario func = new Funcionario();
+
+                    func.Id = dr["Id"].ToString();
+                    func.Nome = dr["Nome"].ToString();
+                    func.CPF = dr["CPF"].ToString();
+                    func.Idade = dr["Idade"].ToString();
+                    func.SalarioPorHora = dr["SalarioPorHora"].ToString();
+                    func.Cargo = dr["Cargo"].ToString();
+                    func.Saldo = dr["Saldo"].ToString();
+
+                    listaFuncionario.Add(func);
+                }
+            }
+            finally
+            {
+
+                conn.Close();
+            }
+
+            return listaFuncionario;
+        }
     }
 }
