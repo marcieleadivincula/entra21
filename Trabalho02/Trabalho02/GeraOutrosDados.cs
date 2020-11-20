@@ -10,6 +10,28 @@ namespace Trabalho02
     {
         private static Random ran = new Random();
 
+        //Gera int TipoCliente, sendo 1 para NORMAL e 2 para SÓCIO e 0 para indefinido
+        public static int TipoCliente()
+        {
+            int escolha = ran.Next(1, 2);
+            int tipoCliente;
+
+            switch (escolha)
+            {
+                case 1:
+                    tipoCliente = 1;
+                    break;
+                case 2:
+                    tipoCliente = 2;
+                    break;
+                default:
+                    tipoCliente = 0;
+                    break;
+            }
+
+            return tipoCliente;
+        }
+
         //Gera string Cargo
         public static string Cargo()
         {
@@ -155,7 +177,7 @@ namespace Trabalho02
         }
 
         // Gera um QtdAcoes de 1 a 10 (clientes) de até no máximo de 4.95% das ações
-        public static double QtdAcoes()
+        public static float QtdAcoes()
         {
             int escolha = ran.Next(1, 10);
             int acoes = ran.Next(1, 4);
@@ -192,13 +214,9 @@ namespace Trabalho02
             string cnpj = "";
             for (int i = 0; i < 18; i++)
             {
-                if (i % 3 == 0)
+                if (i % 4 == 0)
                 {
-                    if (i >= 2 && i <= 6)
-                    {
-                        cnpj += ".";
-                    }
-                    else if (i == 10)
+                    if (i == 10)
                     {
                         cnpj += "/";
                     }
@@ -206,9 +224,17 @@ namespace Trabalho02
                     {
                         cnpj += "-";
                     }
+                    else if (i == 6)
+                    {
+                        cnpj += ".";
+                    }
+                    else if (i == 2)
+                    {
+                        cnpj += ".";
+                    }
                     else
                     {
-                        Console.WriteLine("Erro...");
+                        break;
                     }
                 }
                 else
