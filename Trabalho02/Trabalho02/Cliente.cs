@@ -64,7 +64,7 @@ namespace Trabalho02
 
             //Mostra: Mostra todos os produtos
             Console.WriteLine("-----------------//------------------");
-            Console.WriteLine("LISTA DE CLIENTES: ");
+            Console.WriteLine("LISTA DE CLIENTES do tipo NORMAL: ");
             Console.WriteLine("-----------------//------------------");
             string select = "SELECT * FROM Cliente";
             cmd = new SqlCommand(select, conn);
@@ -78,6 +78,7 @@ namespace Trabalho02
                 Console.WriteLine("CPF: {0}", dr["CPF"]);
                 Console.WriteLine("Idade: {0}", dr["Idade"]);
                 Console.WriteLine("Saldo: {0}", dr["Saldo"]);
+                Console.WriteLine("Tipo de Cliente: {0}", dr["IdTipoCliente"]);
                 Console.WriteLine("-----------------//------------------");
             }
             conn.Close();
@@ -86,10 +87,11 @@ namespace Trabalho02
         {
             SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Desktop\marciele\entra21\Trabalho02\Trabalho02\trabalho02.mdf;Integrated Security=True");
             SqlCommand cmd;
+            int tipoCliente = GeraOutrosDados.TipoCliente();
 
             //Inclui dados na tabela
             Console.WriteLine("Inserindo dos dados do cliente: ");
-            string insert = $"INSERT INTO Cliente(Nome, CPF, Idade, Saldo, IdTipoCliente) VALUES('{Nome}', '{CPF}', {Idade}, {Saldo}, 1)";
+            string insert = $"INSERT INTO Cliente(Nome, CPF, Idade, Saldo, IdTipoCliente) VALUES('{Nome}', '{CPF}', {Idade}, {Saldo}, {tipoCliente})";
             cmd = new SqlCommand(insert, conn);
             conn.Open();
             cmd.ExecuteNonQuery();
