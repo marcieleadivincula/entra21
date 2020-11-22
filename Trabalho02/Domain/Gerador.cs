@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Trabalho02
+namespace Domain
 {
     static class Gerador
     {
@@ -9,16 +13,16 @@ namespace Trabalho02
          *      !!!!!ESTE CÓDIGO NAO PODE SER ALTERADO!!!!!
          *
          */
-        private static Random ran = new Random();
+        private static Random ran = new Random();        
         // Retorna uma idade entre 18 e 80 anos
         public static int Idade()
-        {
+        {            
             return ran.Next(18, 81);
         }
         // Gera um cpf no padrao 000.000.000-00
         public static string Cpf()
         {
-
+            
             string cpf = "";
             for (int i = 1; i < 15; i++)
             {

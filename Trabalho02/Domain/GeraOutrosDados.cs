@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Trabalho02
+namespace Domain
 {
-    static class GeraOutrosDados
+    public class GeraOutrosDados
     {
         private static Random ran = new Random();
 

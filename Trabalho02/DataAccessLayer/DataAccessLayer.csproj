@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DAB2BA80-4FFF-406F-8746-A8B5A42FE64A}</ProjectGuid>
+    <ProjectGuid>{C8A961C5-00BC-4B3A-9E11-04E540A71F98}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Trabalho02</RootNamespace>
-    <AssemblyName>Trabalho02</AssemblyName>
+    <RootNamespace>DataAccessLayer</RootNamespace>
+    <AssemblyName>DataAccessLayer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,6 +24,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -58,19 +58,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClienteDAL.cs" />
+    <Compile Include="DBConfig.cs" />
+    <Compile Include="localDBSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>localDBSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FornecedorDAL.cs" />
+    <Compile Include="FuncionarioDAL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SocioDAL.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".editorconfig" />
     <None Include="App.config" />
+    <None Include="localDBSet.xsc">
+      <DependentUpon>localDBSet.xsd</DependentUpon>
+    </None>
+    <None Include="localDBSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>localDBSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="localDBSet.xss">
+      <DependentUpon>localDBSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="trabalho02.mdf">
+    <Content Include="localDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="trabalho02_log.ldf">
+    <Content Include="localDB_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>trabalho02.mdf</DependentUpon>
+      <DependentUpon>localDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +107,11 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{ac3e7a70-83fd-44c7-b951-6b14b9cefa5c}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
