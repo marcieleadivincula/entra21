@@ -10,7 +10,7 @@ namespace DataAccessLayer
 {
     public class FornecedorDAL
     {
-        public string CreateFornecedor()
+        public string create()
         {
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
@@ -35,7 +35,7 @@ namespace DataAccessLayer
         }
 
 
-        public string InsertFonecedor(Fornecedor fornecedor)
+        public string insert(Fornecedor fornecedor)
         {
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
@@ -69,7 +69,7 @@ namespace DataAccessLayer
             }
         }
 
-        public List<Fornecedor> getAllFornecedor()
+        public List<Fornecedor> getAll()
         {
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
@@ -103,7 +103,7 @@ namespace DataAccessLayer
             }
         }
 
-        public string DeleteFornecedor(Fornecedor fornecedor)
+        public string delete(Fornecedor fornecedor)
         {
 
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
@@ -128,7 +128,7 @@ namespace DataAccessLayer
             }
         }
 
-        public string UpdateFornecedor(Fornecedor fornecedor)
+        public string update(Fornecedor fornecedor)
         {
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
@@ -149,6 +149,80 @@ namespace DataAccessLayer
             catch (Exception)
             {
                 return "Erro no DB, contate o administrador.";
+            }
+            finally
+            {
+                conn.Dispose();
+            }
+        }
+
+        public Fornecedor getLastRegister()
+        {
+            SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
+            SqlCommand command = new SqlCommand();
+            command.Connection = conn;
+            command.CommandText = "SELECT TOP(1) * FROM Fornecedor ORDER BY Id DESC";
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                List<Fornecedor> fornecedores = new List<Fornecedor>();
+                Fornecedor fornecedor = new Fornecedor();
+
+                while (reader.Read())
+                {
+                    fornecedor = new Fornecedor();
+                    fornecedor.Id = Convert.ToInt32(reader["Id"]);
+                    fornecedor.Nome = Convert.ToString(reader["Nome"]);
+                    fornecedor.CNPJ = Convert.ToString(reader["CNPJ"]);
+                    fornecedor.TipoDeProduto = Convert.ToInt32(reader["TipoDeProduto"]);
+                    fornecedor.QuantidadeFornecidaAoMes = Convert.ToInt32(reader["QuantidadeFornecidaAoMes"]);
+
+                    fornecedores.Add(fornecedor);
+                }
+                return fornecedor;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Erro no DB, contate o administrador.");
+            }
+            finally
+            {
+                conn.Dispose();
+            }
+        }
+
+        public Fornecedor getById(int id)
+        {
+            SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
+            SqlCommand command = new SqlCommand();
+            command.Connection = conn;
+            command.CommandText = "SELECT * FROM Fornecedor WHERE Id = @Id";
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                List<Fornecedor> fornecedores = new List<Fornecedor>();
+                Fornecedor fornecedor = new Fornecedor(); //Esta linha estava dentro do while
+
+                while (reader.Read())
+                {
+                    fornecedor = new Fornecedor();
+                    fornecedor.Id = Convert.ToInt32(reader["Id"]);
+                    fornecedor.Nome = Convert.ToString(reader["Nome"]);
+                    fornecedor.CNPJ = Convert.ToString(reader["CNPJ"]);
+                    fornecedor.TipoDeProduto = Convert.ToInt32(reader["TipoDeProduto"]);
+                    fornecedor.QuantidadeFornecidaAoMes = Convert.ToInt32(reader["QuantidadeFornecidaAoMes"]);
+
+                    fornecedores.Add(fornecedor);
+                }
+                return fornecedor; //Antes estava retornando cliente
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Erro no DB, contate o administrador.");
             }
             finally
             {

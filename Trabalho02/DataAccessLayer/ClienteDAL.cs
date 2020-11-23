@@ -5,12 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain;
+using System.Diagnostics;
 
 namespace DataAccessLayer
 {
     public class ClienteDAL
     {
-        public string CreateCliente()
+        public string create()
         {
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
@@ -33,7 +34,7 @@ namespace DataAccessLayer
                 conn.Dispose();
             }
         }
-        public List<Cliente> getAllCliente()
+        public List<Cliente> getAll()
         {
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
@@ -69,7 +70,7 @@ namespace DataAccessLayer
                 conn.Dispose();
             }
         }
-        public string InsertCliente(Cliente cliente)
+        public string insert(Cliente cliente)
         {
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
@@ -104,7 +105,7 @@ namespace DataAccessLayer
                 conn.Dispose();
             }
         }
-        public string UpdateCliente(Cliente cliente)
+        public string update(Cliente cliente)
         {
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
@@ -132,7 +133,7 @@ namespace DataAccessLayer
             }
         }
 
-        public string DeleteCliente(Cliente cliente)
+        public string delete(Cliente cliente)
         {
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
@@ -149,6 +150,82 @@ namespace DataAccessLayer
             catch (Exception)
             {
                 return "Erro no DB, contate o administrador.";
+            }
+            finally
+            {
+                conn.Dispose();
+            }
+        }
+
+        public Cliente getLastRegister()
+        {
+            SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
+            SqlCommand command = new SqlCommand();
+            command.Connection = conn;
+            command.CommandText = "SELECT TOP(1) * FROM Cliente ORDER BY Id DESC";
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                List<Cliente> clientes = new List<Cliente>();
+                Cliente cliente = new Cliente();
+
+                while (reader.Read())
+                {
+                    cliente = new Cliente();
+                    cliente.Id = Convert.ToInt32(reader["Id"]);
+                    cliente.Nome = Convert.ToString(reader["Nome"]);
+                    cliente.CPF = Convert.ToString(reader["CPF"]);
+                    cliente.Idade = Convert.ToInt32(reader["Idade"]);
+                    cliente.Saldo = Convert.ToDouble(reader["Saldo"]);
+                    cliente.IdTipoCliente = Convert.ToInt32(reader["IdTipoCliente"]);
+
+                    clientes.Add(cliente);
+                }
+                return cliente;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Erro no DB, contate o administrador.");
+            }
+            finally
+            {
+                conn.Dispose();
+            }
+        }
+
+        public Cliente getById(int id)
+        {
+            SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
+            SqlCommand command = new SqlCommand();
+            command.Connection = conn;
+            command.CommandText = "SELECT * FROM Cliente WHERE Id = @Id";
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                List<Cliente> clientes = new List<Cliente>();
+                Cliente cliente = new Cliente(); //Esta linha estava dentro do while
+
+                while (reader.Read())
+                {
+                    cliente = new Cliente();
+                    cliente.Id = Convert.ToInt32(reader["Id"]);
+                    cliente.Nome = Convert.ToString(reader["Nome"]);
+                    cliente.CPF = Convert.ToString(reader["CPF"]);
+                    cliente.Idade = Convert.ToInt32(reader["Idade"]);
+                    cliente.Saldo = Convert.ToDouble(reader["Saldo"]);
+                    cliente.IdTipoCliente = Convert.ToInt32(reader["IdTipoCliente"]);
+
+                    clientes.Add(cliente);
+                }
+                return cliente;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Erro no DB, contate o administrador.");
             }
             finally
             {
