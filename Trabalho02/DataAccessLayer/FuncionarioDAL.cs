@@ -10,7 +10,7 @@ namespace DataAccessLayer
 {
     public class FuncionarioDAL
     {
-        public string CreateFuncionario()
+        public string create()
         {
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
@@ -34,7 +34,7 @@ namespace DataAccessLayer
             }
         }
 
-        public List<Funcionario> getAllFuncionario()
+        public List<Funcionario> getAll()
         {
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
@@ -69,7 +69,7 @@ namespace DataAccessLayer
                 conn.Dispose();
             }
         }
-        public string InsertFuncionario(Funcionario funcionario)
+        public string insert(Funcionario funcionario)
         {
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
@@ -104,7 +104,7 @@ namespace DataAccessLayer
                 conn.Dispose();
             }
         }
-        public string UpdateFuncionario(Funcionario funcionario)
+        public string update(Funcionario funcionario)
         {
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
@@ -133,7 +133,7 @@ namespace DataAccessLayer
                 conn.Dispose();
             }
         }
-        public string DeleteFuncionario(Funcionario funcionario)
+        public string delete(Funcionario funcionario)
         {
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
@@ -157,5 +157,80 @@ namespace DataAccessLayer
             }
         }
 
+        public Funcionario getLastRegister()
+        {
+            SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
+            SqlCommand command = new SqlCommand();
+            command.Connection = conn;
+            command.CommandText = "SELECT TOP(1) * FROM Fornecedor ORDER BY Id DESC";
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                List<Funcionario> funcionarios = new List<Funcionario>();
+                Funcionario funcionario = new Funcionario();
+
+                while (reader.Read())
+                {
+                    funcionario = new Funcionario();
+                    funcionario.Id = Convert.ToInt32(reader["Id"]);
+                    funcionario.Nome = Convert.ToString(reader["Nome"]);
+                    funcionario.CPF = Convert.ToString(reader["CPF"]);
+                    funcionario.SalarioPorHora = Convert.ToDouble(reader["SalarioPorHora"]);
+                    funcionario.Cargo = Convert.ToString(reader["Cargo"]);
+                    funcionario.Saldo = Convert.ToDouble(reader["Saldo"]);
+
+                    funcionarios.Add(funcionario);
+                }
+                return funcionario;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Erro no DB, contate o administrador.");
+            }
+            finally
+            {
+                conn.Dispose();
+            }
+        }
+
+        public Funcionario getById(int id)
+        {
+            SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
+            SqlCommand command = new SqlCommand();
+            command.Connection = conn;
+            command.CommandText = "SELECT * FROM Fornecedor WHERE Id = @Id";
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                List<Funcionario> funcionarios = new List<Funcionario>();
+                Funcionario funcionario = new Funcionario();
+
+                while (reader.Read())
+                {
+                    funcionario = new Funcionario();
+                    funcionario.Id = Convert.ToInt32(reader["Id"]);
+                    funcionario.Nome = Convert.ToString(reader["Nome"]);
+                    funcionario.CPF = Convert.ToString(reader["CPF"]);
+                    funcionario.SalarioPorHora = Convert.ToDouble(reader["SalarioPorHora"]);
+                    funcionario.Cargo = Convert.ToString(reader["Cargo"]);
+                    funcionario.Saldo = Convert.ToDouble(reader["Saldo"]);
+
+                    funcionarios.Add(funcionario);
+                }
+                return funcionario;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Erro no DB, contate o administrador.");
+            }
+            finally
+            {
+                conn.Dispose();
+            }
+        }
     }
 }
