@@ -11,6 +11,13 @@ namespace AppVinteUm
     {
         static void Main(string[] args)
         {
+            ClienteDAL clidal = new ClienteDAL();
+            clidal.create();
+            FuncionarioDAL fundal = new FuncionarioDAL();
+            fundal.create();
+            FornecedorDAL forndal = new FornecedorDAL();
+            forndal.create();
+
             int userChoice;
             Console.Clear();
             Console.Write("userChoice principal: \n1 - Adicionar \n2 - Remover \n3 - Comprar  \n4 - Bater Cartão \n5 - Alterar \n6 - Calcular \n7 - Sair \n");

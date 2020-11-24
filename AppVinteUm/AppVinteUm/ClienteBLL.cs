@@ -31,6 +31,12 @@ namespace AppVinteUm
                 erros.AppendLine("O CPF não pode conter mais que 20 caracteres.");
             }
 
+            //Não pode haver CPF ou CNPJ repetidos
+            if (cliente.CPF.Equals(cliente.CPF))
+            {
+                erros.AppendLine("Não pode haver CPF repetidos.");
+            }
+
             if (cliente.Idade < 0 || cliente.Idade != 0)
             {
                 erros.AppendLine("A idade deve ser informado.");
@@ -82,6 +88,13 @@ namespace AppVinteUm
             {
                 erros.AppendLine("O CPF deve ser informada.");
             }
+
+            //Não pode haver CPF ou CNPJ repetidos
+            if (cliente.CPF.Equals(cliente.CPF))
+            {
+                erros.AppendLine("Não pode haver CPF repetidos.");
+            }
+
             if (cliente.CPF.Length > 20)
             {
                 erros.AppendLine("O CPF não pode conter mais que 20 caracteres.");
@@ -137,6 +150,18 @@ namespace AppVinteUm
         public Cliente getLastRegister()
         {
             return dal.getLastRegister();
+        }
+
+        public Cliente getBySumSaldo(Cliente cliente)
+        {
+            StringBuilder erros = new StringBuilder();
+
+            if (cliente.Saldo < 0 || cliente.Saldo != 0)
+            {
+                erros.AppendLine("O saldo do cliente deve ser informado. ");
+            }
+
+            return dal.getBySumSaldo();
         }
     }
 }

@@ -26,9 +26,16 @@ namespace AppVinteUm
             {
                 erros.AppendLine("O CNPJ deve ser informada.");
             }
+
             if (fornecedor.CNPJ.Length > 30)
             {
                 erros.AppendLine("O CNPJ não pode conter mais que 30 caracteres.");
+            }
+
+            //Não pode haver CPF ou CNPJ repetidos
+            if (fornecedor.CNPJ.Equals(fornecedor.CNPJ))
+            {
+                erros.AppendLine("Não pode haver CNPJ repetidos.");
             }
 
             if (fornecedor.TipoDeProduto < 0 || fornecedor.TipoDeProduto != 0)
@@ -72,6 +79,13 @@ namespace AppVinteUm
             {
                 erros.AppendLine("O CNPJ deve ser informada.");
             }
+
+            //Não pode haver CPF ou CNPJ repetidos
+            if (fornecedor.CNPJ.Equals(fornecedor.CNPJ))
+            {
+                erros.AppendLine("Não pode haver CNPJ repetidos.");
+            }
+
             if (fornecedor.CNPJ.Length > 30)
             {
                 erros.AppendLine("O CNPJ não pode conter mais que 30 caracteres.");
@@ -117,6 +131,29 @@ namespace AppVinteUm
         public Fornecedor getLastRegister()
         {
             return dal.getLastRegister();
+        }
+        public Fornecedor getBySumQtdProdutos(Fornecedor fornecedor)
+        {
+            StringBuilder erros = new StringBuilder();
+
+            if (fornecedor.QuantidadeFornecidaAoMes < 0 || fornecedor.QuantidadeFornecidaAoMes != 0)
+            {
+                erros.AppendLine("A quantidade de produtos fornecida ao mês deve ser informado. ");
+            }
+
+            return dal.getBySumQtdProdutos();
+        }
+
+        public Fornecedor getByTipoDeProduto(Fornecedor fornecedor)
+        {
+            StringBuilder erros = new StringBuilder();
+
+            if (fornecedor.TipoDeProduto < 0 || fornecedor.TipoDeProduto != 0)
+            {
+                erros.AppendLine("O tipo de produto deve ser informado. ");
+            }
+
+            return dal.getByTipoDeProduto(fornecedor.TipoDeProduto);
         }
     }
 }

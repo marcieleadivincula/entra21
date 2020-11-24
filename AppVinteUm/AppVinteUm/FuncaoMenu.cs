@@ -543,24 +543,50 @@ namespace AppVinteUm
 
         public static void BaterCartao()
         {
-            ClienteDAL clientedal = new ClienteDAL();
-            FuncionarioDAL funcionariodal = new FuncionarioDAL();
-            FornecedorDAL fornecedordal = new FornecedorDAL();
-            SocioDAL sociodal = new SocioDAL();
-
-            ClienteBLL clientell = new ClienteBLL();
-            FuncionarioBLL funcionarioll = new FuncionarioBLL();
-            FornecedorBLL fornecedorll = new FornecedorBLL();
-            SocioBLL sociolll = new SocioBLL();
-
-            int idade, tipoProduto, qtdFornecidaAoMes, userChoice;
-            string cpf, nome, nomeEmpresa, cargo, tipoCliente, cnpj;
-            double saldo, qtdAcoes, salarioPorHora;
             bool repeat = false;
+            string cpf;
+            int diaOuMes, hrEntrada, hrSaida;
+
+            FuncionarioDAL funcionariodal = new FuncionarioDAL();
 
             while (repeat == false)
             {
+                Console.WriteLine("Lista de todos os funcionários: ");
+                funcionariodal.getAll();
+                Console.WriteLine("-------------------------------//-----------------------");
+                Console.WriteLine("Qual funcionário está  batendo cartão? ");
+                Console.Write("Digite o CPF: ");
+                cpf = Console.ReadLine();
 
+                //, peça se esta batendo o cartao do dia ou de 30 dias, caso for do dia, *peça qual a hora de entrada e qual a hora de saida*
+                if (!string.IsNullOrWhiteSpace(cpf))
+                {
+                    Console.WriteLine("Está batendo o cartão do dia ou de 30 dias? \nDigite: \n1 - Dia \n2 - Mês(30 dias)");
+                    Console.Write("Digite uma opção: ");
+                    diaOuMes = int.Parse(Console.ReadLine());
+
+                    if (diaOuMes == 1)
+                    {
+                        Console.WriteLine("Qual a hora de entrada?");
+                        hrEntrada = int.Parse(Console.ReadLine());
+
+
+                        Console.WriteLine("Qual a hora de saída?");
+                        hrSaida = int.Parse(Console.ReadLine());
+
+
+                    }
+                    else
+                    {
+                        // * 30 dias
+                    }
+
+                    repeat = true;
+                }
+                else
+                {
+                    repeat = false;
+                }
             }
         }
 
@@ -777,25 +803,22 @@ namespace AppVinteUm
 
         public static void CalcularLucro()
         {
+            double ganho, prejuizo;
+            bool repeat = false;
+
             ClienteDAL clientedal = new ClienteDAL();
             FuncionarioDAL funcionariodal = new FuncionarioDAL();
             FornecedorDAL fornecedordal = new FornecedorDAL();
             SocioDAL sociodal = new SocioDAL();
 
-            ClienteBLL clientell = new ClienteBLL();
-            FuncionarioBLL funcionarioll = new FuncionarioBLL();
-            FornecedorBLL fornecedorll = new FornecedorBLL();
-            SocioBLL sociolll = new SocioBLL();
-
-            int idade, tipoProduto, qtdFornecidaAoMes, userChoice;
-            string cpf, nome, nomeEmpresa, cargo, tipoCliente, cnpj;
-            double saldo, qtdAcoes, salarioPorHora;
-            bool repeat = false;
-
-            Cliente[] cliente = new Cliente[5];
-            Funcionario[] funcionario = new Funcionario[5];
-            Socio[] socio = new Socio[2];
-            Fornecedor[] fornecedor = new Fornecedor[5];
+            Console.WriteLine("Saldo total do cliente NORMAL");
+            clientedal.getBySumSaldo();
+            Console.WriteLine("Saldo total do cliente SÓCIO");
+            sociodal.getBySumSaldo();
+            Console.WriteLine("Quantidade total fornecida ao mês");
+            fornecedordal.getBySumQtdProdutos();
+            Console.WriteLine("Saldo total do FUNCIONÁRIO");
+            funcionariodal.getBySumSaldo();
         }
 
         public static void Sair()
