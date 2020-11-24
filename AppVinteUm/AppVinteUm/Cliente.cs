@@ -12,7 +12,7 @@ namespace AppVinteUm
         public string Nome { get; set; }
         public string CPF { get; set; }
         public int Idade { get; set; }
-        public double Saldo { get; set; }
+        public double Saldo { get; set; } //Quanto gastou no mês
         public string TipoCliente { get; set; }
 
         public Cliente(int id, string nome, string cpf, int idade, double saldo, string tipoCliente)
@@ -37,6 +37,11 @@ namespace AppVinteUm
         public Cliente()
         {
 
+        }
+
+        public Cliente(double saldo)
+        {
+            Saldo = saldo;
         }
 
         public string GetDados()

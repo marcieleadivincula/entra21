@@ -28,6 +28,7 @@ namespace AppVinteUm
                 erros.AppendLine("O CPF deve ser informada.");
             }
 
+            //Não pode haver CPF ou CNPJ repetidos
             //if (string.IsNullOrEmpty(socio.CPF))
             //{
             //    erros.AppendLine("");
@@ -68,9 +69,23 @@ namespace AppVinteUm
                 erros.AppendLine("A quantidade de ações deve ser informado.");
             }
 
+            //qtdAcoes de um Cliente é no máximo 4.95% da loja
             if (socio.QtdAcoes > .0495)
             {
                 erros.AppendLine("A quantidade de ações não poder ser maior que 4.95%");
+            }
+
+            //não pode haver mais do que 10 Cliente Sócio
+            if (socio.GetAcoes() > 10)
+            {
+                erros.AppendLine("A quantidade de ações não poder ser maior que 40%");
+            }
+
+
+            //não pode haver mais do que 10 Cliente Sócio
+            if (socio.GetAcoes() > 10)
+            {
+                erros.AppendLine("A quantidade de sócios não poder ser maior que 10");
             }
 
             if (erros.Length != 0)

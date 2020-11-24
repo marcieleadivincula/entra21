@@ -145,34 +145,7 @@ namespace AppVinteUm
         // Gera um quantidade fornecida ao mês de 1 a 6
         public static int QuantidadeFornecidaAoMes()
         {
-            int escolha = ran.Next(1, 6);
-            double qtdFornecidaAoMes;
-
-            switch (escolha)
-            {
-                case 1:
-                    qtdFornecidaAoMes = 5.45;
-                    break;
-                case 2:
-                    qtdFornecidaAoMes = 6.78;
-                    break;
-                case 3:
-                    qtdFornecidaAoMes = 1.43;
-                    break;
-                case 4:
-                    qtdFornecidaAoMes = 2.68;
-                    break;
-                case 5:
-                    qtdFornecidaAoMes = 3.78;
-                    break;
-                case 6:
-                    qtdFornecidaAoMes = 2.96;
-                    break;
-                default:
-                    qtdFornecidaAoMes = 0.0;
-                    break;
-            }
-
+            double qtdFornecidaAoMes = ran.Next(200, 2000) + ran.NextDouble();
             return (int)qtdFornecidaAoMes;
         }
 
@@ -248,12 +221,13 @@ namespace AppVinteUm
         // Gera um saldo aleatório por hora
         public static double SalarioPorHora()
         {
-            double valorHora = ran.Next(0, 5);
-            double valorDiario = ran.Next(5, 35);
-            double valorMensal = ran.Next(151, 1046);
+            //double valorHora = ran.Next(0, 5);
+            //double valorDiario = ran.Next(5, 35);
+            //double valorMensal = ran.Next(151, 1046);
 
             double saldoPorHora = ran.Next(200, 2000) + ran.NextDouble();
             return saldoPorHora;
         }
+
     }
 }

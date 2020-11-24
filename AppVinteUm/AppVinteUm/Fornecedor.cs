@@ -23,6 +23,14 @@ namespace AppVinteUm
             QuantidadeFornecidaAoMes = qtdFornecidaAoMes;
         }
 
+        public Fornecedor(string nome, string cnpj, int tipoDeProduto, int qtdFornecidaAoMes)
+        {
+            Nome = nome;
+            CNPJ = cnpj;
+            TipoDeProduto = tipoDeProduto;
+            QuantidadeFornecidaAoMes = qtdFornecidaAoMes;
+        }
+
         public Fornecedor()
         {
         }

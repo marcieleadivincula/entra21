@@ -14,7 +14,17 @@ namespace AppVinteUm
         {
 
         }
+
+        public Socio(double saldo)
+        {
+
+        }
         public Socio(double qtdAcoes, int id, string nome, string cpf, int idade, double saldo, string tipoCliente) : base(id, nome, cpf, idade, saldo, tipoCliente)
+        {
+            QtdAcoes = qtdAcoes;
+        }
+
+        public Socio(double qtdAcoes, string nome, string cpf, int idade, double saldo, string tipoCliente) : base(nome, cpf, idade, saldo, tipoCliente)
         {
             QtdAcoes = qtdAcoes;
         }

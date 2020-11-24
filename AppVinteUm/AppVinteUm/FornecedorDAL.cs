@@ -9,29 +9,54 @@ namespace AppVinteUm
 {
     public class FornecedorDAL
     {
-        public string create()
-        {
-            SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
-            SqlCommand command = new SqlCommand();
-            command.Connection = conn;
-            command.CommandText = "CREATE TABLE Fornecedor ([Id] INT IDENTITY(1,1) NOT NULL, [Nome] VARCHAR(60), [CNPJ] VARCHAR(20), [TipoDeProduto] INT NOT NULL, [QuantidadeFornecidaAoMes] INT NOT NULL, PRIMARY KEY CLUSTERED([Id] ASC)) VALUES(@Nome, @CNPJ, @TipoDeProduto, @QuantidadeFornecidaAoMes)";
-            try
-            {
-                conn.Open();
-                command.ExecuteNonQuery();
+        //public string create()
+        //{
 
-                return "Fornecedor criado com sucesso!";
-            }
-            catch (Exception)
-            {
 
-                throw new Exception("Erro no DB, contate o administrador.");
-            }
-            finally
-            {
-                conn.Dispose();
-            }
-        }
+        ////CREATE Fornecedor
+        //for (int i = 0; i < 1; i++)
+        //{
+        //    SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
+        //    SqlCommand cmd;
+
+        //    //CRIA TABELA Fornecedor
+        //    string create = "CREATE TABLE Fornecedor (" +
+        //        "[Id] INT IDENTITY(1,1) NOT NULL, " +
+        //        "[Nome] VARCHAR(60), " +
+        //        "[CNPJ] VARCHAR(20), " +
+        //        "[TipoDeProduto] INT NOT NULL, " +
+        //        "[QuantidadeFornecidaAoMes] INT NOT NULL, " +
+        //        "PRIMARY KEY CLUSTERED([Id] ASC))";
+
+        //    cmd = new SqlCommand(create, conn);
+        //    conn.Open();
+        //    cmd.ExecuteNonQuery();
+        //    conn.Close();
+        //}
+
+
+
+        //    //SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
+        //    //SqlCommand command = new SqlCommand();
+        //    //command.Connection = conn;
+        //    //command.CommandText = "CREATE TABLE Fornecedor ([Id] INT IDENTITY(1,1) NOT NULL, [Nome] VARCHAR(60), [CNPJ] VARCHAR(20), [TipoDeProduto] INT NOT NULL, [QuantidadeFornecidaAoMes] INT NOT NULL, PRIMARY KEY CLUSTERED([Id] ASC)) VALUES(@Nome, @CNPJ, @TipoDeProduto, @QuantidadeFornecidaAoMes)";
+        //    //try
+        //    //{
+        //    //    conn.Open();
+        //    //    command.ExecuteNonQuery();
+
+        //    //    return "Fornecedor criado com sucesso!";
+        //    //}
+        //    //catch (Exception)
+        //    //{
+
+        //    //    throw new Exception("Erro no DB, contate o administrador.");
+        //    //}
+        //    //finally
+        //    //{
+        //    //    conn.Dispose();
+        //    //}
+        //}
 
         public string insert(Fornecedor fornecedor)
         {
@@ -202,7 +227,7 @@ namespace AppVinteUm
                 conn.Open();
                 SqlDataReader reader = command.ExecuteReader();
                 List<Fornecedor> fornecedores = new List<Fornecedor>();
-                Fornecedor fornecedor = new Fornecedor(); //Esta linha estava dentro do while
+                Fornecedor fornecedor = new Fornecedor(); 
 
                 while (reader.Read())
                 {
@@ -215,7 +240,44 @@ namespace AppVinteUm
 
                     fornecedores.Add(fornecedor);
                 }
-                return fornecedor; //Antes estava retornando cliente
+                return fornecedor; 
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Erro no DB, contate o administrador.");
+            }
+            finally
+            {
+                conn.Dispose();
+            }
+        }
+
+        public Fornecedor getByCnpj(string cpnj)
+        {
+            SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
+            SqlCommand command = new SqlCommand();
+            command.Connection = conn;
+            command.CommandText = "SELECT * FROM Fornecedor WHERE CNPJ = @CNPJ";
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                List<Fornecedor> fornecedores = new List<Fornecedor>();
+                Fornecedor fornecedor = new Fornecedor(); 
+
+                while (reader.Read())
+                {
+                    fornecedor = new Fornecedor();
+                    fornecedor.Id = Convert.ToInt32(reader["Id"]);
+                    fornecedor.Nome = Convert.ToString(reader["Nome"]);
+                    fornecedor.CNPJ = Convert.ToString(reader["CNPJ"]);
+                    fornecedor.TipoDeProduto = Convert.ToInt32(reader["TipoDeProduto"]);
+                    fornecedor.QuantidadeFornecidaAoMes = Convert.ToInt32(reader["QuantidadeFornecidaAoMes"]);
+
+                    fornecedores.Add(fornecedor);
+                }
+                return fornecedor; 
             }
             catch (Exception)
             {

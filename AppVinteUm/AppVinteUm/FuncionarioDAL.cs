@@ -9,29 +9,56 @@ namespace AppVinteUm
 {
     public class FuncionarioDAL
     {
-        public string create()
-        {
-            SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
-            SqlCommand command = new SqlCommand();
-            command.Connection = conn;
-            command.CommandText = "CREATE TABLE Funcionario ([Id] INT IDENTITY(1,1) NOT NULL, [Nome] VARCHAR(60), [CPF] VARCHAR(20), [Idade] INT NOT NULL, [SalarioPorHora] FLOAT NOT NULL, [Cargo] VARCHAR(60), [Saldo] FLOAT NOT NULL, PRIMARY KEY CLUSTERED([Id] ASC)) VALUES(@Nome,  @CPF, @Idade, @SalarioPorHora, @Cargo, @Saldo)";
-            try
-            {
-                conn.Open();
-                command.ExecuteNonQuery();
+        //public string create()
+        //{
 
-                return "Funcionário criado com sucesso!";
-            }
-            catch (Exception)
-            {
 
-                throw new Exception("Erro no DB, contate o administrador.");
-            }
-            finally
-            {
-                conn.Dispose();
-            }
-        }
+        //CREATE Funcionario
+        //for (int i = 0; i < 1; i++)
+        //{
+        //    SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
+        //    SqlCommand cmd;
+
+        //    //CRIA TABELA Funcionario
+        //    string create = "CREATE TABLE Funcionario (" +
+        //        "[Id] INT IDENTITY(1,1) NOT NULL, " +
+        //        "[Nome] VARCHAR(60), " +
+        //        "[CPF] VARCHAR(20), " +
+        //        "[Idade] INT NOT NULL, " +
+        //        "[SalarioPorHora] FLOAT NOT NULL, " +
+        //        "[Cargo] VARCHAR(60), " +
+        //        "[Saldo] FLOAT NOT NULL, " +
+        //        "PRIMARY KEY CLUSTERED([Id] ASC))";
+
+        //    cmd = new SqlCommand(create, conn);
+        //    conn.Open();
+        //    cmd.ExecuteNonQuery();
+        //    conn.Close();
+        //}
+
+
+
+        //    //SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
+        //    //SqlCommand command = new SqlCommand();
+        //    //command.Connection = conn;
+        //    //command.CommandText = "CREATE TABLE Funcionario ([Id] INT IDENTITY(1,1) NOT NULL, [Nome] VARCHAR(60), [CPF] VARCHAR(20), [Idade] INT NOT NULL, [SalarioPorHora] FLOAT NOT NULL, [Cargo] VARCHAR(60), [Saldo] FLOAT NOT NULL, PRIMARY KEY CLUSTERED([Id] ASC)) VALUES(@Nome,  @CPF, @Idade, @SalarioPorHora, @Cargo, @Saldo)";
+        //    //try
+        //    //{
+        //    //    conn.Open();
+        //    //    command.ExecuteNonQuery();
+
+        //    //    return "Funcionário criado com sucesso!";
+        //    //}
+        //    //catch (Exception)
+        //    //{
+
+        //    //    throw new Exception("Erro no DB, contate o administrador.");
+        //    //}
+        //    //finally
+        //    //{
+        //    //    conn.Dispose();
+        //    //}
+        //}
 
         public List<Funcionario> getAll()
         {
@@ -161,7 +188,7 @@ namespace AppVinteUm
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
             command.Connection = conn;
-            command.CommandText = "SELECT TOP(1) * FROM Fornecedor ORDER BY Id DESC";
+            command.CommandText = "SELECT TOP(1) * FROM Funcionario ORDER BY Id DESC";
             try
             {
                 conn.Open();
@@ -199,13 +226,51 @@ namespace AppVinteUm
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
             command.Connection = conn;
-            command.CommandText = "SELECT * FROM Fornecedor WHERE Id = @Id";
+            command.CommandText = "SELECT * FROM Funcionario WHERE Id = @Id";
             try
             {
                 conn.Open();
                 SqlDataReader reader = command.ExecuteReader();
                 List<Funcionario> funcionarios = new List<Funcionario>();
                 Funcionario funcionario = new Funcionario();
+
+                while (reader.Read())
+                {
+                    funcionario = new Funcionario();
+                    funcionario.Id = Convert.ToInt32(reader["Id"]);
+                    funcionario.Nome = Convert.ToString(reader["Nome"]);
+                    funcionario.CPF = Convert.ToString(reader["CPF"]);
+                    funcionario.SalarioPorHora = Convert.ToDouble(reader["SalarioPorHora"]);
+                    funcionario.Cargo = Convert.ToString(reader["Cargo"]);
+                    funcionario.Saldo = Convert.ToDouble(reader["Saldo"]);
+
+                    funcionarios.Add(funcionario);
+                }
+                return funcionario;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Erro no DB, contate o administrador.");
+            }
+            finally
+            {
+                conn.Dispose();
+            }
+        }
+
+        public Funcionario getByCpf(string cpf)
+        {
+            SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
+            SqlCommand command = new SqlCommand();
+            command.Connection = conn;
+            command.CommandText = "SELECT * FROM Funcionario WHERE CPF = @CPF";
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                List<Funcionario> funcionarios = new List<Funcionario>();
+                Funcionario funcionario = new Funcionario(); //Esta linha estava dentro do while
 
                 while (reader.Read())
                 {

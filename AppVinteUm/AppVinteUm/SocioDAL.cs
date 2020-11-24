@@ -213,5 +213,44 @@ namespace AppVinteUm
                 conn.Dispose();
             }
         }
+
+        public Socio getByCpf(string cpf)
+        {
+            SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
+            SqlCommand command = new SqlCommand();
+            command.Connection = conn;
+            command.CommandText = "SELECT * FROM Cliente WHERE CPF = @CPF";
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                List<Socio> socios = new List<Socio>();
+                Socio socio = new Socio(); //Esta linha estava dentro do while
+
+                while (reader.Read())
+                {
+                    socio = new Socio();
+                    socio.Id = Convert.ToInt32(reader["Id"]);
+                    socio.Nome = Convert.ToString(reader["Nome"]);
+                    socio.CPF = Convert.ToString(reader["CPF"]);
+                    socio.Idade = Convert.ToInt32(reader["Idade"]);
+                    socio.Saldo = Convert.ToDouble(reader["Saldo"]);
+                    socio.TipoCliente = Convert.ToString(reader["TipoCliente"]);
+                    socio.QtdAcoes = Convert.ToDouble(reader["QtdAcoes"]);
+
+                    socios.Add(socio);
+                }
+                return socio;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Erro no DB, contate o administrador.");
+            }
+            finally
+            {
+                conn.Dispose();
+            }
+        }
     }
 }
