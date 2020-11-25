@@ -15,6 +15,12 @@ namespace AppVinteUm
 
         }
 
+        public Socio(string cpf)
+        {
+
+        }
+
+
         public Socio(double saldo)
         {
 

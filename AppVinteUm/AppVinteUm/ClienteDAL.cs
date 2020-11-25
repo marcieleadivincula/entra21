@@ -6,80 +6,81 @@ namespace AppVinteUm
 {
     public class ClienteDAL
     {
-        public void create()
-        {
-            SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
-            SqlCommand cmd;
+        //public void create()
+        //{
+        //    //SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
+        //    //SqlCommand cmd;
 
-            //CRIA TABELA Cliente
-            string create = "CREATE TABLE Cliente (" +
-                "[Id] INT IDENTITY(1,1) NOT NULL, " +
-                "[Nome] VARCHAR(60), " +
-                "[CPF] VARCHAR(20), " +
-                "[Idade] INT NOT NULL, " +
-                "[Saldo] FLOAT NOT NULL, " +
-                "[TipoCliente] VARCHAR(20), " +
-                "[QtdAcoes] FLOAT," +
-                "PRIMARY KEY CLUSTERED([Id] ASC))";
+        //    ////CRIA TABELA Cliente
+        //    //string create = "CREATE TABLE Cliente (" +
+        //    //    "[Id] INT IDENTITY(1,1) NOT NULL, " +
+        //    //    "[Nome] VARCHAR(60), " +
+        //    //    "[CPF] VARCHAR(20), " +
+        //    //    "[Idade] INT NOT NULL, " +
+        //    //    "[Saldo] FLOAT NOT NULL, " +
+        //    //    "[TipoCliente] VARCHAR(20), " +
+        //    //    "[QtdAcoes] FLOAT," +
+        //    //    "PRIMARY KEY CLUSTERED([Id] ASC))";
 
-            cmd = new SqlCommand(create, conn);
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
+        //    //cmd = new SqlCommand(create, conn);
+        //    //conn.Open();
+        //    //cmd.ExecuteNonQuery();
+        //    //conn.Close();
 
 
 
-        //    CREATE Cliente
-        //for (int i = 0; i < 1; i++)
+        ////    CREATE Cliente
+        ////for (int i = 0; i < 1; i++)
+        ////    {
+        ////        clientedal = new ClienteDAL();
+        ////        clientell = new ClienteBLL();
+
+        ////        try
+        ////        {
+        ////            clientedal.create();
+        ////            cliente[i] = clientedal.getLastRegister();
+        ////            cliente[i] = clientell.getLastRegister();
+        ////        }
+        ////        catch (Exception)
+        ////        {
+        ////            throw new Exception("Erro no DB, contate o administrador.");
+        ////        }
+        ////        finally
+        ////        {
+        ////            clientedal.getAll();
+        ////            clientell.getAll();
+        ////        }
+        ////    }
+
+
+        //    SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
+        //    SqlCommand command = new SqlCommand();
+        //    command.Connection = conn;
+        //    command.CommandText = "CREATE TABLE Cliente ([Id] INT IDENTITY(1,1) NOT NULL, [Nome] VARCHAR(60), [CPF] VARCHAR(20), [Idade] INT NOT NULL, [Saldo] FLOAT NOT NULL, [TipoCliente] VARCHAR(20), [QtdAcoes] FLOAT,  PRIMARY KEY CLUSTERED([Id] ASC)) VALUES(@Nome, @CPF, @Idade, @Saldo, @TipoCliente, @QtdAcoes)";
+        //    try
         //    {
-        //        clientedal = new ClienteDAL();
-        //        clientell = new ClienteBLL();
+        //        conn.Open();
+        //        command.ExecuteNonQuery();
 
-        //        try
-        //        {
-        //            clientedal.create();
-        //            cliente[i] = clientedal.getLastRegister();
-        //            cliente[i] = clientell.getLastRegister();
-        //        }
-        //        catch (Exception)
-        //        {
-        //            throw new Exception("Erro no DB, contate o administrador.");
-        //        }
-        //        finally
-        //        {
-        //            clientedal.getAll();
-        //            clientell.getAll();
-        //        }
+        //        return "Cliente criado com sucesso!";
         //    }
+        //    catch (Exception)
+        //    {
 
-
-            //SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
-            //SqlCommand command = new SqlCommand();
-            //command.Connection = conn;
-            //command.CommandText = "CREATE TABLE Cliente ([Id] INT IDENTITY(1,1) NOT NULL, [Nome] VARCHAR(60), [CPF] VARCHAR(20), [Idade] INT NOT NULL, [Saldo] FLOAT NOT NULL, [TipoCliente] VARCHAR(20), [QtdAcoes] FLOAT,  PRIMARY KEY CLUSTERED([Id] ASC)) VALUES(@Nome, @CPF, @Idade, @Saldo, @TipoCliente, @QtdAcoes)";
-            //try
-            //{
-            //    conn.Open();
-            //    command.ExecuteNonQuery();
-
-            //    return "Cliente criado com sucesso!";
-            //}
-            //catch (Exception)
-            //{
-
-            //    throw new Exception("Erro no DB, contate o administrador.");
-            //}
-            //finally
-            //{
-            //    conn.Dispose();
-            //}
-        }
+        //        throw new Exception("Erro no DB, contate o administrador.");
+        //    }
+        //    finally
+        //    {
+        //        conn.Dispose();
+        //    }
+        //}
         public List<Cliente> getAll()
         {
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
             command.Connection = conn;
             command.CommandText = "SELECT * FROM Cliente WHERE TipoCliente LIKE 'Normal'";
+
             try
             {
                 conn.Open();
@@ -100,9 +101,10 @@ namespace AppVinteUm
                 }
                 return clientes;
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
+                Console.WriteLine(e.Message);
                 throw new Exception("Erro no DB, contate o administrador.");
             }
             finally
@@ -225,9 +227,9 @@ namespace AppVinteUm
                 }
                 return cliente;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                Console.WriteLine(e.Message);
                 throw new Exception("Erro no DB, contate o administrador.");
             }
             finally
@@ -241,7 +243,7 @@ namespace AppVinteUm
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
             command.Connection = conn;
-            command.CommandText = "SELECT * FROM Cliente WHERE Id = @Id";
+            command.CommandText = "SELECT * FROM Cliente WHERE Id = " + id;
             try
             {
                 conn.Open();
@@ -263,9 +265,9 @@ namespace AppVinteUm
                 }
                 return cliente;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                Console.WriteLine(e.Message);
                 throw new Exception("Erro no DB, contate o administrador.");
             }
             finally
@@ -279,13 +281,13 @@ namespace AppVinteUm
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
             command.Connection = conn;
-            command.CommandText = "SELECT * FROM Cliente WHERE CPF = @CPF";
+            command.CommandText = $"SELECT * FROM Cliente WHERE CPF = '{cpf}'";
             try
             {
                 conn.Open();
                 SqlDataReader reader = command.ExecuteReader();
                 List<Cliente> clientes = new List<Cliente>();
-                Cliente cliente = new Cliente(); 
+                Cliente cliente = new Cliente();
 
                 while (reader.Read())
                 {
@@ -301,9 +303,10 @@ namespace AppVinteUm
                 }
                 return cliente;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.InnerException);
                 throw new Exception("Erro no DB, contate o administrador.");
             }
             finally

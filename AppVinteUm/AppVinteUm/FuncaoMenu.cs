@@ -15,29 +15,23 @@ namespace AppVinteUm
             double saldo, qtdAcoes, salarioPorHora;
             bool repeat = false;
 
-            List<Cliente> clientes = new List<Cliente>();
-            List<Funcionario> funcionarios = new List<Funcionario>();
-            List<Socio> socios = new List<Socio>();
-            List<Fornecedor> fornecedores = new List<Fornecedor>();
-
             ClienteDAL clientedal = new ClienteDAL();
             FuncionarioDAL funcionariodal = new FuncionarioDAL();
             FornecedorDAL fornecedordal = new FornecedorDAL();
             SocioDAL sociodal = new SocioDAL();
 
             Console.Clear();
-            Console.WriteLine("Quem deseja adicionar?");
-            Console.Write("Menu principal: \n1 - Cliente Normal \n2 - Cliente Sócio \n3 - Funcionário  \n4 - Fornecedor \n5 - Sair \n");
+            Console.WriteLine("Menu principal");
+            Console.Write("Quem deseja adicionar? \n1 - Cliente Normal \n2 - Cliente Sócio \n3 - Funcionário  \n4 - Fornecedor \n5 - Sair \n ");
             Console.WriteLine();
-            Console.Write("Escolha uma opção:");
+            Console.Write("Escolha uma opção: ");
             userChoice = int.Parse(Console.ReadLine());
 
             while (repeat == false)
             {
                 if (userChoice == 1)
                 {
-                    Console.WriteLine("Quer geradar dados do cliente ou inserir dados? \nDigite: \n1 - Inserir dados \n2 - Gerar dados");
-                    Console.Write("Número: ");
+                    Console.WriteLine("Quer geradar dados do cliente ou inserir dados? \n1 - Inserir dados \n2 - Gerar dados \nEscolha uma opção: ");
                     createOrInsert = int.Parse(Console.ReadLine());
 
                     if (createOrInsert == 1)
@@ -63,7 +57,7 @@ namespace AppVinteUm
 
                             try
                             {
-                                clientedal.update(new Cliente(nome, cpf, idade, saldo, tipoCliente));
+                                clientedal.insert(new Cliente(nome, cpf, idade, saldo, tipoCliente));
                             }
                             catch (Exception)
                             {
@@ -72,7 +66,8 @@ namespace AppVinteUm
                             }
                             finally
                             {
-                                Console.WriteLine("Inserção concluída. Cliente " + clientedal.getLastRegister() + "inserido com sucesso.");
+                                Console.WriteLine("Inserção concluída com sucesso.");
+                                clientedal.getLastRegister();
                             }
                         }
                     }
@@ -91,16 +86,20 @@ namespace AppVinteUm
                             nome = Gerador.NomePessoa();
                             saldo = Gerador.Saldo();
                             tipoCliente = GeraOutrosDados.TipoCliente();
-                           
-                            clientes[i] = new Cliente(nome, cpf, idade, saldo, tipoCliente);
 
                             try
                             {
-                                clientedal.insert(new Cliente(clientes[i].Nome, clientes[i].CPF, clientes[i].Idade, clientes[i].Saldo, clientes[i].TipoCliente));
+                                clientedal.insert(new Cliente(nome, cpf, idade, saldo, tipoCliente));
+                            }
+                            catch (Exception)
+                            {
+                                clientedal.delete(new Cliente(nome, cpf, idade, saldo, tipoCliente));
+                                Console.WriteLine("ERRO ao tentar inserir este cliente.");
                             }
                             finally
                             {
-                                clientedal.delete(clientes[i]);
+                                Console.WriteLine("Inserção concluída com sucesso.");
+                                clientedal.getLastRegister();
                             }
                         }
                     }
@@ -109,8 +108,7 @@ namespace AppVinteUm
                 }
                 else if (userChoice == 2)
                 {
-                    Console.WriteLine("Quer geradar dados do sócio ou inserir dados? \nDigite: \n1 - Inserir dados \n2 - Gerar dados");
-                    Console.Write("Número: ");
+                    Console.WriteLine("Quer geradar dados do sócio ou inserir dados? \n1 - Inserir dados \n2 - Gerar dados \nDigite um número: ");
                     createOrInsert = int.Parse(Console.ReadLine());
 
                     if (createOrInsert == 1)
@@ -138,7 +136,7 @@ namespace AppVinteUm
 
                             try
                             {
-                                sociodal.update(new Socio(qtdAcoes, nome, cpf, idade, saldo, tipoCliente));
+                                sociodal.insert(new Socio(qtdAcoes, nome, cpf, idade, saldo, tipoCliente));
                             }
                             catch (Exception)
                             {
@@ -147,7 +145,8 @@ namespace AppVinteUm
                             }
                             finally
                             {
-                                Console.WriteLine("Inserção concluída. Sócio " + sociodal.getLastRegister() + "inserido com sucesso.");
+                                Console.WriteLine("Inserção concluída com sucesso.");
+                                sociodal.getLastRegister();
                             }
                         }
                     }
@@ -167,16 +166,20 @@ namespace AppVinteUm
                             saldo = Gerador.Saldo();
                             tipoCliente = GeraOutrosDados.TipoCliente();
                             qtdAcoes = GeraOutrosDados.QtdAcoes();
-                            
-                            socios[i] = new Socio(qtdAcoes, nome, cpf, idade, saldo, tipoCliente);
 
                             try
                             {
-                                sociodal.insert(new Socio(socios[i].QtdAcoes, socios[i].Nome, socios[i].CPF, socios[i].Idade, socios[i].Saldo, socios[i].TipoCliente));
+                                sociodal.insert(new Socio(qtdAcoes, nome, cpf, idade, saldo, tipoCliente));
+                            }
+                            catch (Exception)
+                            {
+                                sociodal.delete(new Socio(qtdAcoes, nome, cpf, idade, saldo, tipoCliente));
+                                Console.WriteLine("ERRO ao tentar inserir este sócio.");
                             }
                             finally
                             {
-                                sociodal.delete(socios[i]);
+                                Console.WriteLine("Inserção concluída com sucesso.");
+                                sociodal.getLastRegister();
                             }
                         }
                     }
@@ -185,8 +188,7 @@ namespace AppVinteUm
                 }
                 else if (userChoice == 3)
                 {
-                    Console.WriteLine("Quer geradar dados do funcionário ou inserir dados? \nDigite: \n1 - Inserir dados \n2 - Gerar dados");
-                    Console.Write("Número: ");
+                    Console.WriteLine("Quer geradar dados do funcionário ou inserir dados? Digite: \n1 - Inserir dados \n2 - Gerar dados \nNúmero:");
                     createOrInsert = int.Parse(Console.ReadLine());
 
                     if (createOrInsert == 1)
@@ -223,7 +225,8 @@ namespace AppVinteUm
                             }
                             finally
                             {
-                                Console.WriteLine("Inserção concluída. Funcionário " + funcionariodal.getLastRegister() + "inserido com sucesso.");
+                                Console.WriteLine("Inserção concluída com sucesso.");
+                                funcionariodal.getLastRegister();
                             }
                         }
                     }
@@ -235,6 +238,8 @@ namespace AppVinteUm
                         Console.WriteLine("Inserindo dados do funcionário.");
                         for (int i = 0; i < qtdCreates; i++)
                         {
+                            funcionariodal = new FuncionarioDAL();
+
                             idade = Gerador.Idade();
                             cpf = Gerador.Cpf();
                             nome = Gerador.NomePessoa();
@@ -242,16 +247,19 @@ namespace AppVinteUm
                             cargo = GeraOutrosDados.Cargo();
                             salarioPorHora = GeraOutrosDados.SalarioPorHora();
 
-                            funcionariodal = new FuncionarioDAL();
-                            funcionarios[i] = new Funcionario(nome, cpf, idade, salarioPorHora, cargo, saldo);
-
                             try
                             {
-                                funcionariodal.insert(new Funcionario(funcionarios[i].Nome, funcionarios[i].CPF, funcionarios[i].Idade, funcionarios[i].SalarioPorHora, funcionarios[i].Cargo, funcionarios[i].Saldo));
+                                funcionariodal.insert(new Funcionario(nome, cpf, idade, salarioPorHora, cargo, saldo));
+                            }
+                            catch (Exception)
+                            {
+                                funcionariodal.delete(new Funcionario(nome, cpf, idade, salarioPorHora, cargo, saldo));
+                                Console.WriteLine("ERRO ao tentar inserir este funcionário.");
                             }
                             finally
                             {
-                                Console.WriteLine("Inserção concluída. Funcionário " + funcionariodal.getLastRegister() + "inserido com sucesso.");
+                                Console.WriteLine("Inserção concluída com sucesso.");
+                                funcionariodal.getLastRegister();
                             }
                         }
                     }
@@ -260,7 +268,7 @@ namespace AppVinteUm
                 }
                 else if (userChoice == 4)
                 {
-                    Console.WriteLine("Quer geradar dados do fornecedor ou inserir dados? \nDigite: \n1 - Inserir dados \n2 - Gerar dados");
+                    Console.WriteLine("Quer geradar dados do fornecedor ou inserir dados? Digite: \n1 - Inserir dados \n2 - Gerar dados");
                     Console.Write("Número: ");
                     createOrInsert = int.Parse(Console.ReadLine());
 
@@ -294,29 +302,38 @@ namespace AppVinteUm
                             }
                             finally
                             {
-                                Console.WriteLine("Inserção concluída. Fornecedor " + fornecedordal.getLastRegister() + "inserido com sucesso.");
+                                Console.WriteLine("Inserção concluída com sucesso.");
+                                fornecedordal.getLastRegister();
                             }
                         }
                     }
                     else
                     {
-                        for (int i = 0; i < fornecedores.Count; i++)
+                        Console.WriteLine("Quantos fornecedores quer inserir? \nInsira um número:");
+                        qtdCreates = int.Parse(Console.ReadLine());
+
+                        for (int i = 0; i < qtdCreates; i++)
                         {
+                            fornecedordal = new FornecedorDAL();
+
                             nomeEmpresa = Gerador.NomeEmpresa();
                             tipoProduto = GeraOutrosDados.TipoProduto();
                             qtdFornecidaAoMes = GeraOutrosDados.QuantidadeFornecidaAoMes();
                             cnpj = GeraOutrosDados.Cnpj();
 
-                            fornecedordal = new FornecedorDAL();
-                            fornecedores[i] = new Fornecedor(nomeEmpresa, cnpj, tipoProduto, qtdFornecidaAoMes);
-
                             try
                             {
-                                fornecedordal.insert(new Fornecedor(fornecedores[i].Nome, fornecedores[i].CNPJ, fornecedores[i].TipoDeProduto, fornecedores[i].QuantidadeFornecidaAoMes));
+                                fornecedordal.insert(new Fornecedor(nomeEmpresa, cnpj, tipoProduto, qtdFornecidaAoMes));
+                            }
+                            catch (Exception)
+                            {
+                                fornecedordal.delete(new Fornecedor(nomeEmpresa, cnpj, tipoProduto, qtdFornecidaAoMes));
+                                Console.WriteLine("ERRO ao tentar inserir este fornecedor.");
                             }
                             finally
                             {
-                                fornecedordal.delete(fornecedores[i]);
+                                Console.WriteLine("Inserção concluída com sucesso.");
+                                fornecedordal.getLastRegister();
                             }
                         }
 
@@ -333,8 +350,8 @@ namespace AppVinteUm
 
         public static void Remover()
         {
-            int userChoice;
-            string cpfOrCnpj;
+            int userChoice, idOrCpf, id;
+            string cpfOrCnpj, cnpj, cpf;
             bool repeat = false;
 
             ClienteDAL clientedal = new ClienteDAL();
@@ -343,124 +360,278 @@ namespace AppVinteUm
             SocioDAL sociodal = new SocioDAL();
 
             Console.Clear();
-            Console.WriteLine("O que será removido?");
-            Console.Write("Menu principal: \n1 - Cliente Normal \n2 - Cliente Sócio \n3 - Funcionário  \n4 - Fornecedor \n5 - Sair \n");
+            Console.WriteLine("MENU PRINCIPAL: ");
+            Console.Write("O que será removido? \n1 - Cliente Normal \n2 - Cliente Sócio \n3 - Funcionário  \n4 - Fornecedor \n5 - Sair \n");
             Console.WriteLine();
             Console.Write("Escolha uma opção:");
             userChoice = int.Parse(Console.ReadLine());
 
             while (repeat == false)
             {
-                switch (userChoice)
+                if (userChoice == 1)
                 {
-                    case 1:
-                        clientedal = new ClienteDAL();
+                    Console.WriteLine("Quer remover cliente por ID ou CPF? \n1 - ID \n2 - CPF \nEscolha uma opção: ");
+                    idOrCpf = int.Parse(Console.ReadLine());
+
+                    if (idOrCpf == 1)
+                    {
+                        Console.WriteLine("-------------------------------//-----------------------");
                         Console.WriteLine("Lista todos os clientes normais: ");
                         clientedal.getAll();
                         Console.WriteLine("-------------------------------//-----------------------");
+                        Console.WriteLine("Qual elemento será removido?");
+                        Console.Write("Digite o ID: ");
+                        id = int.Parse(Console.ReadLine());
 
+                        Cliente cliente = new Cliente();
+                        cliente = clientedal.getById(id);
+
+                        try
+                        {
+                            clientedal.delete(cliente);
+                        }
+                        catch (Exception e)
+                        {
+                            clientedal.getById(id);
+                            Console.WriteLine(e.Message);
+                        }
+                        finally
+                        {
+                            Console.WriteLine("O elemento [" + id + "] foi removido com sucesso.");
+                        }
+                    }
+                    else if (idOrCpf == 2)
+                    {
+                        Cliente cliente = new Cliente();
+                        Console.WriteLine("-------------------------------//-----------------------");
+                        Console.WriteLine("Lista todos os clientes normais: ");
+                        clientedal.getAll();
+                        Console.WriteLine("-------------------------------//-----------------------");
                         Console.WriteLine("Qual elemento será removido?");
                         Console.Write("Digite o CPF: ");
-                        cpfOrCnpj = Console.ReadLine();
+                        cpf = Console.ReadLine();
 
-                        if (!string.IsNullOrWhiteSpace(cpfOrCnpj))
+                        cliente = clientedal.getByCpf(cpf);
+
+                        try
                         {
-                            clientedal.getByCpf(cpfOrCnpj);
-
-                            try
-                            {
-                                clientedal.delete(new Cliente());
-                            }
-                            finally
-                            {
-                                Console.WriteLine("O elemento [" + cpfOrCnpj + "] foi removido com sucesso.");
-                            }
+                            clientedal.delete(cliente);
                         }
-
-                        repeat = true;
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
+                        finally
+                        {
+                            Console.WriteLine("O elemento [" + cpf + "] foi removido com sucesso.");
+                        }
+                    }
+                    else
+                    {
                         break;
-                    case 2:
+                    }
+
+                    repeat = true;
+                    Console.Clear(); //REVER
+                    //VOLTAR AO MENU PRINCIPAL
+                }
+                else if (userChoice == 2)
+                {
+                    Console.WriteLine("Quer remover sócio por ID ou CPF? \n1 - ID \n2 - CPF \nEscolha uma opção: ");
+                    idOrCpf = int.Parse(Console.ReadLine());
+
+                    if (idOrCpf == 1)
+                    {
+                        Socio socio = new Socio();
                         sociodal = new SocioDAL();
+                        Console.WriteLine("-------------------------------//-----------------------");
                         Console.WriteLine("Lista todos os clientes sócios: ");
                         sociodal.getAll();
                         Console.WriteLine("-------------------------------//-----------------------");
+                        Console.WriteLine("Qual elemento será removido?");
+                        Console.Write("Digite o ID: ");
+                        id = int.Parse(Console.ReadLine());
 
+                        socio = sociodal.getById(id);
+
+                        try
+                        {
+                            sociodal.delete(socio);
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
+                        finally
+                        {
+                            Console.WriteLine("O elemento [" + id + "] foi removido com sucesso.");
+                        }
+                    }
+                    else if (idOrCpf == 2)
+                    {
+                        Socio socio = new Socio();
+                        sociodal = new SocioDAL();
+                        Console.WriteLine("-------------------------------//-----------------------");
+                        Console.WriteLine("Lista todos os clientes sócios: ");
+                        sociodal.getAll();
+                        Console.WriteLine("-------------------------------//-----------------------");
                         Console.WriteLine("Qual elemento será removido?");
                         Console.Write("Digite o CPF: ");
-                        cpfOrCnpj = Console.ReadLine();
+                        cpf = Console.ReadLine();
 
-                        if (!string.IsNullOrWhiteSpace(cpfOrCnpj))
+                        socio = sociodal.getByCpf(cpf);
+
+                        try
                         {
-                            sociodal.getByCpf(cpfOrCnpj);
+                            sociodal.delete(socio);
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
+                        finally
+                        {
+                            Console.WriteLine("O elemento [" + cpf + "] foi removido com sucesso.");
+                        }
+                    }
+                    else
+                    {
+                        FuncaoMenu.Sair(); //REVER
+                        break;
+                    }
+                }
+                else if (userChoice == 3)
+                {
+                    Console.WriteLine("Quer remover funcionário por ID ou CPF? \n1 - ID \n2 - CPF \nEscolha uma opção: ");
+                    idOrCpf = int.Parse(Console.ReadLine());
 
-                            try
-                            {
-                                sociodal.delete(new Socio());
-                            }
-                            finally
-                            {
-                                Console.WriteLine("O elemento [" + cpfOrCnpj + "] foi removido com sucesso.");
-                            }
+                    if (idOrCpf == 1)
+                    {
+                        Funcionario funcionario = new Funcionario();
+                        funcionariodal = new FuncionarioDAL();
+                        Console.WriteLine("-------------------------------//-----------------------");
+                        Console.WriteLine("Lista todos os funcionários: ");
+                        funcionariodal.getAll();
+                        Console.WriteLine("-------------------------------//-----------------------");
+                        Console.WriteLine("Qual elemento será removido?");
+                        Console.Write("Digite o ID: ");
+                        id = int.Parse(Console.ReadLine());
+                        funcionario = funcionariodal.getById(id);
+
+                        try
+                        {
+                            funcionariodal.delete(funcionario);
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
+                        finally
+                        {
+                            Console.WriteLine("O elemento [" + id + "] foi removido com sucesso.");
                         }
 
-                        repeat = true;
-                        break;
-                    case 3:
+
+                    }
+                    else if (idOrCpf == 2)
+                    {
+                        Funcionario funcionario = new Funcionario();
                         funcionariodal = new FuncionarioDAL();
                         Console.WriteLine("Lista todos os funcionários: ");
                         funcionariodal.getAll();
                         Console.WriteLine("-------------------------------//-----------------------");
-
                         Console.WriteLine("Qual elemento será removido?");
                         Console.Write("Digite o CPF: ");
-                        cpfOrCnpj = Console.ReadLine();
+                        cpf = Console.ReadLine();
 
-                        if (!string.IsNullOrWhiteSpace(cpfOrCnpj))
+                        funcionario = funcionariodal.getByCpf(cpf);
+
+                        try
                         {
-                            funcionariodal.getByCpf(cpfOrCnpj);
-
-                            try
-                            {
-                                funcionariodal.delete(new Funcionario());
-                            }
-                            finally
-                            {
-                                Console.WriteLine("O elemento [" + cpfOrCnpj + "] foi removido com sucesso.");
-                            }
+                            funcionariodal.delete(funcionario);
                         }
-
-                        repeat = true;
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
+                        finally
+                        {
+                            Console.WriteLine("O elemento [" + cpf + "] foi removido com sucesso.");
+                        }
+                    }
+                    else
+                    {
                         break;
-                    case 4:
+                    }
+
+                    repeat = true;
+                }
+                else if (userChoice == 4)
+                {
+                    Fornecedor fornecedor = new Fornecedor();
+                    Console.WriteLine("Quer remover funcionário por ID ou CNPJ? \n1 - ID \n2 - CNPJ \nEscolha uma opção: ");
+                    idOrCpf = int.Parse(Console.ReadLine());
+
+                    if (idOrCpf == 1)
+                    {
                         fornecedordal = new FornecedorDAL();
+                        Console.WriteLine("-------------------------------//-----------------------");
                         Console.WriteLine("Lista todos os fornecedores: ");
                         fornecedordal.getAll();
                         Console.WriteLine("-------------------------------//-----------------------");
-
                         Console.WriteLine("Qual elemento será removido?");
-                        Console.Write("Digite o CNPJ: ");
-                        cpfOrCnpj = Console.ReadLine();
+                        Console.Write("Digite o ID: ");
+                        id = int.Parse(Console.ReadLine());
 
-                        if (!string.IsNullOrWhiteSpace(cpfOrCnpj))
+                        fornecedor = fornecedordal.getById(id);
+
+                        try
                         {
-                            fornecedordal.getByCnpj(cpfOrCnpj);
-
-                            try
-                            {
-                                fornecedordal.delete(new Fornecedor());
-                            }
-                            finally
-                            {
-                                Console.WriteLine("O elemento [" + cpfOrCnpj + "] foi removido com sucesso.");
-                            }
+                            fornecedordal.delete(fornecedor);
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
+                        finally
+                        {
+                            Console.WriteLine("O elemento [" + id + "] foi removido com sucesso.");
                         }
 
                         repeat = true;
-                        break;
-                    default:
-                        Console.WriteLine("Opção inválida!");
-                        repeat = false;
-                        break;
+                    }
+                    else
+                    {
+                        fornecedordal = new FornecedorDAL();
+                        Console.WriteLine("-------------------------------//-----------------------");
+                        Console.WriteLine("Lista todos os fornecedores: ");
+                        fornecedordal.getAll();
+                        Console.WriteLine("-------------------------------//-----------------------");
+                        Console.WriteLine("Qual elemento será removido?");
+                        Console.Write("Digite o CNPJ: ");
+                        cnpj = Console.ReadLine();
+
+                        fornecedor = fornecedordal.getByCnpj(cnpj);
+
+                        try
+                        {
+                            fornecedordal.delete(fornecedor);
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
+                        finally
+                        {
+                            Console.WriteLine("O elemento [" + cnpj + "] foi removido com sucesso.");
+                        }
+
+                        repeat = true;
+                    }
+                }
+                else
+                {
+                    repeat = false;
                 }
             }
         }
@@ -825,6 +996,7 @@ namespace AppVinteUm
         {
             Console.WriteLine("Obrigado por usar nosso programa.");
             Console.WriteLine("Encerrando programa...");
+            //RETORNAR AO MENU PRINCIPAL
         }
     }
 }

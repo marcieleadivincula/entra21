@@ -152,6 +152,18 @@ namespace AppVinteUm
             return dal.getLastRegister();
         }
 
+        public Cliente getByCpf(Cliente cliente)
+        {
+            StringBuilder erros = new StringBuilder();
+
+            if (string.IsNullOrWhiteSpace(cliente.CPF))
+            {
+                erros.AppendLine("O CPF do cliente deve ser informado. ");
+            }
+
+            return dal.getByCpf(cliente.CPF);
+        }
+
         public Cliente getBySumSaldo(Cliente cliente)
         {
             StringBuilder erros = new StringBuilder();

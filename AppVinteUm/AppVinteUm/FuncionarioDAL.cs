@@ -47,9 +47,9 @@ namespace AppVinteUm
 
                 return "Funcionário criado com sucesso!";
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                Console.WriteLine(e.Message);
                 throw new Exception("Erro no DB, contate o administrador.");
             }
             finally
@@ -84,8 +84,9 @@ namespace AppVinteUm
                 }
                 return funcionario;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 throw new Exception("Erro no DB, contate o administrador.");
             }
             finally
@@ -148,8 +149,9 @@ namespace AppVinteUm
                 command.ExecuteNonQuery();
                 return "Atualizado com sucesso!";
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 return "Erro no DB, contate o administrador.";
             }
             finally
@@ -171,8 +173,9 @@ namespace AppVinteUm
                 command.ExecuteNonQuery();
                 return "Deletado com sucesso!";
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 return "Erro no DB, contate o administrador.";
             }
             finally
@@ -208,9 +211,9 @@ namespace AppVinteUm
                 }
                 return funcionario;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                Console.WriteLine(e.Message);
                 throw new Exception("Erro no DB, contate o administrador.");
             }
             finally
@@ -224,7 +227,7 @@ namespace AppVinteUm
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
             command.Connection = conn;
-            command.CommandText = "SELECT * FROM Funcionario WHERE Id = @Id";
+            command.CommandText = "SELECT * FROM Funcionario WHERE Id = " + id;
             try
             {
                 conn.Open();
@@ -246,9 +249,9 @@ namespace AppVinteUm
                 }
                 return funcionario;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                Console.WriteLine(e.Message);
                 throw new Exception("Erro no DB, contate o administrador.");
             }
             finally
@@ -262,7 +265,7 @@ namespace AppVinteUm
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
             command.Connection = conn;
-            command.CommandText = "SELECT * FROM Funcionario WHERE CPF = @CPF";
+            command.CommandText = $"SELECT * FROM Funcionario WHERE CPF = '{cpf}'";
             try
             {
                 conn.Open();
@@ -284,9 +287,9 @@ namespace AppVinteUm
                 }
                 return funcionario;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                Console.WriteLine(e.Message);
                 throw new Exception("Erro no DB, contate o administrador.");
             }
             finally
@@ -321,9 +324,9 @@ namespace AppVinteUm
                 }
                 return funcionario;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                Console.WriteLine(e.Message);
                 throw new Exception("Erro no DB, contate o administrador.");
             }
             finally

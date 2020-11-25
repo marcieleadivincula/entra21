@@ -9,47 +9,47 @@ namespace AppVinteUm
 {
     public class FornecedorDAL
     {
-        public string create()
-        {
-            //CREATE Fornecedor
-            //SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
-            //SqlCommand cmd;
+        //public string create()
+        //{
+        //    //CREATE Fornecedor
+        //    //SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
+        //    //SqlCommand cmd;
 
-            //CRIA TABELA Fornecedor
-            //string create = "CREATE TABLE Fornecedor (" +
-            //    "[Id] INT IDENTITY(1,1) NOT NULL, " +
-            //    "[Nome] VARCHAR(60), " +
-            //    "[CNPJ] VARCHAR(20), " +
-            //    "[TipoDeProduto] INT NOT NULL, " +
-            //    "[QuantidadeFornecidaAoMes] INT NOT NULL, " +
-            //    "PRIMARY KEY CLUSTERED([Id] ASC))";
+        //    //CRIA TABELA Fornecedor
+        //    //string create = "CREATE TABLE Fornecedor (" +
+        //    //    "[Id] INT IDENTITY(1,1) NOT NULL, " +
+        //    //    "[Nome] VARCHAR(60), " +
+        //    //    "[CNPJ] VARCHAR(20), " +
+        //    //    "[TipoDeProduto] INT NOT NULL, " +
+        //    //    "[QuantidadeFornecidaAoMes] INT NOT NULL, " +
+        //    //    "PRIMARY KEY CLUSTERED([Id] ASC))";
 
-            //cmd = new SqlCommand(create, conn);
-            //conn.Open();
-            //cmd.ExecuteNonQuery();
-            //conn.Close();
+        //    //cmd = new SqlCommand(create, conn);
+        //    //conn.Open();
+        //    //cmd.ExecuteNonQuery();
+        //    //conn.Close();
 
-            SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
-            SqlCommand command = new SqlCommand();
-            command.Connection = conn;
-            command.CommandText = "CREATE TABLE Fornecedor ([Id] INT IDENTITY(1,1) NOT NULL, [Nome] VARCHAR(60), [CNPJ] VARCHAR(20), [TipoDeProduto] INT NOT NULL, [QuantidadeFornecidaAoMes] INT NOT NULL, PRIMARY KEY CLUSTERED([Id] ASC)) VALUES(@Nome, @CNPJ, @TipoDeProduto, @QuantidadeFornecidaAoMes)";
-            try
-            {
-                conn.Open();
-                command.ExecuteNonQuery();
+        //    SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
+        //    SqlCommand command = new SqlCommand();
+        //    command.Connection = conn;
+        //    command.CommandText = "CREATE TABLE Fornecedor ([Id] INT IDENTITY(1,1) NOT NULL, [Nome] VARCHAR(60), [CNPJ] VARCHAR(20), [TipoDeProduto] INT NOT NULL, [QuantidadeFornecidaAoMes] INT NOT NULL, PRIMARY KEY CLUSTERED([Id] ASC)) VALUES(@Nome, @CNPJ, @TipoDeProduto, @QuantidadeFornecidaAoMes)";
+        //    try
+        //    {
+        //        conn.Open();
+        //        command.ExecuteNonQuery();
 
-                return "Fornecedor criado com sucesso!";
-            }
-            catch (Exception)
-            {
+        //        return "Fornecedor criado com sucesso!";
+        //    }
+        //    catch (Exception)
+        //    {
 
-                throw new Exception("Erro no DB, contate o administrador.");
-            }
-            finally
-            {
-                conn.Dispose();
-            }
-        }
+        //        throw new Exception("Erro no DB, contate o administrador.");
+        //    }
+        //    finally
+        //    {
+        //        conn.Dispose();
+        //    }
+        //}
 
         public string insert(Fornecedor fornecedor)
         {
@@ -109,8 +109,9 @@ namespace AppVinteUm
                 }
                 return fornecedor;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 throw new Exception("Erro no DB, contate o administrador.");
             }
             finally
@@ -134,8 +135,9 @@ namespace AppVinteUm
                 command.ExecuteNonQuery();
                 return "Deletado com sucesso!";
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 return "Erro no DB, contate o administrador.";
             }
             finally
@@ -162,8 +164,9 @@ namespace AppVinteUm
                 command.ExecuteNonQuery();
                 return "Atualizado com sucesso!";
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 return "Erro no DB, contate o administrador.";
             }
             finally
@@ -198,9 +201,9 @@ namespace AppVinteUm
                 }
                 return fornecedor;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                Console.WriteLine(e.Message);
                 throw new Exception("Erro no DB, contate o administrador.");
             }
             finally
@@ -214,7 +217,7 @@ namespace AppVinteUm
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
             command.Connection = conn;
-            command.CommandText = "SELECT * FROM Fornecedor WHERE Id = @Id";
+            command.CommandText = "SELECT * FROM Fornecedor WHERE Id = " + id;
             try
             {
                 conn.Open();
@@ -235,9 +238,9 @@ namespace AppVinteUm
                 }
                 return fornecedor;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                Console.WriteLine(e.Message);
                 throw new Exception("Erro no DB, contate o administrador.");
             }
             finally
@@ -246,12 +249,12 @@ namespace AppVinteUm
             }
         }
 
-        public Fornecedor getByCnpj(string cpnj)
+        public Fornecedor getByCnpj(string cnpj)
         {
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
             command.Connection = conn;
-            command.CommandText = "SELECT * FROM Fornecedor WHERE CNPJ = @CNPJ";
+            command.CommandText = $"SELECT * FROM Fornecedor WHERE CNPJ = '{cnpj}'";
             try
             {
                 conn.Open();
@@ -272,9 +275,9 @@ namespace AppVinteUm
                 }
                 return fornecedor;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                Console.WriteLine(e.Message);
                 throw new Exception("Erro no DB, contate o administrador.");
             }
             finally
@@ -309,9 +312,9 @@ namespace AppVinteUm
                 }
                 return fornec;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                Console.WriteLine(e.Message);
                 throw new Exception("Erro no DB, contate o administrador.");
             }
             finally
@@ -346,9 +349,9 @@ namespace AppVinteUm
                 }
                 return fornecedor;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                Console.WriteLine(e.Message);
                 throw new Exception("Erro no DB, contate o administrador.");
             }
             finally

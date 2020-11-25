@@ -13,7 +13,7 @@ namespace AppVinteUm
         //Gera int TipoCliente, sendo 1 para NORMAL e 2 para SÓCIO e 0 para indefinido
         public static string TipoCliente()
         {
-            int escolha = ran.Next(1, 2);
+            int escolha = ran.Next(0, 2);
             string tipoCliente;
 
             switch (escolha)
@@ -189,30 +189,14 @@ namespace AppVinteUm
             {
                 if (i % 4 == 0)
                 {
-                    if (i == 10)
-                    {
-                        cnpj += "/";
-                    }
-                    else if (i == 15)
+                    if (i == 15)
                     {
                         cnpj += "-";
-                    }
-                    else if (i == 6)
-                    {
-                        cnpj += ".";
-                    }
-                    else if (i == 2)
-                    {
-                        cnpj += ".";
-                    }
-                    else
-                    {
-                        break;
                     }
                 }
                 else
                 {
-                    cnpj += ran.Next(0, 9);
+                    cnpj += ran.Next(0, 10);
                 }
             }
             return cnpj;
@@ -225,7 +209,7 @@ namespace AppVinteUm
             //double valorDiario = ran.Next(5, 35);
             //double valorMensal = ran.Next(151, 1046);
 
-            double saldoPorHora = ran.Next(200, 2000) + ran.NextDouble();
+            double saldoPorHora = ran.Next(0, 6) + ran.NextDouble();
             return saldoPorHora;
         }
 

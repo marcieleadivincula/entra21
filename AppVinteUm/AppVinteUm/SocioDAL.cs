@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace AppVinteUm
 {
-    public class SocioDAL: ClienteDAL
+    public class SocioDAL
     {
         public string insert(Socio socio)
         {
@@ -56,6 +56,7 @@ namespace AppVinteUm
                 conn.Open();
                 SqlDataReader reader = command.ExecuteReader();
                 List<Socio> socios = new List<Socio>();
+
                 while (reader.Read())
                 {
                     Socio s = new Socio();
@@ -71,8 +72,9 @@ namespace AppVinteUm
                 }
                 return socios;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 throw new Exception("Erro no DB, contate o administrador.");
             }
             finally
@@ -96,8 +98,9 @@ namespace AppVinteUm
                 command.ExecuteNonQuery();
                 return "Deletado com sucesso!";
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 return "Erro no DB, contate o administrador.";
             }
             finally
@@ -126,8 +129,9 @@ namespace AppVinteUm
                 command.ExecuteNonQuery();
                 return "Atualizado com sucesso!";
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 return "Erro no DB, contate o administrador.";
             }
             finally
@@ -164,9 +168,9 @@ namespace AppVinteUm
                 }
                 return socio;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                Console.WriteLine(e.Message);
                 throw new Exception("Erro no DB, contate o administrador.");
             }
             finally
@@ -180,46 +184,7 @@ namespace AppVinteUm
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
             command.Connection = conn;
-            command.CommandText = "SELECT * FROM Cliente WHERE Id = @Id";
-            try
-            {
-                conn.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                List<Socio> socios = new List<Socio>();
-                Socio socio = new Socio(); //Esta linha estava dentro do while
-
-                while (reader.Read())
-                {
-                    socio = new Socio();
-                    socio.Id = Convert.ToInt32(reader["Id"]);
-                    socio.Nome = Convert.ToString(reader["Nome"]);
-                    socio.CPF = Convert.ToString(reader["CPF"]);
-                    socio.Idade = Convert.ToInt32(reader["Idade"]);
-                    socio.Saldo = Convert.ToDouble(reader["Saldo"]);
-                    socio.TipoCliente = Convert.ToString(reader["TipoCliente"]);
-                    socio.QtdAcoes = Convert.ToDouble(reader["QtdAcoes"]);
-
-                    socios.Add(socio);
-                }
-                return socio;
-            }
-            catch (Exception)
-            {
-
-                throw new Exception("Erro no DB, contate o administrador.");
-            }
-            finally
-            {
-                conn.Dispose();
-            }
-        }
-
-        public Socio getByCpf(string cpf)
-        {
-            SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
-            SqlCommand command = new SqlCommand();
-            command.Connection = conn;
-            command.CommandText = "SELECT * FROM Cliente WHERE CPF = @CPF";
+            command.CommandText = "SELECT * FROM Cliente WHERE Id = " + id;
             try
             {
                 conn.Open();
@@ -242,9 +207,9 @@ namespace AppVinteUm
                 }
                 return socio;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                Console.WriteLine(e.Message);
                 throw new Exception("Erro no DB, contate o administrador.");
             }
             finally
@@ -253,7 +218,46 @@ namespace AppVinteUm
             }
         }
 
-        public Socio getBySumSaldo(double saldo)
+        public Socio getByCpf(string cpf)
+        {
+            SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
+            SqlCommand command = new SqlCommand();
+            command.Connection = conn;
+            command.CommandText = $"SELECT * FROM Cliente WHERE CPF = '{cpf}'";
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                List<Socio> socios = new List<Socio>();
+                Socio socio = new Socio(); 
+
+                while (reader.Read())
+                {
+                    socio = new Socio();
+                    socio.Id = Convert.ToInt32(reader["Id"]);
+                    socio.Nome = Convert.ToString(reader["Nome"]);
+                    socio.CPF = Convert.ToString(reader["CPF"]);
+                    socio.Idade = Convert.ToInt32(reader["Idade"]);
+                    socio.Saldo = Convert.ToDouble(reader["Saldo"]);
+                    socio.TipoCliente = Convert.ToString(reader["TipoCliente"]);
+                    socio.QtdAcoes = Convert.ToDouble(reader["QtdAcoes"]);
+
+                    socios.Add(socio);
+                }
+                return socio;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw new Exception("Erro no DB, contate o administrador.");
+            }
+            finally
+            {
+                conn.Dispose();
+            }
+        }
+
+        public Socio getBySumSaldo()
         {
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
@@ -281,9 +285,9 @@ namespace AppVinteUm
                 }
                 return socio;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                Console.WriteLine(e.Message);
                 throw new Exception("Erro no DB, contate o administrador.");
             }
             finally

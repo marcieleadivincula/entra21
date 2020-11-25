@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AppVinteUm
 {
-    public class SocioBLL: ClienteBLL
+    public class SocioBLL
     {
         SocioDAL dal = new SocioDAL();
         public string insert(Socio socio)
