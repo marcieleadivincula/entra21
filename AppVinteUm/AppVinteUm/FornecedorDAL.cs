@@ -95,7 +95,7 @@ namespace AppVinteUm
             {
                 conn.Open();
                 SqlDataReader reader = command.ExecuteReader();
-                List<Fornecedor> fornecedor = new List<Fornecedor>();
+                List<Fornecedor> fornecedores = new List<Fornecedor>();
                 while (reader.Read())
                 {
                     Fornecedor f = new Fornecedor();
@@ -105,9 +105,9 @@ namespace AppVinteUm
                     f.TipoDeProduto = Convert.ToInt32(reader["TipoDeProduto"]);
                     f.QuantidadeFornecidaAoMes = Convert.ToInt32(reader["QuantidadeFornecidaAoMes"]);
 
-                    fornecedor.Add(f);
+                    fornecedores.Add(f);
                 }
-                return fornecedor;
+                return fornecedores;
             }
             catch (Exception e)
             {

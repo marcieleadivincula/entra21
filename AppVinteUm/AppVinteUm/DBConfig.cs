@@ -8,10 +8,10 @@ namespace AppVinteUm
 {
     public class DBConfig
     {
-        //public const string CONNECTION_STRING = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Desktop\marciele\entra21\AppVinteUm\AppVinteUm\Database2.mdf;Integrated Security=True Timeout=30";
+        public const string CONNECTION_STRING = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Desktop\marciele\entra21\AppVinteUm\AppVinteUm\Database2.mdf;Integrated Security=True;Connect Timeout=30";
 
-        //public const string CONNECTION_STRING = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Desktop\marciele\entra21\AppVinteUm\AppVinteUm\Database2.mdf;Integrated Security=True Timeout=30";
+        //public const string CONNECTION_STRING = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Desktop\marciele\entra21\AppVinteUm\AppVinteUm\localDB.mdf;Integrated Security=True;Connect Timeout=30";
 
-        public const string CONNECTION_STRING = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\marci\source\repos\entra21\AppVinteUm\AppVinteUm\Database1.mdf;Integrated Security=True";
+        //public const string CONNECTION_STRING = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\marci\source\repos\entra21\AppVinteUm\AppVinteUm\Database1.mdf;Integrated Security=True";
     }
 }
