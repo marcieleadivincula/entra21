@@ -58,9 +58,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adicionar.cs" />
+    <Compile Include="AlterarItem.cs" />
+    <Compile Include="BaterCartao.cs" />
+    <Compile Include="CalcularLucro.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="ClienteBLL.cs" />
     <Compile Include="ClienteDAL.cs" />
+    <Compile Include="ComprarItem.cs" />
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -78,9 +83,12 @@
     <Compile Include="GeraOutrosDados.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Remover.cs" />
+    <Compile Include="Sair.cs" />
     <Compile Include="Socio.cs" />
     <Compile Include="SocioBLL.cs" />
     <Compile Include="SocioDAL.cs" />
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

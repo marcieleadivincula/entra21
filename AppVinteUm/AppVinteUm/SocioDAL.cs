@@ -50,16 +50,18 @@ namespace AppVinteUm
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
             command.Connection = conn;
-            command.CommandText = "SELECT * FROM Cliente WHERE TipoCliente LIKE 'Sócio'";
+            command.CommandText = "SELECT * FROM Cliente WHERE TipoCliente LIKE 'S%'";
+            List<Socio> socios = new List<Socio>();
+
             try
             {
                 conn.Open();
                 SqlDataReader reader = command.ExecuteReader();
-                List<Socio> socios = new List<Socio>();
+                Socio s = new Socio();
 
                 while (reader.Read())
                 {
-                    Socio s = new Socio();
+                    s = new Socio();
                     s.Id = Convert.ToInt32(reader["Id"]);
                     s.Nome = Convert.ToString(reader["Nome"]);
                     s.CPF = Convert.ToString(reader["CPF"]);
@@ -75,6 +77,7 @@ namespace AppVinteUm
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                Console.WriteLine(e.InnerException);
                 throw new Exception("Erro no DB, contate o administrador.");
             }
             finally
@@ -190,7 +193,7 @@ namespace AppVinteUm
                 conn.Open();
                 SqlDataReader reader = command.ExecuteReader();
                 List<Socio> socios = new List<Socio>();
-                Socio socio = new Socio(); 
+                Socio socio = new Socio();
 
                 while (reader.Read())
                 {
@@ -229,7 +232,7 @@ namespace AppVinteUm
                 conn.Open();
                 SqlDataReader reader = command.ExecuteReader();
                 List<Socio> socios = new List<Socio>();
-                Socio socio = new Socio(); 
+                Socio socio = new Socio();
 
                 while (reader.Read())
                 {
@@ -268,7 +271,46 @@ namespace AppVinteUm
                 conn.Open();
                 SqlDataReader reader = command.ExecuteReader();
                 List<Socio> socios = new List<Socio>();
-                Socio socio = new Socio(); 
+                Socio socio = new Socio();
+
+                while (reader.Read())
+                {
+                    socio = new Socio();
+                    socio.Id = Convert.ToInt32(reader["Id"]);
+                    socio.Nome = Convert.ToString(reader["Nome"]);
+                    socio.CPF = Convert.ToString(reader["CPF"]);
+                    socio.Idade = Convert.ToInt32(reader["Idade"]);
+                    socio.Saldo = Convert.ToDouble(reader["Saldo"]);
+                    socio.TipoCliente = Convert.ToString(reader["TipoCliente"]);
+                    socio.QtdAcoes = Convert.ToDouble(reader["QtdAcoes"]);
+
+                    socios.Add(socio);
+                }
+                return socio;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw new Exception("Erro no DB, contate o administrador.");
+            }
+            finally
+            {
+                conn.Dispose();
+            }
+        }
+
+        public Cliente getBySaldo(string cpf)
+        {
+            SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
+            SqlCommand command = new SqlCommand();
+            command.Connection = conn;
+            command.CommandText = $"SELECT SUM(Saldo) FROM Cliente WHERE CPF LIKE '{cpf}'";
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                List<Socio> socios = new List<Socio>();
+                Socio socio = new Socio();
 
                 while (reader.Read())
                 {

@@ -11,9 +11,9 @@ namespace AppVinteUm
         private static Random ran = new Random();
 
         //Gera int TipoCliente, sendo 1 para NORMAL e 2 para SÓCIO e 0 para indefinido
-        public static string TipoCliente()
+        public static string TipoClienteNormal()
         {
-            int escolha = ran.Next(0, 2);
+            int escolha = ran.Next(1, 2);
             string tipoCliente;
 
             switch (escolha)
@@ -21,7 +21,22 @@ namespace AppVinteUm
                 case 1:
                     tipoCliente = "Nomal";
                     break;
-                case 2:
+                default:
+                    tipoCliente = "";
+                    break;
+            }
+
+            return tipoCliente;
+        }
+
+        public static string TipoClienteSocio()
+        {
+            int escolha = ran.Next(1, 2);
+            string tipoCliente;
+
+            switch (escolha)
+            {
+                case 1:
                     tipoCliente = "Sócio";
                     break;
                 default:
@@ -111,35 +126,35 @@ namespace AppVinteUm
         //O tipoDeProduto gera um custo para loja, o custo é dado na tabela abaixo
         public static int TipoProduto()
         {
-            int escolha = ran.Next(1, 6);
-            double tipoProduto;
+            int tipoProduto = ran.Next(1, 7);
+            double valorProduto;
 
-            switch (escolha)
+            switch (tipoProduto)
             {
                 case 1:
-                    tipoProduto = 5.45;
+                    valorProduto = 5.45;
                     break;
                 case 2:
-                    tipoProduto = 6.78;
+                    valorProduto = 6.78;
                     break;
                 case 3:
-                    tipoProduto = 1.43;
+                    valorProduto = 1.43;
                     break;
                 case 4:
-                    tipoProduto = 2.68;
+                    valorProduto = 2.68;
                     break;
                 case 5:
-                    tipoProduto = 3.78;
+                    valorProduto = 3.78;
                     break;
                 case 6:
-                    tipoProduto = 2.96;
+                    valorProduto = 2.96;
                     break;
                 default:
-                    tipoProduto = 0.0;
+                    valorProduto = 0.0;
                     break;
             }
 
-            return (int)tipoProduto;
+            return (int)valorProduto;
         }
 
         // Gera um quantidade fornecida ao mês de 1 a 6
@@ -152,31 +167,7 @@ namespace AppVinteUm
         // Gera um QtdAcoes de 1 a 10 (clientes) de até no máximo de 4.95% das ações
         public static float QtdAcoes()
         {
-            int escolha = ran.Next(1, 10);
-            int acoes = ran.Next(1, 4);
-            double qtdAcoes;
-
-            switch (escolha)
-            {
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                case 9:
-                    qtdAcoes = acoes;
-                    break;
-                case 10:
-                    qtdAcoes = 5.45;
-                    break;
-                default:
-                    qtdAcoes = 0.0;
-                    break;
-            }
-
+            double qtdAcoes = ran.Next(1, 10);
             return (int)qtdAcoes;
         }
 
@@ -209,7 +200,7 @@ namespace AppVinteUm
             //double valorDiario = ran.Next(5, 35);
             //double valorMensal = ran.Next(151, 1046);
 
-            double saldoPorHora = ran.Next(0, 6) + ran.NextDouble();
+            double saldoPorHora = ran.Next(1, 6) + ran.NextDouble();
             return saldoPorHora;
         }
 

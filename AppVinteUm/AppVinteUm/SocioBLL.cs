@@ -29,7 +29,7 @@ namespace AppVinteUm
             }
 
             //Não pode haver CPF ou CNPJ repetidos
-            if (socio.CPF.Equals(socio.CPF))
+            if (socio.CPF.Equals(socio.CPF) || socio.CPF.Contains(socio.CPF))
             {
                 erros.AppendLine("Não pode haver CPF repetidos. EQUALS");
             }
@@ -62,6 +62,12 @@ namespace AppVinteUm
             if (socio.TipoCliente.Length > 20)
             {
                 erros.AppendLine("O tipo de cliente conter mais que 20 caracteres.");
+            }
+
+            //DEVE VALIDAR O TIPO ANTES DE INSERIR NA TABELA  - REVER
+            if (!socio.TipoCliente.Equals("Sócio"))
+            {
+                erros.AppendLine("O tipo de cliente deve ser SÓCIO.");
             }
 
             if (socio.QtdAcoes < 0 || socio.QtdAcoes != 0)
@@ -117,7 +123,7 @@ namespace AppVinteUm
             }
 
             //Não pode haver CPF ou CNPJ repetidos
-            if (socio.CPF.Equals(socio.CPF))
+            if (socio.CPF.Equals(socio.CPF) || socio.CPF.Contains(socio.CPF))
             {
                 erros.AppendLine("Não pode haver CPF repetidos. EQUALS");
             }
@@ -146,11 +152,18 @@ namespace AppVinteUm
             {
                 erros.AppendLine("O tipo de cliente deve ser informado.");
             }
-
+            
             if (socio.TipoCliente.Length > 20)
             {
                 erros.AppendLine("O tipo de cliente conter mais que 20 caracteres.");
             }
+
+            //DEVE VALIDAR O TIPO ANTES DE INSERIR NA TABELA  - REVER
+            if (!socio.TipoCliente.Equals("Sócio"))
+            {
+                erros.AppendLine("O tipo de cliente deve ser SÓCIO.");
+            }
+
 
             if (socio.QtdAcoes < 0 || socio.QtdAcoes != 0)
             {

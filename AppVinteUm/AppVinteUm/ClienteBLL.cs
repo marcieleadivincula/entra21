@@ -32,7 +32,7 @@ namespace AppVinteUm
             }
 
             //Não pode haver CPF ou CNPJ repetidos
-            if (cliente.CPF.Equals(cliente.CPF))
+            if (cliente.CPF.Equals(cliente.CPF) || cliente.CPF.Contains(cliente.CPF))
             {
                 erros.AppendLine("Não pode haver CPF repetidos.");
             }
@@ -55,6 +55,11 @@ namespace AppVinteUm
             if (cliente.TipoCliente.Length > 20)
             {
                 erros.AppendLine("O tipo de cliente conter mais que 20 caracteres.");
+            }
+
+            if (cliente.TipoCliente != "Normal")
+            {
+                erros.AppendLine("O tipo de cliente deve ser NORMAL.");
             }
 
             if (erros.Length != 0)
@@ -90,7 +95,7 @@ namespace AppVinteUm
             }
 
             //Não pode haver CPF ou CNPJ repetidos
-            if (cliente.CPF.Equals(cliente.CPF))
+            if (cliente.CPF.Equals(cliente.CPF) || cliente.CPF.Contains(cliente.CPF))
             {
                 erros.AppendLine("Não pode haver CPF repetidos.");
             }
@@ -119,6 +124,13 @@ namespace AppVinteUm
             {
                 erros.AppendLine("O tipo de cliente não pode conter mais que 20 caracteres.");
             }
+
+
+            if (cliente.TipoCliente != "Normal")
+            {
+                erros.AppendLine("O tipo de cliente deve ser NORMAL.");
+            }
+
 
             if (erros.Length != 0)
             {
@@ -175,5 +187,17 @@ namespace AppVinteUm
 
             return dal.getBySumSaldo();
         }
+
+        //public Cliente getBySaldo(Cliente cliente)
+        //{
+        //    StringBuilder erros = new StringBuilder();
+
+        //    if (cliente.Saldo < 0 || cliente.Saldo != 0)
+        //    {
+        //        erros.AppendLine("O saldo do cliente deve ser informado. ");
+        //    }
+
+        //    return dal.getBySaldo(cliente.Saldo);
+        //}
     }
 }
