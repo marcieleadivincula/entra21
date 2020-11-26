@@ -48,6 +48,8 @@ namespace AppVinteUm
                         {
                             clientedal = new ClienteDAL();
 
+                            //VERIFICAR SE ID É IGUAL AO QUE TEM NO BANCO, se for não cadastrar
+
                             Console.WriteLine("Dados a serem inseridos: ");
                             Console.Write("Nome: ");
                             nome = Console.ReadLine();
@@ -61,7 +63,6 @@ namespace AppVinteUm
                             tipoCliente = Console.ReadLine();
 
                             cliente = new Cliente(nome, cpf, idade, saldo, tipoCliente);
-
 
                             try
                             {
@@ -89,6 +90,7 @@ namespace AppVinteUm
                         {
                             clientedal = new ClienteDAL();
 
+                            //VERIFICAR SE ID É IGUAL AO QUE TEM NO BANCO, se for não cadastrar
                             idade = Gerador.Idade();
                             cpf = Gerador.Cpf();
                             nome = Gerador.NomePessoa();
@@ -129,6 +131,8 @@ namespace AppVinteUm
                         for (int i = 0; i < qtdCreates; i++)
                         {
                             sociodal = new SocioDAL();
+
+                            //VERIFICAR SE ID É IGUAL AO QUE TEM NO BANCO, se for não cadastrar
 
                             Console.WriteLine("Dados a serem inseridos: ");
                             Console.Write("Nome: ");
@@ -172,6 +176,8 @@ namespace AppVinteUm
                         {
                             sociodal = new SocioDAL();
 
+                            //VERIFICAR SE ID É IGUAL AO QUE TEM NO BANCO, se for não cadastrar
+
                             idade = Gerador.Idade();
                             cpf = Gerador.Cpf();
                             nome = Gerador.NomePessoa();
@@ -214,6 +220,8 @@ namespace AppVinteUm
                         {
                             funcionariodal = new FuncionarioDAL();
 
+                            //VERIFICAR SE ID É IGUAL AO QUE TEM NO BANCO, se for não cadastrar
+
                             Console.WriteLine("Insira os dados abaixo:");
                             Console.Write("Nome: ");
                             nome = Console.ReadLine();
@@ -255,6 +263,8 @@ namespace AppVinteUm
                         for (int i = 0; i < qtdCreates; i++)
                         {
                             funcionariodal = new FuncionarioDAL();
+
+                            //VERIFICAR SE ID É IGUAL AO QUE TEM NO BANCO, se for não cadastrar
 
                             idade = Gerador.Idade();
                             cpf = Gerador.Cpf();
@@ -299,6 +309,8 @@ namespace AppVinteUm
                         {
                             fornecedordal = new FornecedorDAL();
 
+                            //VERIFICAR SE ID É IGUAL AO QUE TEM NO BANCO, se for não cadastrar
+
                             Console.WriteLine("Insira os dados abaixo:");
                             Console.Write("Nome da Empresa: ");
                             nomeEmpresa = Console.ReadLine();
@@ -335,6 +347,8 @@ namespace AppVinteUm
                         for (int i = 0; i < qtdCreates; i++)
                         {
                             fornecedordal = new FornecedorDAL();
+
+                            //VERIFICAR SE ID É IGUAL AO QUE TEM NO BANCO, se for não cadastrar
 
                             nomeEmpresa = Gerador.NomeEmpresa();
                             tipoProduto = GeraOutrosDados.TipoProduto();

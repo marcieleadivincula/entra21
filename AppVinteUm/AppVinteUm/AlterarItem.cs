@@ -51,6 +51,9 @@ namespace AppVinteUm
 
                         //cliente = clientedal.getById(id);
 
+                        //TODO: Verificar se quer alterar todos os dados ou apenas um dos dados
+                        //VERIFICAR SE ID É IGUAL AO QUE TEM NO BANCO, se for não cadastrar
+
                         Console.WriteLine("Dados a serem alterados: ");
                         Console.Write("Nome: ");
                         nome = Console.ReadLine();
@@ -94,6 +97,9 @@ namespace AppVinteUm
 
                         clientedal.getByCpf(cpfOrCnpj);
 
+                        //TODO: Verificar se quer alterar todos os dados ou apenas um dos dados
+                        //VERIFICAR SE ID É IGUAL AO QUE TEM NO BANCO, se for não cadastrar
+
                         Console.WriteLine("Dados a serem alterados: ");
                         Console.Write("Nome: ");
                         nome = Console.ReadLine();
@@ -136,6 +142,9 @@ namespace AppVinteUm
                     Console.WriteLine("Qual será alterado? ");
                     Console.Write("Digite o CPF: ");
                     cpfOrCnpj = Console.ReadLine();
+
+                    //TODO: Verificar se quer alterar todos os dados ou apenas um dos dados
+                    //VERIFICAR SE ID É IGUAL AO QUE TEM NO BANCO, se for não cadastrar
 
                     if (string.IsNullOrWhiteSpace(cpfOrCnpj))
                     {
@@ -183,6 +192,9 @@ namespace AppVinteUm
                     Console.Write("Digite o CPF: ");
                     cpfOrCnpj = Console.ReadLine();
 
+                    //TODO: Verificar se quer alterar todos os dados ou apenas um dos dados
+                    //VERIFICAR SE ID É IGUAL AO QUE TEM NO BANCO, se for não cadastrar
+
                     if (string.IsNullOrWhiteSpace(cpfOrCnpj))
                     {
                         funcionariodal = new FuncionarioDAL();
@@ -221,51 +233,108 @@ namespace AppVinteUm
                 }
                 else if (userChoice == 4)
                 {
-                    fornecedordal = new FornecedorDAL();
-                    Console.WriteLine("Listando fornecedores: ");
-                    fornecedordal.getAll().ForEach(x => { Console.WriteLine(x.GetDados()); });
-                    Console.WriteLine("-------------------------------//-----------------------");
+                    Console.WriteLine("Quer alterar fornecedor pelo ID ou CPF? \n1 - ID \n2 - CPF \nEscolha uma opção: ");
+                    idOrCpf = int.Parse(Console.ReadLine());
 
-                    Console.WriteLine("Qual será alterado? ");
-                    Console.Write("Digite o CNPJ: ");
-                    cpfOrCnpj = Console.ReadLine();
-
-                    fornecedor = fornecedordal.getByCnpj(cpfOrCnpj);
-
-                    if (fornecedor.CNPJ == cpfOrCnpj)
+                    if (idOrCpf == 1)
                     {
-                        Console.WriteLine("Insira os novos dados: ");
-                        Console.Write("Nome da Empresa: ");
-                        nomeEmpresa = Console.ReadLine();
-                        Console.Write("Tipo de Produto: ");
-                        tipoProduto = int.Parse(Console.ReadLine());
-                        Console.Write("Quantidade Fornecida ao Mês: ");
-                        qtdFornecidaAoMes = int.Parse(Console.ReadLine());
-                        Console.Write("CNPJ: ");
-                        cnpj = Console.ReadLine();
+                        fornecedordal = new FornecedorDAL();
+                        Console.WriteLine("Listando fornecedores: ");
+                        fornecedordal.getAll().ForEach(x => { Console.WriteLine(x.GetDados()); });
+                        Console.WriteLine("-------------------------------//-----------------------");
 
-                        fornecedor = new Fornecedor(nomeEmpresa, cnpj, tipoProduto, qtdFornecidaAoMes);
+                        Console.WriteLine("Qual será alterado? ");
+                        Console.Write("Digite o ID: ");
+                        id = int.Parse(Console.ReadLine());
 
-                        try
+                        fornecedor = fornecedordal.getById(id);
+
+                        //TODO: Verificar se quer alterar todos os dados ou apenas um dos dados
+                        //VERIFICAR SE ID É IGUAL AO QUE TEM NO BANCO, se for não cadastrar
+                        if (fornecedor.Id == id)
                         {
-                            fornecedordal.update(fornecedor);
+                            Console.WriteLine("Insira os novos dados: ");
+                            Console.Write("Nome da Empresa: ");
+                            nomeEmpresa = Console.ReadLine();
+                            Console.Write("Tipo de Produto: ");
+                            tipoProduto = int.Parse(Console.ReadLine());
+                            Console.Write("Quantidade Fornecida ao Mês: ");
+                            qtdFornecidaAoMes = int.Parse(Console.ReadLine());
+                            Console.Write("CNPJ: ");
+                            cnpj = Console.ReadLine();
+
+                            fornecedor = new Fornecedor(nomeEmpresa, cnpj, tipoProduto, qtdFornecidaAoMes);
+
+                            try
+                            {
+                                fornecedordal.update(fornecedor);
+                            }
+                            catch (Exception)
+                            {
+                                fornecedordal.delete(fornecedor);
+                                Console.WriteLine("ERRO ao tentar atualizar este fornecedor.");
+                            }
+                            finally
+                            {
+                                fornecedordal.getLastRegister();
+                                Console.WriteLine("Atualização terminada.");
+                            }
                         }
-                        catch (Exception)
+                        else
                         {
-                            fornecedordal.delete(fornecedor);
-                            Console.WriteLine("ERRO ao tentar atualizar este fornecedor.");
-                        }
-                        finally
-                        {
-                            fornecedordal.getLastRegister();
-                            Console.WriteLine("Atualização terminada.");
+                            Console.WriteLine("ID inválido, tente novamente.");
                         }
                     }
                     else
                     {
-                        Console.WriteLine("CNPJ inválido, tente novamente.");
-                    }
+                        fornecedordal = new FornecedorDAL();
+                        Console.WriteLine("Listando fornecedores: ");
+                        fornecedordal.getAll().ForEach(x => { Console.WriteLine(x.GetDados()); });
+                        Console.WriteLine("-------------------------------//-----------------------");
 
+                        Console.WriteLine("Qual será alterado? ");
+                        Console.Write("Digite o CNPJ: ");
+                        cpfOrCnpj = Console.ReadLine();
+
+                        fornecedor = fornecedordal.getByCnpj(cpfOrCnpj);
+
+                        if (fornecedor.CNPJ == cpfOrCnpj)
+                        {
+                            //TODO: Verificar se quer alterar todos os dados ou apenas um dos dados
+                            //VERIFICAR SE ID É IGUAL AO QUE TEM NO BANCO, se for não cadastrar
+
+                            Console.WriteLine("Insira os novos dados: ");
+                            Console.Write("Nome da Empresa: ");
+                            nomeEmpresa = Console.ReadLine();
+                            Console.Write("Tipo de Produto: ");
+                            tipoProduto = int.Parse(Console.ReadLine());
+                            Console.Write("Quantidade Fornecida ao Mês: ");
+                            qtdFornecidaAoMes = int.Parse(Console.ReadLine());
+                            Console.Write("CNPJ: ");
+                            cnpj = Console.ReadLine();
+
+                            fornecedor = new Fornecedor(nomeEmpresa, cnpj, tipoProduto, qtdFornecidaAoMes);
+
+                            try
+                            {
+                                fornecedordal.update(fornecedor);
+                            }
+                            catch (Exception)
+                            {
+                                fornecedordal.delete(fornecedor);
+                                Console.WriteLine("ERRO ao tentar atualizar este fornecedor.");
+                            }
+                            finally
+                            {
+                                fornecedordal.getLastRegister();
+                                Console.WriteLine("Atualização terminada.");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("CNPJ inválido, tente novamente.");
+                        }
+                    }
                     repeat = true;
                 }
                 else

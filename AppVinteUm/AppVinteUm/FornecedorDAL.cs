@@ -91,6 +91,7 @@ namespace AppVinteUm
             SqlCommand command = new SqlCommand();
             command.Connection = conn;
             command.CommandText = "SELECT * FROM Fornecedor";
+
             try
             {
                 conn.Open();
