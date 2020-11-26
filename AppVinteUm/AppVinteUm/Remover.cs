@@ -19,6 +19,8 @@ namespace AppVinteUm
             FornecedorDAL fornecedordal = new FornecedorDAL();
             SocioDAL sociodal = new SocioDAL();
 
+            Cliente cliente = new Cliente();
+
             Console.Clear();
             Console.WriteLine("MENU PRINCIPAL: ");
             Console.Write("O que será removido? \n1 - Cliente Normal \n2 - Cliente Sócio \n3 - Funcionário  \n4 - Fornecedor \n5 - Sair \n");
@@ -35,7 +37,7 @@ namespace AppVinteUm
 
                     if (idOrCpf == 1)
                     {
-                        Cliente cliente = new Cliente();
+                        cliente = new Cliente();
                         Console.WriteLine("-------------------------------//-----------------------");
                         Console.WriteLine("Lista todos os clientes normais: ");
                         clientedal.getAll().ForEach(x => { Console.WriteLine(x.GetDados()); });
@@ -57,12 +59,13 @@ namespace AppVinteUm
                         }
                         finally
                         {
+                            cliente = clientedal.getLastRegister();
                             Console.WriteLine("O elemento [" + id + "] foi removido com sucesso.");
                         }
                     }
                     else if (idOrCpf == 2)
                     {
-                        Cliente cliente = new Cliente();
+                        cliente = new Cliente();
                         Console.WriteLine("-------------------------------//-----------------------");
                         Console.WriteLine("Lista todos os clientes normais: ");
                         clientedal.getAll().ForEach(x => { Console.WriteLine(x.GetDados()); });

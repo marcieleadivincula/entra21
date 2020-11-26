@@ -68,6 +68,7 @@ namespace AppVinteUm
                         try
                         {
                             clientedal.update(cliente);
+                            cliente = clientedal.getLastRegister();
                         }
                         catch (Exception)
                         {
