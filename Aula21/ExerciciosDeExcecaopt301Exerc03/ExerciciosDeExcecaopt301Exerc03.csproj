@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5F77CC51-49BA-4C14-9108-7951F5840040}</ProjectGuid>
+    <ProjectGuid>{54D46E4B-BF01-4A99-9B82-5844B965F1CF}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Aula21</RootNamespace>
-    <AssemblyName>Aula21</AssemblyName>
+    <RootNamespace>ExerciciosDeExcecaopt301Exerc03</RootNamespace>
+    <AssemblyName>ExerciciosDeExcecaopt301Exerc03</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBConfig.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

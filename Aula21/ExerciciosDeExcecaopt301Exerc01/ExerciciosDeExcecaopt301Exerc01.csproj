@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5F77CC51-49BA-4C14-9108-7951F5840040}</ProjectGuid>
+    <ProjectGuid>{7F32D854-4639-4BA6-AEF1-3F294CB650C5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Aula21</RootNamespace>
-    <AssemblyName>Aula21</AssemblyName>
+    <RootNamespace>ExerciciosDeExcecaopt301Exerc01</RootNamespace>
+    <AssemblyName>ExerciciosDeExcecaopt301Exerc01</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,12 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBConfig.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aula21\Aula21.csproj">
+      <Project>{5f77cc51-49ba-4c14-9108-7951f5840040}</Project>
+      <Name>Aula21</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
