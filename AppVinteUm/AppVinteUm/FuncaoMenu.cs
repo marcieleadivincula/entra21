@@ -190,26 +190,24 @@ namespace AppVinteUm
         {
             //public void create()
             //{
-            //    //SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
-            //    //SqlCommand cmd;
+            SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
+            SqlCommand cmd;
 
-            //    ////CRIA TABELA Cliente
-            //    //string create = "CREATE TABLE Cliente (" +
-            //    //    "[Id] INT IDENTITY(1,1) NOT NULL, " +
-            //    //    "[Nome] VARCHAR(60), " +
-            //    //    "[CPF] VARCHAR(20), " +
-            //    //    "[Idade] INT NOT NULL, " +
-            //    //    "[Saldo] FLOAT NOT NULL, " +
-            //    //    "[TipoCliente] VARCHAR(20), " +
-            //    //    "[QtdAcoes] FLOAT," +
-            //    //    "PRIMARY KEY CLUSTERED([Id] ASC))";
+            //CRIA TABELA Cliente
+            string create = "CREATE TABLE Cliente (" +
+                "[Id] INT IDENTITY(1,1) NOT NULL, " +
+                "[Nome] VARCHAR(60), " +
+                "[CPF] VARCHAR(20), " +
+                "[Idade] INT NOT NULL, " +
+                "[Saldo] FLOAT NOT NULL, " +
+                "[TipoCliente] VARCHAR(20), " +
+                "[QtdAcoes] FLOAT," +
+                "PRIMARY KEY CLUSTERED([Id] ASC))";
 
-            //    //cmd = new SqlCommand(create, conn);
-            //    //conn.Open();
-            //    //cmd.ExecuteNonQuery();
-            //    //conn.Close();
-
-
+            cmd = new SqlCommand(create, conn);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
 
             ////    CREATE Cliente
             ////for (int i = 0; i < 1; i++)
@@ -258,5 +256,48 @@ namespace AppVinteUm
             //}
         }
 
+
+        public static void CreateFuncionario()
+        {
+            SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
+            SqlCommand cmd;
+
+            //CRIA TABELA Funcionario
+            string create = "CREATE TABLE Funcionario (" +
+                "[Id] INT IDENTITY(1,1) NOT NULL, " +
+                "[Nome] VARCHAR(60), " +
+                "[CPF] VARCHAR(20), " +
+                "[Idade] INT NOT NULL, " +
+                "[SalarioPorHora] FLOAT, " +
+                "[Cargo] VARCHAR(60), " +
+                "[Saldo] FLOAT, " +
+                "PRIMARY KEY CLUSTERED([Id] ASC))";
+
+            cmd = new SqlCommand(create, conn);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public static void CreateFornecedor()
+        {
+            SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
+            SqlCommand cmd;
+
+            //CRIA TABELA Fornecedor
+            string create = "CREATE TABLE Fornecedor (" +
+                "[Id] INT IDENTITY(1,1) NOT NULL, " +
+                "[Nome] VARCHAR(60), " +
+                "[CNPJ] VARCHAR(20), " +
+                "[Idade] INT NOT NULL, " +
+                "[TipoDeProduto] INT NOT NULL, " +
+                "[QuantidadeFornecidaAoMes] INT NOT NULL," +
+                "PRIMARY KEY CLUSTERED([Id] ASC))";
+
+            cmd = new SqlCommand(create, conn);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }
