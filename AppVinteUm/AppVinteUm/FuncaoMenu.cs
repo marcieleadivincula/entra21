@@ -256,7 +256,6 @@ namespace AppVinteUm
             //}
         }
 
-
         public static void CreateFuncionario()
         {
             SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);

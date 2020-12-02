@@ -17,7 +17,7 @@ namespace AppVinteUm
             ClienteDAL clientedal = new ClienteDAL();
             SocioDAL sociodal = new SocioDAL();
 
-            double quantidade, resultado;
+            double quantidade, resultado, desconto;
             Console.Clear();
             Console.WriteLine("Qual cliente está comprando?");
             Console.Write("Menu principal: \n1 - Cliente Normal \n2 - Cliente Sócio \n3 - Sair \n");
@@ -32,12 +32,13 @@ namespace AppVinteUm
                     Cliente cliente = new Cliente();
                     Console.WriteLine("-------------------------------//-----------------------");
                     Console.WriteLine("Listando clientes normais: ");
-                    //clientedal.getAll();
+                    clientedal.getAll().ForEach(x => { Console.WriteLine(x.GetDados()); });
                     Console.WriteLine("-------------------------------//-----------------------");
 
                     Console.WriteLine("Qual cliente está comprando? ");
                     Console.Write("Digite o CPF: ");
                     cpf = Console.ReadLine();
+
                     cliente = clientedal.getByCpf(cpf);
 
                     Console.Write("Quanto está comprando? ");
@@ -57,24 +58,28 @@ namespace AppVinteUm
                 }
                 else if (userChoice == 2)
                 {
+                    Socio socio = new Socio();
                     Console.WriteLine("Listando clientes sócios: ");
-                    //sociodal.getAll();
+                    sociodal.getAll().ForEach(x => { Console.WriteLine(x.GetDados()); });
                     Console.WriteLine("-------------------------------//-----------------------");
 
                     Console.WriteLine("Qual cliente está comprando? ");
                     Console.Write("Digite o CPF: ");
                     cpf = Console.ReadLine();
 
+                    socio = sociodal.getByCpf(cpf);
+
                     if (string.IsNullOrWhiteSpace(cpf))
                     {
                         Console.Write("Quanto está comprando? ");
                         quantidade = int.Parse(Console.ReadLine());
-                        //resultado = quantidade - 0.20;
-                        resultado = quantidade * 1.20;
+
+                        desconto = quantidade * 0.20;
+                        resultado = quantidade - desconto;
 
                         if (resultado > 0)
                         {
-                            sociodal.update(new Socio(resultado));  //ver como se comporta, se atualiza um apenas ou tudo
+                            sociodal.update(socio);  //ver como se comporta, se atualiza um apenas ou tudo
                         }
                     }
 

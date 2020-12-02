@@ -78,7 +78,7 @@ namespace AppVinteUm
 
                         try
                         {
-                            clientedal.delete(cliente);
+                            clientedal.deleteByCPF(cliente);
                         }
                         catch (Exception e)
                         {

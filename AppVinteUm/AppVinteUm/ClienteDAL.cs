@@ -360,5 +360,30 @@ namespace AppVinteUm
                 conn.Dispose();
             }
         }
+
+        public string deleteByCPF(Cliente cliente)
+        {
+            SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
+            SqlCommand command = new SqlCommand();
+            command.Connection = conn;
+            command.CommandText = "DELETE FROM Cliente WHERE CPF = @CPF";
+            command.Parameters.AddWithValue("@Id", cliente.CPF);
+
+            try
+            {
+                conn.Open();
+                command.ExecuteNonQuery();
+                return "Deletado com sucesso!";
+            }
+            catch (Exception)
+            {
+                return "Erro no DB, contate o administrador.";
+            }
+            finally
+            {
+                conn.Dispose();
+            }
+        }
+
     }
 }

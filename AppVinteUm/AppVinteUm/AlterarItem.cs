@@ -41,6 +41,8 @@ namespace AppVinteUm
 
                     if (idOrCpf == 1)
                     {
+                        clientedal = new ClienteDAL();
+
                         Console.WriteLine("-------------------------------//-----------------------");
                         Console.WriteLine("Lista de todos os clientes normais: ");
                         clientedal.getAll().ForEach(x => { Console.WriteLine(x.GetDados()); });
@@ -49,7 +51,7 @@ namespace AppVinteUm
                         Console.Write("Digite o ID: ");
                         id = int.Parse(Console.ReadLine());
 
-                        //cliente = clientedal.getById(id);
+                        cliente = clientedal.getById(id);
 
                         //TODO: Verificar se quer alterar todos os dados ou apenas um dos dados
                         //VERIFICAR SE ID É IGUAL AO QUE TEM NO BANCO, se for não cadastrar
