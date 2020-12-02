@@ -27,13 +27,6 @@ namespace ExerciciosDeExcecaopt301Exerc01
             SqlConnection connection = new SqlConnection(DBConfig.CONNECTION_STRING);
             SqlCommand command = new SqlCommand();
 
-            ////CREATE TABLE
-            //string create = "CREATE TABLE Pessoa(Id INT NOT NULL IDENTITY(0,1) PRIMARY KEY, Nome VARCHAR(60) NOT NULL)";
-            //SqlCommand command = new SqlCommand(create, connection);
-            //connection.Open();
-            //command.ExecuteNonQuery();
-            //connection.Close();
-
             for (int i = 0; i < 5; i++)
             {
                 try
@@ -42,6 +35,7 @@ namespace ExerciciosDeExcecaopt301Exerc01
                     {
                         Console.WriteLine("{0} {1}", j + 1, (Nomes)j);
                     }
+
                     Console.Write("Insira o nome do elemento: ");
                     int escolha = int.Parse(Console.ReadLine()) - 1;
 

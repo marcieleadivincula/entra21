@@ -18,6 +18,7 @@ namespace ExerciciosDeExcecaopt301Exerc02
                 int result = (numero > 10) ? numero * numero : numero;
                 return result;
             };
+
             Console.WriteLine(quadrado(numero));
             Console.ReadLine();
         }
