@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using Aula17ExercicioDeDBpt101Exerc01;
 
 namespace ExercicioDeDBpt101Exerc01
 {
@@ -12,10 +13,21 @@ namespace ExercicioDeDBpt101Exerc01
         static void Main(string[] args)
         {
             //1) Crie um Banco de Dados para armazenar 4 Clientes de uma loja, cada Cliente possui nome, idade e cpf. Após inserir todos os Clientes, Mostre estes Clientes na tela
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Desktop\marciele\entra21\Aula17\Aula17\Database1.mdf;Integrated Security=True");
-            SqlCommand cmd;
+            //SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Desktop\marciele\entra21\Aula17\Aula17\Database1.mdf;Integrated Security=True");
+            //SqlConnection conn = new SqlConnection(@"server=localhost;user id=root;persistsecurityinfo=True;database=entra21");
+            //SqlCommand cmd;
             SqlDataReader dr;
-            
+
+            SqlConnection conn = new SqlConnection(DBConfig.CONNECTION_STRING);
+            SqlCommand cmd = new SqlCommand();
+
+            ////CREATE TABLE
+            //string create = "CREATE TABLE Pessoa(Id INT NOT NULL IDENTITY(0,1) PRIMARY KEY, Nome VARCHAR(60) NOT NULL)";
+            //SqlCommand cmd = new SqlCommand(create, conn);
+            //conn.Open();
+            //cmd.ExecuteNonQuery();
+            //conn.Close();
+
             string nome, cpf, select;
             int idade;
 

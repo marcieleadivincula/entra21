@@ -41,7 +41,8 @@ namespace Aula17
             //Mostra: Mostra todos os produtos
             //Sair: Encerre o programa
             //b) Agora que criamos os produtos, vamos usá-los num caixa de mercado, peça ao usuario os produtos(pode ser por id ou nome) para o usuario poder escolher mostre apenas o nome e id de todos os produtos no bd(apenas aqueles que possuem ao menos 1 no estoque) e para cada produto escolhido reduza 1 no estoque e aumente o valor do carrinho, quando não houver mais produtos digite -1 para parar e então mostre o valor final da compra, após terminar a compra, pergunte se tem outra compra, se sim, repita o processo caso nao, encerre o programa
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Desktop\marciele\entra21\Aula17\Aula17\Database1.mdf;Integrated Security=True");
+            //SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Desktop\marciele\entra21\Aula17\Aula17\Database1.mdf;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"server=localhost;user id=root;persistsecurityinfo=True;database=entra21");
             SqlCommand cmd;
             SqlDataReader dr;
             string insert, select, update, create, delete;
